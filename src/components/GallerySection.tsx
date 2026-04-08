@@ -16,18 +16,18 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-primary">
+    <section id="gallery" className="py-24 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-secondary-foreground/60 text-sm tracking-[0.3em] uppercase font-body mb-4">
+          <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
             Galería
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-primary-foreground">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
             Nuestros <span className="italic">platos</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
           {images.map((img, i) => (
             <div
               key={i}
@@ -48,7 +48,7 @@ const GallerySection = () => {
             href="https://www.instagram.com/toscacarme/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border border-primary-foreground/30 text-primary-foreground px-10 py-3 text-sm tracking-[0.25em] uppercase font-body hover:bg-primary-foreground hover:text-primary transition-all duration-500"
+            className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
           >
             Ver más en Instagram
           </a>
