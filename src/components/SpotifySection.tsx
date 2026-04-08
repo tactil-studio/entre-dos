@@ -2,16 +2,16 @@ import { Music } from "lucide-react";
 
 const SpotifySection = () => {
   return (
-    <section id="spotify" className="py-24 md:py-32 bg-secondary">
+    <section id="spotify" className="py-24 md:py-32 bg-card">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <Music className="w-8 h-8 text-secondary-foreground/60 mx-auto mb-6" />
-        <p className="text-secondary-foreground/60 text-sm tracking-[0.3em] uppercase font-body mb-4">
+        <Music className="w-6 h-6 text-olive mx-auto mb-6" />
+        <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
           Nuestra playlist
         </p>
-        <h2 className="text-4xl md:text-5xl font-heading font-light text-secondary-foreground mb-4">
+        <h2 className="text-4xl md:text-5xl font-heading font-light text-foreground mb-4">
           La banda sonora de <span className="italic">Entre Dos</span>
         </h2>
-        <p className="text-secondary-foreground/60 font-body mb-12 max-w-md mx-auto">
+        <p className="text-muted-foreground font-body mb-12 max-w-md mx-auto text-sm">
           La música que suena en nuestro espacio. Escúchala donde quieras.
         </p>
 
@@ -32,7 +32,7 @@ const SpotifySection = () => {
           href="https://open.spotify.com/playlist/61T3a2uuAz7f6AAjaEJrLd?si=mAXF9oc5QnyHH7cDhh3JLg"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border border-secondary-foreground/30 text-secondary-foreground px-10 py-3 text-sm tracking-[0.25em] uppercase font-body hover:bg-secondary-foreground hover:text-secondary transition-all duration-500"
+          className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
         >
           Abrir en Spotify
         </a>

@@ -6,12 +6,12 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-secondary text-sm tracking-[0.3em] uppercase font-body mb-4">
+            <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
               Nuestra esencia
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground leading-tight">
               Donde la tradición<br />
-              <span className="italic text-secondary">se encuentra</span><br />
+              <span className="italic">se encuentra</span><br />
               con lo moderno
             </h2>
             <p className="mt-8 text-muted-foreground font-body leading-relaxed text-base max-w-md">
@@ -30,7 +30,7 @@ const AboutSection = () => {
               className="w-full aspect-[4/5] object-cover"
               loading="lazy"
             />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-secondary/30" />
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-olive/20" />
           </div>
         </div>
       </div>
