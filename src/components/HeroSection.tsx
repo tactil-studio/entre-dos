@@ -1,11 +1,11 @@
-import heroBg from "@/assets/hero-bg.jpg";
+import foodBrunch1 from "@/assets/food-brunch1.jpg";
 
 const HeroSection = () => {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       <img
-        src={heroBg}
-        alt="Entre 2 restaurant interior"
+        src={foodBrunch1}
+        alt="Brunch en Entre 2"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
         height={1080}
