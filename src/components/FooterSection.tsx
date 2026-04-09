@@ -90,7 +90,16 @@ const FooterSection = () => {
 									href="mailto:toscadelcarme40@gmail.com"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
 								>
-									contacto
+									toscadelcarme40@gmail.com
+								</a>
+							</li>
+							<li className="flex items-center gap-2 justify-center md:justify-start">
+								<Phone size={16} className="text-olive shrink-0" />
+								<a
+									href="tel:+34937308487"
+									className="text-background/60 hover:text-background transition-colors text-sm font-body"
+								>
+									937308487
 								</a>
 							</li>
 						</ul>

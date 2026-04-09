@@ -13,11 +13,6 @@ const Navbar = () => {
 		{ label: "Nosotros", href: isHome ? "#about" : "/#about", isLink: true },
 		{ label: "Carta", href: "/carta", isLink: true },
 		{ label: "Galería", href: isHome ? "#gallery" : "/#gallery", isLink: true },
-		{
-			label: "Contacto",
-			href: isHome ? "#contact" : "/#contact",
-			isLink: true,
-		},
 	];
 
 	return (
