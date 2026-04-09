@@ -2,7 +2,7 @@ import foodHam from "@/assets/food-ham.jpg";
 
 const AboutSection = () => {
 	return (
-		<section id="about" className="py-24 md:py-32 bg-background">
+		<section id="about" className="py-16 md:py-32 bg-background">
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div>
