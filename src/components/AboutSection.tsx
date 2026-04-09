@@ -30,8 +30,8 @@ const AboutSection = () => {
 						<img
 							src={foodHam}
 							alt="Jamón curado catalán"
-							className="w-full aspect-[4/5] object-cover"
 							loading="lazy"
+							className="w-full aspect-[4/5] object-cover"
 						/>
 					</div>
 				</div>
