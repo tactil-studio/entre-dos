@@ -2,7 +2,7 @@ import { Music } from "lucide-react";
 
 const SpotifySection = () => {
   return (
-    <section id="spotify" className="py-24 md:py-32 bg-card">
+    <section id="spotify" className="py-16 md:py-24 bg-card">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <Music className="w-6 h-6 text-olive mx-auto mb-6" />
         <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">

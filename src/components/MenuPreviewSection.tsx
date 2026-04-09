@@ -5,7 +5,7 @@ import foodMezze from "@/assets/food-mezze.jpg";
 
 const MenuPreviewSection = () => {
   return (
-    <section id="menu" className="py-24 md:py-32 bg-background">
+    <section id="menu" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
