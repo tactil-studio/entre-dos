@@ -5,14 +5,14 @@ import foodMezze from "@/assets/food-mezze.jpg";
 
 const MenuPreviewSection = () => {
   return (
-    <section id="menu" className="py-24 md:py-32 bg-background">
+    <section id="menu" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
             Nuestra carta
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
-            Sabores <span className="italic">mediterráneos</span>
+            Sabores <span className="italic text-night-blue">mediterráneos</span>
           </h2>
           <p className="mt-6 text-muted-foreground font-body text-sm max-w-lg mx-auto">
             Platos elaborados con ingredientes frescos y de temporada. 
