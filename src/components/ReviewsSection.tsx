@@ -4,40 +4,40 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const reviews = [
 	{
-		name: "Laura M.",
+		name: "Brent V.",
 		rating: 5,
-		text: "Un lugar con mucho encanto en el Raval. La comida es espectacular, todo fresco y con mucho sabor. El brunch de fin de semana es increíble. ¡Volveremos seguro!",
-		date: "Hace 2 semanas",
+		text: "Mi novia y yo cenamos aquí hace unos días. El ambiente era muy acogedor, con buena música de fondo. El personal fue muy amable y atento. Pedimos el salmón al horno, el pollo con tzatziki y las patatas gajo, todo delicioso. Además, los cócteles estaban increíbles.",
+		date: "Hace 1 semana",
 	},
 	{
-		name: "Marc T.",
+		name: "Laudenor P.",
 		rating: 5,
-		text: "Ambiente acogedor y platos muy bien elaborados. Las gambas al ajillo y la tostada de aguacate son de otro nivel. Muy buen servicio.",
-		date: "Hace 1 mes",
+		text: "Ambiente auténtico y acogedor, comida excelente, precios justos y un servicio impecable.",
+		date: "Hace 1 semana",
 	},
 	{
-		name: "Sophie L.",
+		name: "Alexandra D.",
 		rating: 5,
-		text: "Best brunch spot in Barcelona! The shakshuka was amazing, and the playlist creates such a cool atmosphere. Love the terrace.",
-		date: "Hace 3 semanas",
+		text: "Great discovery in El Raval! The food was excellent and the atmosphere perfect for a relaxed dinner. The staff is super friendly and attentive. We'll definitely be back!",
+		date: "Hace 1 semana",
 	},
 	{
-		name: "Carlos R.",
+		name: "Sandra D.",
 		rating: 5,
-		text: "Descubrimos este sitio por casualidad y fue un acierto total. La carta de vinos es genial y los cocktails están buenísimos. Sitio top.",
-		date: "Hace 1 mes",
+		text: "Un restaurante muy especial, con muy buen ambiente y muy bien situado. Los platos que comimos estuvieron deliciosos. Tiene vinos y bebidas a buen precio. Personal atento y amable.",
+		date: "Hace 2 días",
 	},
 	{
-		name: "Anna B.",
+		name: "Elodie B.",
 		rating: 5,
-		text: "Me encanta la decoración y el concepto. La comida está riquísima, especialmente los tacos de desayuno. Precios muy razonables para la calidad.",
-		date: "Hace 2 meses",
+		text: "A wonderful welcome for families with children. Truly a charming place with delicious food and a lovely terrace. Highly recommend for brunch!",
+		date: "Hace 1 semana",
 	},
 	{
-		name: "David K.",
+		name: "Valentyn N.",
 		rating: 5,
-		text: "Great food, lovely atmosphere. The mezze board is perfect for sharing. We had a wonderful evening here. Highly recommended!",
-		date: "Hace 1 mes",
+		text: "Amazing spot in Barcelona! The cocktails are fantastic and the food is fresh and tasty. Loved the cozy vibe and the music playlist. Perfect place for dinner or drinks.",
+		date: "Hace 2 días",
 	},
 ];
 
