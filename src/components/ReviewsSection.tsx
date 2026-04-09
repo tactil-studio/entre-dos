@@ -33,7 +33,7 @@ const reviews = [
   },
   {
     name: "David K.",
-    rating: 4,
+    rating: 5,
     text: "Great food, lovely atmosphere. The mezze board is perfect for sharing. We had a wonderful evening here. Highly recommended!",
     date: "Hace 1 mes",
   },
@@ -48,16 +48,17 @@ const ReviewsSection = () => {
             Opiniones
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
-            Lo que dicen de <span className="italic">nosotros</span>
+            Lo que dicen de <span className="italic text-night-blue">nosotros</span>
           </h2>
           <div className="flex items-center justify-center gap-2 mt-6">
             <div className="flex">
-              {[...Array(5)].map((_, i) => (
+              {[...Array(4)].map((_, i) => (
                 <Star key={i} size={18} className="fill-yellow-500 text-yellow-500" />
               ))}
+              <Star size={18} className="fill-yellow-500/50 text-yellow-500" />
             </div>
             <span className="text-muted-foreground font-body text-sm ml-2">
-              4.8 en Google Maps
+              4.5 en Google Maps
             </span>
           </div>
         </div>

@@ -12,7 +12,7 @@ const MenuPreviewSection = () => {
             Nuestra carta
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
-            Sabores <span className="italic">mediterráneos</span>
+            Sabores <span className="italic text-night-blue">mediterráneos</span>
           </h2>
           <p className="mt-6 text-muted-foreground font-body text-sm max-w-lg mx-auto">
             Platos elaborados con ingredientes frescos y de temporada. 

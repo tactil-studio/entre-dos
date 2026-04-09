@@ -9,7 +9,7 @@ const SpotifySection = () => {
           Nuestra playlist
         </p>
         <h2 className="text-4xl md:text-5xl font-heading font-light text-foreground mb-4">
-          La banda sonora de <span className="italic">Entre Dos</span>
+          La banda sonora de <span className="italic text-olive">Entre Dos</span>
         </h2>
         <p className="text-muted-foreground font-body mb-12 max-w-md mx-auto text-sm">
           La música que suena en nuestro espacio. Escúchala donde quieras.
