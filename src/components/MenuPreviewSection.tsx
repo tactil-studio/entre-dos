@@ -2,12 +2,22 @@ import { Link } from "react-router-dom";
 import foodBrunch1 from "@/assets/food-brunch1.jpg";
 import foodMezze from "@/assets/food-mezze.jpg";
 import foodPrawns from "@/assets/food-prawns.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
+const items = [
+	{ img: foodPrawns, label: "Carta", desc: "Tapas, entrantes, carnes y pescados" },
+	{ img: foodBrunch1, label: "Brunch", desc: "Sábados y domingos, 11–16h" },
+	{ img: foodMezze, label: "Bebidas & Cocktails", desc: "Vinos, cócteles y zumos naturales" },
+];
 
 const MenuPreviewSection = () => {
+	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ rootMargin: "0px 0px -40px 0px" });
+
 	return (
-		<section id="menu" className="py-16 md:py-16bg-background">
+		<section id="menu" className="py-16 md:py-16 bg-background">
 			<div className="max-w-7xl mx-auto px-6">
-				<div className="text-center mb-16">
+				<div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 						Nuestra carta
 					</p>
@@ -21,28 +31,12 @@ const MenuPreviewSection = () => {
 					</p>
 				</div>
 
-				<div className="grid md:grid-cols-3 gap-4">
-					{[
-						{
-							img: foodPrawns,
-							label: "Carta",
-							desc: "Tapas, entrantes, carnes y pescados",
-						},
-						{
-							img: foodBrunch1,
-							label: "Brunch",
-							desc: "Sábados y domingos, 11–16h",
-						},
-						{
-							img: foodMezze,
-							label: "Bebidas & Cocktails",
-							desc: "Vinos, cócteles y zumos naturales",
-						},
-					].map((item, i) => (
+				<div ref={gridRef} className="grid md:grid-cols-3 gap-4">
+					{items.map((item, i) => (
 						<Link
 							to="/carta"
 							key={i}
-							className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
+							className={`group relative overflow-hidden aspect-[3/4] cursor-pointer reveal-scale reveal-delay-${i + 1} ${gridVisible ? "visible" : ""}`}
 						>
 							<img
 								src={item.img}
@@ -63,7 +57,7 @@ const MenuPreviewSection = () => {
 					))}
 				</div>
 
-				<div className="text-center mt-12">
+				<div className={`text-center mt-12 reveal reveal-delay-4 ${gridVisible ? "visible" : ""}`}>
 					<Link
 						to="/carta"
 						className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"

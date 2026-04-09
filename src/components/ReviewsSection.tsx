@@ -1,4 +1,5 @@
 import { Quote, Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const reviews = [
 	{
@@ -40,10 +41,13 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ rootMargin: "0px 0px -40px 0px" });
+
 	return (
-		<section id="reviews" className="py-16 md:py-16bg-card">
+		<section id="reviews" className="py-16 md:py-16 bg-card">
 			<div className="max-w-7xl mx-auto px-6">
-				<div className="text-center mb-16">
+				<div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 						Opiniones
 					</p>
@@ -54,11 +58,7 @@ const ReviewsSection = () => {
 					<div className="flex items-center justify-center gap-2 mt-6">
 						<div className="flex">
 							{[...Array(4)].map((_, i) => (
-								<Star
-									key={i}
-									size={18}
-									className="fill-yellow-500 text-yellow-500"
-								/>
+								<Star key={i} size={18} className="fill-yellow-500 text-yellow-500" />
 							))}
 							<Star size={18} className="fill-yellow-500/50 text-yellow-500" />
 						</div>
@@ -68,11 +68,11 @@ const ReviewsSection = () => {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{reviews.map((review, i) => (
 						<div
 							key={i}
-							className="bg-background p-8 relative group hover:shadow-lg transition-shadow duration-500"
+							className={`bg-background p-8 relative group hover:shadow-lg transition-all duration-500 reveal reveal-delay-${Math.min(i + 1, 4)} ${gridVisible ? "visible" : ""}`}
 						>
 							<Quote size={24} className="text-olive/20 mb-4" />
 							<p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">
@@ -89,11 +89,7 @@ const ReviewsSection = () => {
 								</div>
 								<div className="flex">
 									{[...Array(review.rating)].map((_, j) => (
-										<Star
-											key={j}
-											size={12}
-											className="fill-yellow-500 text-yellow-500"
-										/>
+										<Star key={j} size={12} className="fill-yellow-500 text-yellow-500" />
 									))}
 								</div>
 							</div>
@@ -101,7 +97,7 @@ const ReviewsSection = () => {
 					))}
 				</div>
 
-				<div className="text-center mt-12">
+				<div className={`text-center mt-12 reveal reveal-delay-4 ${gridVisible ? "visible" : ""}`}>
 					<a
 						href="https://maps.app.goo.gl/by5H899MJv1qyLTy6"
 						target="_blank"

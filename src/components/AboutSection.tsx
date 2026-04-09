@@ -1,18 +1,21 @@
 import foodHam from "@/assets/food-ham.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {
+	const { ref, isVisible } = useScrollReveal();
+
 	return (
-		<section id="about" className="py-24 bg-background">
+		<section id="about" className="py-24 bg-background" ref={ref}>
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
-					<div>
+					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
 						<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 							Nuestra esencia
 						</p>
 						<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground leading-tight">
 							Donde la tradición
 							<br />
-							<span className="italic">se encuentra</span>
+							<span className="italic text-olive">se encuentra</span>
 							<br />
 							con lo moderno
 						</h2>
@@ -26,7 +29,7 @@ const AboutSection = () => {
 							única.
 						</p>
 					</div>
-					<div className="relative">
+					<div className={`relative reveal-right ${isVisible ? "visible" : ""}`}>
 						<img
 							src={foodHam}
 							alt="Jamón curado catalán"
