@@ -55,12 +55,12 @@ const Carta = () => {
 
 					{/* Menu image */}
 					<div className="flex justify-center">
-						<div className="w-full md:max-w-2xl aspect-[3/4] overflow-hidden shadow-lg">
+						<div className="w-full md:max-w-2xl shadow-lg">
 							<img
 								key={activeTab.id}
 								src={activeTab.image}
 								alt={`Carta - ${activeTab.label}`}
-								className="w-full h-full object-cover animate-fade-in"
+								className="w-full h-auto object-contain animate-fade-in"
 							/>
 						</div>
 					</div>
