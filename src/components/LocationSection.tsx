@@ -1,4 +1,4 @@
-import { Clock, MapPin, Mail } from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const schedule = [
@@ -13,68 +13,143 @@ const LocationSection = () => {
 	const { ref: rightRef, isVisible: rightVisible } = useScrollReveal();
 
 	return (
-		<section id="location" className="py-16 md:py-24 bg-background">
+		<section id="location" className="py-8 md:py-12 bg-background">
 			<div className="max-w-7xl mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-0 overflow-hidden border border-border">
+				<div className="grid md:grid-cols-2 gap-0 overflow-hidden border border-border shadow-lg">
 					{/* Left — info */}
 					<div
 						ref={leftRef}
-						className={`bg-foreground text-background p-10 md:p-16 flex flex-col justify-center reveal-left ${leftVisible ? "visible" : ""}`}
+						className={`bg-gradient-to-br from-background via-background to-background/95 text-foreground border-r border-border/30 p-6 md:p-8 flex flex-col justify-center relative reveal-left overflow-hidden ${leftVisible ? "visible" : ""}`}
 					>
-						<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-6">
-							Encuéntranos
-						</p>
-						<h2 className="text-4xl md:text-5xl font-heading font-light leading-tight mb-10">
-							Ven a{" "}
-							<span className="italic text-olive">visitarnos</span>
-						</h2>
+						{/* Decorative elements */}
+						<div className="absolute top-20 -right-32 w-64 h-64 bg-olive/5 rounded-full blur-3xl"></div>
+						<div className="absolute bottom-10 -left-32 w-48 h-48 bg-olive/5 rounded-full blur-3xl"></div>
 
-						{/* Address */}
-						<div className="flex items-start gap-4 mb-8">
-							<MapPin size={18} className="text-olive mt-1 shrink-0" />
-							<div>
-								<p className="font-body text-sm text-background/90">
+						{/* Top accent bar */}
+						<div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-olive via-olive to-olive/70"></div>
+
+						<div className="relative z-10">
+							<p className="text-olive text-xs tracking-[0.4em] uppercase font-body mb-4 font-semibold">
+								✦ Encuéntranos
+							</p>
+							<h2 className="text-3xl md:text-4xl font-heading font-light leading-tight mb-2 pb-4 border-b-2 border-olive/40">
+								Ven a{" "}
+								<span className="italic text-olive font-light block mt-1">
+									visitarnos
+								</span>
+							</h2>
+							<div className="flex items-center gap-3 mt-3 mb-6">
+								<div className="h-px w-10 bg-gradient-to-r from-olive to-olive/0"></div>
+								<div className="h-px w-10 bg-gradient-to-l from-olive to-olive/0"></div>
+							</div>
+
+							{/* Address */}
+							<div className="md:hidden mb-6">
+								<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-2 font-medium">
+									Ubicación
+								</p>
+								<p className="font-body text-base text-foreground font-medium">
 									C/ del Carme, 40
 								</p>
-								<p className="font-body text-sm text-background/50">
+								<p className="font-body text-xs text-foreground/60">
 									08001 Barcelona
 								</p>
 							</div>
-						</div>
 
-						{/* Schedule */}
-						<div className="flex items-start gap-4 mb-8">
-							<Clock size={18} className="text-olive mt-1 shrink-0" />
-							<div className="w-full">
-								<p className="font-body text-xs tracking-[0.2em] uppercase text-background/40 mb-4">
-									Horario
-								</p>
-								<div className="space-y-3">
-									{schedule.map((s, i) => (
-										<div key={i} className="grid grid-cols-[1fr_auto_auto] gap-x-4 items-baseline font-body text-sm">
-											<span className="text-background/90">{s.day}</span>
-											<span className="text-background/50 text-xs">Cocina {s.kitchen}</span>
-											<span className="text-background/50 text-xs">Bar {s.bar}</span>
-										</div>
-									))}
+							<div className="hidden md:flex md:items-start md:gap-3 md:mb-6 md:group">
+								<div className="mt-1 p-2 bg-olive/10 rounded-lg group-hover:bg-olive/20 transition-colors">
+									<MapPin size={18} className="text-olive" />
 								</div>
-								<div className="mt-4 pt-4 border-t border-background/10">
-									<p className="font-body text-sm text-background/70">
-										<span className="text-olive font-medium">Brunch</span> · Sáb & Dom 11:00 – 16:00
+								<div>
+									<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-1 font-medium">
+										Ubicación
+									</p>
+									<p className="font-body text-base text-foreground font-medium">
+										C/ del Carme, 40
+									</p>
+									<p className="font-body text-xs text-foreground/60">
+										08001 Barcelona
 									</p>
 								</div>
 							</div>
-						</div>
 
-						{/* Contact */}
-						<div className="flex items-start gap-4">
-							<Mail size={18} className="text-olive mt-1 shrink-0" />
-							<a
-								href="mailto:toscadelcarme40@gmail.com"
-								className="font-body text-sm text-background/70 hover:text-background transition-colors"
-							>
-								toscadelcarme40@gmail.com
-							</a>
+							{/* Schedule */}
+							<div className="md:hidden mb-6">
+								<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-3 font-medium">
+									Horario
+								</p>
+								<div className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-2 mb-3 border-b-2 border-olive/30">
+									<span></span>
+									<span className="text-olive font-semibold uppercase">
+										Cocina
+									</span>
+									<span className="text-olive font-semibold uppercase">
+										Bar
+									</span>
+								</div>
+								<div className="space-y-1.5">
+									{schedule.map((s, i) => (
+										<div
+											key={i}
+											className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-1.5 border-b border-border/10 hover:border-olive/20 transition-colors"
+										>
+											<span className="text-foreground font-medium">
+												{s.day}
+											</span>
+											<span className="text-foreground/60">{s.kitchen}</span>
+											<span className="text-foreground/60">{s.bar}</span>
+										</div>
+									))}
+								</div>
+								<div className="mt-3 pt-3 border-t-2 border-olive/30">
+									<p className="font-body text-xs text-foreground/75 flex items-center gap-2">
+										<span className="inline-block w-1.5 h-1.5 bg-olive rounded-full"></span>
+										<span className="text-olive font-semibold">Brunch</span> ·
+										Sáb & Dom 11:00 – 16:00
+									</p>
+								</div>
+							</div>
+
+							<div className="hidden md:flex md:items-start md:gap-3 md:mb-6 md:group">
+								<div className="mt-1 p-2 bg-olive/10 rounded-lg group-hover:bg-olive/20 transition-colors">
+									<Clock size={18} className="text-olive" />
+								</div>
+								<div className="w-full">
+									<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-3 font-medium">
+										Horario
+									</p>
+									<div className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-2 mb-3 border-b-2 border-olive/30">
+										<span></span>
+										<span className="text-olive font-semibold uppercase">
+											Cocina
+										</span>
+										<span className="text-olive font-semibold uppercase">
+											Bar
+										</span>
+									</div>
+									<div className="space-y-1.5">
+										{schedule.map((s, i) => (
+											<div
+												key={i}
+												className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-1.5 border-b border-border/10 hover:border-olive/20 transition-colors"
+											>
+												<span className="text-foreground font-medium">
+													{s.day}
+												</span>
+												<span className="text-foreground/60">{s.kitchen}</span>
+												<span className="text-foreground/60">{s.bar}</span>
+											</div>
+										))}
+									</div>
+									<div className="mt-3 pt-3 border-t-2 border-olive/30">
+										<p className="font-body text-xs text-foreground/75 flex items-center gap-2">
+											<span className="inline-block w-1.5 h-1.5 bg-olive rounded-full"></span>
+											<span className="text-olive font-semibold">Brunch</span> ·
+											Sáb & Dom 11:00 – 16:00
+										</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 
