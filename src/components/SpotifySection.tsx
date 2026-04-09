@@ -2,14 +2,14 @@ import { Music } from "lucide-react";
 
 const SpotifySection = () => {
   return (
-    <section id="spotify" className="py-24 md:py-32 bg-card">
+    <section id="spotify" className="py-16 md:py-24 bg-card">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <Music className="w-6 h-6 text-olive mx-auto mb-6" />
         <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
           Nuestra playlist
         </p>
         <h2 className="text-4xl md:text-5xl font-heading font-light text-foreground mb-4">
-          La banda sonora de <span className="italic">Entre Dos</span>
+          La banda sonora de <span className="italic text-olive">Entre Dos</span>
         </h2>
         <p className="text-muted-foreground font-body mb-12 max-w-md mx-auto text-sm">
           La música que suena en nuestro espacio. Escúchala donde quieras.

@@ -16,14 +16,14 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-background">
+    <section id="gallery" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
             Galería
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
-            Nuestros <span className="italic">platos</span>
+            Nuestros <span className="italic text-olive">platos</span>
           </h2>
         </div>
 

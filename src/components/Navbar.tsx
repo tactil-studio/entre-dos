@@ -10,10 +10,10 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Inicio", href: isHome ? "#hero" : "/", isLink: !isHome },
-    { label: "Nosotros", href: isHome ? "#about" : "/#about", isLink: !isHome },
+    { label: "Nosotros", href: isHome ? "#about" : "/#about", isLink: true },
     { label: "Carta", href: "/carta", isLink: true },
-    { label: "Galería", href: isHome ? "#gallery" : "/#gallery", isLink: !isHome },
-    { label: "Contacto", href: isHome ? "#contact" : "/#contact", isLink: !isHome },
+    { label: "Galería", href: isHome ? "#gallery" : "/#gallery", isLink: true },
+    { label: "Contacto", href: isHome ? "#contact" : "/#contact", isLink: true },
   ];
 
   return (
