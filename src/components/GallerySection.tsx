@@ -4,6 +4,7 @@ import foodMezze from "@/assets/food-mezze.jpg";
 import foodPrawns from "@/assets/food-prawns.jpg";
 import foodSalad1 from "@/assets/food-salad1.jpg";
 import foodTacos from "@/assets/food-tacos.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [
 	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán" },
@@ -15,10 +16,13 @@ const images = [
 ];
 
 const GallerySection = () => {
+	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ rootMargin: "0px 0px -40px 0px" });
+
 	return (
-		<section id="gallery" className="py-16 md:py-16bg-background">
+		<section id="gallery" className="py-16 md:py-16 bg-background">
 			<div className="max-w-7xl mx-auto px-6">
-				<div className="text-center mb-16">
+				<div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 						Galería
 					</p>
@@ -27,11 +31,11 @@ const GallerySection = () => {
 					</h2>
 				</div>
 
-				<div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+				<div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
 					{images.map((img, i) => (
 						<div
 							key={i}
-							className={`overflow-hidden group ${i === 0 ? "row-span-2" : ""}`}
+							className={`overflow-hidden group reveal-scale reveal-delay-${Math.min(i + 1, 4)} ${i === 0 ? "row-span-2" : ""} ${gridVisible ? "visible" : ""}`}
 						>
 							<img
 								src={img.src}
@@ -43,7 +47,7 @@ const GallerySection = () => {
 					))}
 				</div>
 
-				<div className="text-center mt-12">
+				<div className={`text-center mt-12 reveal reveal-delay-3 ${gridVisible ? "visible" : ""}`}>
 					<a
 						href="https://www.instagram.com/toscacarme/"
 						target="_blank"
