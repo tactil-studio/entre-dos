@@ -194,6 +194,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 /* Elegant blur + scale reveal */
