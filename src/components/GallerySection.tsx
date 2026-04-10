@@ -1,16 +1,28 @@
+import foodAvocado from "@/assets/food-avocado.jpg";
 import foodBrunch1 from "@/assets/food-brunch1.jpg";
 import foodBrunch2 from "@/assets/food-brunch2.jpg";
+import foodCappuccino from "@/assets/food-cappuccino.jpg";
 import foodMezze from "@/assets/food-mezze.jpg";
+import foodMezze2 from "@/assets/food-mezze2.jpg";
+import foodPancakes from "@/assets/food-pancakes.jpg";
 import foodPrawns from "@/assets/food-prawns.jpg";
 import foodSalad1 from "@/assets/food-salad1.jpg";
+import foodScrambled from "@/assets/food-scrambled.jpg";
+import foodShakshuka from "@/assets/food-shakshuka.jpg";
 import foodTacos from "@/assets/food-tacos.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [
 	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán" },
+	{ src: foodAvocado, alt: "Tostada de aguacate con ensalada y patatas" },
+	{ src: foodShakshuka, alt: "Shakshuka con huevos y feta" },
 	{ src: foodSalad1, alt: "Ensalada fresca con mango" },
+	{ src: foodPancakes, alt: "Tortitas con frutas y sirope" },
 	{ src: foodTacos, alt: "Breakfast tacos" },
+	{ src: foodScrambled, alt: "Revuelto con jamón y espárragos" },
 	{ src: foodBrunch1, alt: "Brunch con tostada artesana" },
+	{ src: foodMezze2, alt: "Tabla de hummus con crudités y pan" },
+	{ src: foodCappuccino, alt: "Cappuccino artesano" },
 	{ src: foodMezze, alt: "Mezze board con hummus y verduras" },
 	{ src: foodBrunch2, alt: "Tostada con granada" },
 ];
@@ -31,11 +43,11 @@ const GallerySection = () => {
 					</h2>
 				</div>
 
-				<div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+				<div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
 					{images.map((img, i) => (
 						<div
 							key={i}
-							className={`overflow-hidden group reveal-scale reveal-delay-${Math.min(i + 1, 4)} ${i === 0 ? "row-span-2" : ""} ${gridVisible ? "visible" : ""}`}
+							className={`overflow-hidden group reveal-scale reveal-delay-${Math.min((i % 4) + 1, 4)} ${i === 0 ? "row-span-2" : ""} ${gridVisible ? "visible" : ""}`}
 						>
 							<img
 								src={img.src}

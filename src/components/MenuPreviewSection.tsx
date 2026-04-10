@@ -5,9 +5,9 @@ import foodPrawns from "@/assets/food-prawns.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const items = [
-	{ img: foodPrawns, label: "Carta", desc: "Tapas, entrantes, carnes y pescados" },
-	{ img: foodBrunch1, label: "Brunch", desc: "Sábados y domingos, 11–16h" },
-	{ img: foodMezze, label: "Bebidas & Cocktails", desc: "Vinos, cócteles y zumos naturales" },
+	{ img: foodPrawns, label: "Carta", desc: "Tapas, entrantes, carnes y pescados", tab: "carta" },
+	{ img: foodBrunch1, label: "Brunch", desc: "Sábados y domingos, 11–16h", tab: "brunch" },
+	{ img: foodMezze, label: "Bebidas & Cocktails", desc: "Vinos, cócteles y zumos naturales", tab: "cocktails" },
 ];
 
 const MenuPreviewSection = () => {
@@ -34,7 +34,7 @@ const MenuPreviewSection = () => {
 				<div ref={gridRef} className="grid md:grid-cols-3 gap-4">
 					{items.map((item, i) => (
 						<Link
-							to="/carta"
+							to={`/carta?tab=${item.tab}`}
 							key={i}
 							className={`group relative overflow-hidden aspect-[3/4] cursor-pointer reveal-scale reveal-delay-${i + 1} ${gridVisible ? "visible" : ""}`}
 						>
