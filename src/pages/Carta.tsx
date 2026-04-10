@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import menuBebidas from "@/assets/menu-bebidas.png";
 import menuBrunch from "@/assets/menu-brunch.png";
 import menuCarta from "@/assets/menu-carta.png";
@@ -16,8 +17,17 @@ const tabs = [
 ];
 
 const Carta = () => {
-	const [active, setActive] = useState("carta");
+	const [searchParams] = useSearchParams();
+	const initialTab = searchParams.get("tab") || "carta";
+	const [active, setActive] = useState(initialTab);
 	const activeTab = tabs.find((t) => t.id === active)!;
+
+	useEffect(() => {
+		const tab = searchParams.get("tab");
+		if (tab && tabs.some((t) => t.id === tab)) {
+			setActive(tab);
+		}
+	}, [searchParams]);
 
 	return (
 		<div className="min-h-screen">
