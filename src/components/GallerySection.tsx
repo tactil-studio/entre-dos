@@ -13,18 +13,18 @@ import foodTacos from "@/assets/food-tacos.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [
-	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán" },
-	{ src: foodAvocado, alt: "Tostada de aguacate con ensalada y patatas" },
-	{ src: foodShakshuka, alt: "Shakshuka con huevos y feta" },
-	{ src: foodSalad1, alt: "Ensalada fresca con mango" },
-	{ src: foodPancakes, alt: "Tortitas con frutas y sirope" },
-	{ src: foodTacos, alt: "Breakfast tacos" },
-	{ src: foodScrambled, alt: "Revuelto con jamón y espárragos" },
-	{ src: foodBrunch1, alt: "Brunch con tostada artesana" },
-	{ src: foodMezze2, alt: "Tabla de hummus con crudités y pan" },
-	{ src: foodCappuccino, alt: "Cappuccino artesano" },
-	{ src: foodMezze, alt: "Mezze board con hummus y verduras" },
-	{ src: foodBrunch2, alt: "Tostada con granada" },
+	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán", className: "col-span-2 row-span-2 md:col-span-2" },
+	{ src: foodAvocado, alt: "Tostada de aguacate con ensalada y patatas", className: "row-span-1" },
+	{ src: foodShakshuka, alt: "Shakshuka con huevos y feta", className: "row-span-1" },
+	{ src: foodSalad1, alt: "Ensalada fresca con mango", className: "row-span-2" },
+	{ src: foodPancakes, alt: "Tortitas con frutas y sirope", className: "col-span-2 md:col-span-1" },
+	{ src: foodTacos, alt: "Breakfast tacos", className: "md:col-span-2 xl:col-span-1" },
+	{ src: foodScrambled, alt: "Revuelto con jamón y espárragos", className: "row-span-1" },
+	{ src: foodBrunch1, alt: "Brunch con tostada artesana", className: "row-span-1" },
+	{ src: foodMezze2, alt: "Tabla de hummus con crudités y pan", className: "col-span-2 md:col-span-1 row-span-2" },
+	{ src: foodCappuccino, alt: "Cappuccino artesano", className: "row-span-1" },
+	{ src: foodMezze, alt: "Mezze board con hummus y verduras", className: "md:col-span-2 xl:col-span-1" },
+	{ src: foodBrunch2, alt: "Tostada con granada", className: "row-span-1" },
 ];
 
 const GallerySection = () => {
@@ -33,7 +33,7 @@ const GallerySection = () => {
 
 	return (
 		<section id="gallery" className="py-16 md:py-16 bg-background">
-			<div className="max-w-7xl mx-auto px-6">
+			<div className="mx-auto max-w-[92rem] px-6">
 				<div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 						Galería
@@ -43,16 +43,19 @@ const GallerySection = () => {
 					</h2>
 				</div>
 
-				<div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+				<div
+					ref={gridRef}
+					className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] xl:auto-rows-[260px] 2xl:auto-rows-[300px] gap-3 md:gap-4"
+				>
 					{images.map((img, i) => (
 						<div
 							key={i}
-							className={`overflow-hidden group reveal-scale reveal-delay-${Math.min((i % 4) + 1, 4)} ${i === 0 ? "row-span-2" : ""} ${gridVisible ? "visible" : ""}`}
+							className={`overflow-hidden group reveal-scale reveal-delay-${Math.min((i % 4) + 1, 4)} ${img.className ?? ""} ${gridVisible ? "visible" : ""}`}
 						>
 							<img
 								src={img.src}
 								alt={img.alt}
-								className="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-700"
+								className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
 								loading="lazy"
 							/>
 						</div>
