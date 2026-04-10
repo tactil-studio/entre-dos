@@ -1,25 +1,28 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
   const { pathname, search } = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const params = new URLSearchParams(search);
     const section = params.get("section");
+    let frame = 0;
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
     if (section) {
-      // Wait for page to render then scroll to section
-      setTimeout(() => {
+      frame = window.requestAnimationFrame(() => {
         const el = document.getElementById(section);
         if (el) {
           el.scrollIntoView({ behavior: "smooth" });
         }
-      }, 150);
-      return;
+      });
+
+      return () => window.cancelAnimationFrame(frame);
     }
 
-    window.scrollTo({ top: 0, left: 0 });
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname, search]);
 
   return null;
