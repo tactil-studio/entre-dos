@@ -15,7 +15,7 @@ const ScrollToTop = () => {
       frame = window.requestAnimationFrame(() => {
         const el = document.getElementById(section);
         if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
+          el.scrollIntoView({ behavior: "auto", block: "start" });
         }
       });
 
