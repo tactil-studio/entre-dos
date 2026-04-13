@@ -1,4 +1,4 @@
-import foodBrunch1 from "@/assets/food-brunch1.jpg";
+import foodBrunch1 from "@/assets/food-brunch1.webp";
 
 const HeroSection = () => {
 	return (

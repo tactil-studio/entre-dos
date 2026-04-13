@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import foodBrunch1 from "@/assets/food-brunch1.jpg";
-import foodMezze from "@/assets/food-mezze.jpg";
-import foodPrawns from "@/assets/food-prawns.jpg";
+import foodBrunch1 from "@/assets/food-brunch1.webp";
+import foodMezze from "@/assets/food-mezze.webp";
+import foodPrawns from "@/assets/food-prawns.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Link } from "react-router-dom";
 
 const items = [
 	{ img: foodPrawns, label: "Carta", desc: "Tapas, entrantes, carnes y pescados", tab: "carta" },

@@ -1,15 +1,15 @@
-import foodAvocado from "@/assets/food-avocado.jpg";
-import foodBrunch1 from "@/assets/food-brunch1.jpg";
-import foodBrunch2 from "@/assets/food-brunch2.jpg";
-import foodCappuccino from "@/assets/food-cappuccino.jpg";
-import foodMezze from "@/assets/food-mezze.jpg";
-import foodMezze2 from "@/assets/food-mezze2.jpg";
-import foodPancakes from "@/assets/food-pancakes.jpg";
-import foodPrawns from "@/assets/food-prawns.jpg";
-import foodSalad1 from "@/assets/food-salad1.jpg";
-import foodScrambled from "@/assets/food-scrambled.jpg";
-import foodShakshuka from "@/assets/food-shakshuka.jpg";
-import foodTacos from "@/assets/food-tacos.jpg";
+import foodAvocado from "@/assets/food-avocado.webp";
+import foodBrunch1 from "@/assets/food-brunch1.webp";
+import foodBrunch2 from "@/assets/food-brunch2.webp";
+import foodCappuccino from "@/assets/food-cappuccino.webp";
+import foodMezze from "@/assets/food-mezze.webp";
+import foodMezze2 from "@/assets/food-mezze2.webp";
+import foodPancakes from "@/assets/food-pancakes.webp";
+import foodPrawns from "@/assets/food-prawns.webp";
+import foodSalad1 from "@/assets/food-salad1.webp";
+import foodScrambled from "@/assets/food-scrambled.webp";
+import foodShakshuka from "@/assets/food-shakshuka.webp";
+import foodTacos from "@/assets/food-tacos.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [

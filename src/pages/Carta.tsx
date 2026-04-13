@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-import menuBebidas from "@/assets/menu-bebidas.png";
-import menuBrunch from "@/assets/menu-brunch.png";
-import menuCarta from "@/assets/menu-carta.png";
-import menuCocktails from "@/assets/menu-cocktails.png";
-import menuVinos from "@/assets/menu-vinos.png";
+import menuBebidas from "@/assets/menu-bebidas.webp";
+import menuBrunch from "@/assets/menu-brunch.webp";
+import menuCarta from "@/assets/menu-carta.webp";
+import menuCocktails from "@/assets/menu-cocktails.webp";
+import menuVinos from "@/assets/menu-vinos.webp";
 import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const tabs = [
 	{ id: "carta", label: "Carta", image: menuCarta },
@@ -55,11 +55,10 @@ const Carta = () => {
 							<button
 								key={tab.id}
 								onClick={() => setActive(tab.id)}
-								className={`px-6 py-2 text-xs tracking-[0.2em] uppercase font-body transition-all duration-300 ${
-									active === tab.id
+								className={`px-6 py-2 text-xs tracking-[0.2em] uppercase font-body transition-all duration-300 ${active === tab.id
 										? "text-foreground border-b-2 border-foreground"
 										: "text-muted-foreground hover:text-foreground"
-								}`}
+									}`}
 							>
 								{tab.label}
 							</button>

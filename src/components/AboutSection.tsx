@@ -1,4 +1,4 @@
-import foodHam from "@/assets/food-ham.jpg";
+import foodHam from "@/assets/food-ham.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {

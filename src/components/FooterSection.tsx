@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-entre2.png";
+import logo from "@/assets/logo-entre2.webp";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 

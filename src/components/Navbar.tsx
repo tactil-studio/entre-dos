@@ -1,7 +1,7 @@
+import logo from "@/assets/logo-entre2.webp";
 import { Menu, X } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/logo-entre2.png";
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
