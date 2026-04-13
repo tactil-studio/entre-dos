@@ -98,7 +98,7 @@ const ReviewsSection = () => {
 							<ChevronLeft size={20} className="text-foreground" />
 						</button>
 
-						<div className="overflow-visible min-h-[280px]">
+						<div className="overflow-hidden min-h-[280px]">
 							<div
 								className="flex transition-transform duration-500 ease-in-out"
 								style={{ transform: `translateX(-${currentIndex * 100}%)` }}
