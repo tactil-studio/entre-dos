@@ -13,18 +13,18 @@ import foodTacos from "@/assets/food-tacos.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [
-	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán", className: "col-span-2 row-span-2 md:col-span-2" },
-	{ src: foodAvocado, alt: "Tostada de aguacate con ensalada y patatas", className: "row-span-1" },
-	{ src: foodShakshuka, alt: "Shakshuka con huevos y feta", className: "row-span-1" },
-	{ src: foodSalad1, alt: "Ensalada fresca con mango", className: "row-span-2" },
-	{ src: foodPancakes, alt: "Tortitas con frutas y sirope", className: "col-span-2 md:col-span-1" },
-	{ src: foodTacos, alt: "Breakfast tacos", className: "md:col-span-2 xl:col-span-1" },
-	{ src: foodScrambled, alt: "Revuelto con jamón y espárragos", className: "row-span-1" },
-	{ src: foodBrunch1, alt: "Brunch con tostada artesana", className: "row-span-1" },
-	{ src: foodMezze2, alt: "Tabla de hummus con crudités y pan", className: "col-span-2 md:col-span-1 row-span-2" },
-	{ src: foodCappuccino, alt: "Cappuccino artesano", className: "row-span-1" },
-	{ src: foodMezze, alt: "Mezze board con hummus y verduras", className: "md:col-span-2 xl:col-span-1" },
-	{ src: foodBrunch2, alt: "Tostada con granada", className: "row-span-1" },
+	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán", className: "col-span-2 row-span-2" },
+	{ src: foodAvocado, alt: "Tostada de aguacate con ensalada y patatas", className: "" },
+	{ src: foodShakshuka, alt: "Shakshuka con huevos y feta", className: "" },
+	{ src: foodSalad1, alt: "Ensalada fresca con mango", className: "md:row-span-2" },
+	{ src: foodPancakes, alt: "Tortitas con frutas y sirope", className: "" },
+	{ src: foodTacos, alt: "Breakfast tacos", className: "" },
+	{ src: foodScrambled, alt: "Revuelto con jamón y espárragos", className: "" },
+	{ src: foodBrunch1, alt: "Brunch con tostada artesana", className: "" },
+	{ src: foodMezze2, alt: "Tabla de hummus con crudités y pan", className: "md:col-span-1 md:row-span-2" },
+	{ src: foodCappuccino, alt: "Cappuccino artesano", className: "" },
+	{ src: foodMezze, alt: "Mezze board con hummus y verduras", className: "" },
+	{ src: foodBrunch2, alt: "Tostada con granada", className: "" },
 ];
 
 const GallerySection = () => {

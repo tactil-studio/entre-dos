@@ -194,6 +194,7 @@
 
 html {
   scroll-behavior: auto;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
