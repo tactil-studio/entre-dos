@@ -1,23 +1,43 @@
-import foodBrunch1 from "@/assets/food-brunch1.webp";
-import foodMezze from "@/assets/food-mezze.webp";
-import foodPrawns from "@/assets/food-prawns.webp";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
+import foodBrunch1 from "@/assets/food-brunch1.webp";
+import foodPrawns from "@/assets/food-prawns.webp";
+import foodMalibu from "@/assets/malibu.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const items = [
-	{ img: foodPrawns, label: "Carta", desc: "Tapas, entrantes, carnes y pescados", tab: "carta" },
-	{ img: foodBrunch1, label: "Brunch", desc: "Sábados y domingos, 11–16h", tab: "brunch" },
-	{ img: foodMezze, label: "Bebidas & Cocktails", desc: "Vinos, cócteles y zumos naturales", tab: "cocktails" },
+	{
+		img: foodPrawns,
+		label: "Carta",
+		desc: "Tapas, entrantes, carnes y pescados",
+		tab: "carta",
+	},
+	{
+		img: foodBrunch1,
+		label: "Brunch",
+		desc: "Sábados y domingos, 11–16h",
+		tab: "brunch",
+	},
+	{
+		img: foodMalibu,
+		label: "Bebidas & Cocktails",
+		desc: "Vinos, cócteles y zumos naturales",
+		tab: "cocktails",
+	},
 ];
 
 const MenuPreviewSection = () => {
 	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
-	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ rootMargin: "0px 0px -40px 0px" });
+	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
+		rootMargin: "0px 0px -40px 0px",
+	});
 
 	return (
 		<section id="menu" className="py-16 md:py-16 bg-background">
 			<div className="max-w-7xl mx-auto px-6">
-				<div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}>
+				<div
+					ref={headerRef}
+					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
+				>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 						Nuestra carta
 					</p>
@@ -57,7 +77,9 @@ const MenuPreviewSection = () => {
 					))}
 				</div>
 
-				<div className={`text-center mt-12 reveal reveal-delay-4 ${gridVisible ? "visible" : ""}`}>
+				<div
+					className={`text-center mt-12 reveal reveal-delay-4 ${gridVisible ? "visible" : ""}`}
+				>
 					<Link
 						to="/carta"
 						className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
