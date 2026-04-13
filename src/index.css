@@ -194,8 +194,11 @@
 
 html {
   scroll-behavior: auto;
-  overflow-x: hidden;
   overflow-y: scroll;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Elegant blur + scale reveal */

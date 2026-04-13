@@ -7,6 +7,8 @@ import menuCocktails from "@/assets/menu-cocktails.png";
 import menuVinos from "@/assets/menu-vinos.png";
 import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const tabs = [
 	{ id: "carta", label: "Carta", image: menuCarta },
@@ -20,6 +22,7 @@ const Carta = () => {
 	const [searchParams] = useSearchParams();
 	const initialTab = searchParams.get("tab") || "carta";
 	const [active, setActive] = useState(initialTab);
+	const [zoomed, setZoomed] = useState(false);
 	const activeTab = tabs.find((t) => t.id === active)!;
 
 	useEffect(() => {
@@ -65,7 +68,10 @@ const Carta = () => {
 
 					{/* Menu image */}
 					<div className="flex justify-center">
-						<div className="w-full md:max-w-2xl shadow-lg flex items-start justify-center">
+						<div
+							className="w-full md:max-w-2xl shadow-lg flex items-start justify-center cursor-zoom-in"
+							onClick={() => setZoomed(true)}
+						>
 							<img
 								key={activeTab.id}
 								src={activeTab.image}
@@ -75,11 +81,29 @@ const Carta = () => {
 						</div>
 					</div>
 
+					<p className="text-center mt-4 text-muted-foreground/50 text-xs font-body md:hidden">
+						Toca para ampliar
+					</p>
+
 					<p className="text-center mt-8 text-muted-foreground/60 text-xs font-body">
 						*suplemento 10% en terraza
 					</p>
 				</div>
 			</section>
+
+			{/* Fullscreen zoom dialog */}
+			<Dialog open={zoomed} onOpenChange={setZoomed}>
+				<DialogContent className="max-w-none w-screen h-screen p-0 border-none bg-black/95 overflow-auto">
+					<VisuallyHidden>
+						<DialogTitle>Carta - {activeTab.label}</DialogTitle>
+					</VisuallyHidden>
+					<img
+						src={activeTab.image}
+						alt={`Carta - ${activeTab.label}`}
+						className="w-full max-w-3xl mx-auto h-auto"
+					/>
+				</DialogContent>
+			</Dialog>
 
 			<FooterSection />
 		</div>
