@@ -65,7 +65,7 @@ const Carta = () => {
 
 					{/* Menu image */}
 					<div className="flex justify-center">
-						<div className="w-full md:max-w-2xl shadow-lg min-h-[600px] md:min-h-[800px] flex items-start justify-center">
+						<div className="w-full md:max-w-2xl shadow-lg flex items-start justify-center">
 							<img
 								key={activeTab.id}
 								src={activeTab.image}
