@@ -1,6 +1,6 @@
+import logo from "@/assets/logo-entre2.png";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-entre2.png";
 
 const FooterSection = () => {
 	return (
@@ -79,7 +79,7 @@ const FooterSection = () => {
 							<li className="flex items-start gap-2 justify-center md:justify-start">
 								<MapPin size={16} className="text-olive mt-0.5 shrink-0" />
 								<span className="text-background/60 text-sm font-body">
-									C/ del Carme, 40
+									Carrer del Carme, 40
 									<br />
 									08001 Barcelona
 								</span>

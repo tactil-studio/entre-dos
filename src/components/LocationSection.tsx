@@ -1,5 +1,5 @@
-import { ArrowRight, Clock, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ArrowRight, Clock, Mail, MapPin } from "lucide-react";
 
 const schedule = [
 	{ day: "Lunes – Jueves", kitchen: "12:00 – 23:00", bar: "12:00 – 00:00" },
@@ -49,7 +49,7 @@ const LocationSection = () => {
 									Ubicación
 								</p>
 								<p className="font-body text-base text-foreground font-medium">
-									C/ del Carme, 40
+									Carrer del Carme, 40
 								</p>
 								<p className="font-body text-xs text-foreground/60">
 									08001 Barcelona
@@ -65,7 +65,7 @@ const LocationSection = () => {
 										Ubicación
 									</p>
 									<p className="font-body text-base text-foreground font-medium">
-										C/ del Carme, 40
+										Carrer del Carme, 40
 									</p>
 									<p className="font-body text-xs text-foreground/60">
 										08001 Barcelona

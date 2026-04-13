@@ -1,22 +1,72 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/src/assets/logo-entre2.png" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Entre Dos</title>
-    <meta name="description" content="Entre Dos - Restaurante Mediterráneo" />
-    <meta name="author" content="Tactil Studio" />
+<html lang="es">
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:type" content="website" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/src/assets/logo-entre2.png" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-  </head>
+  <title>Entre Dos | Restaurante Mediterráneo en Barcelona</title>
+  <meta name="description"
+    content="Entre Dos es un bistrot mediterráneo en el Carrer del Carme, 40 de Barcelona. Carta de tapas, brunch los fines de semana, vinos y cócteles. Reserva tu mesa." />
+  <meta name="author" content="Tactil Studio" />
+  <meta name="robots" content="index, follow" />
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Entre Dos | Restaurante Mediterráneo en Barcelona" />
+  <meta property="og:description"
+    content="Bistrot mediterráneo en el corazón de Barcelona. Tapas, brunch, vinos y cócteles. Carrer del Carme, 40 · 08001 Barcelona." />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Entre Dos" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Entre Dos | Restaurante Mediterráneo en Barcelona" />
+  <meta name="twitter:description"
+    content="Bistrot mediterráneo en el corazón de Barcelona. Tapas, brunch, vinos y cócteles. Carrer del Carme, 40 · 08001 Barcelona." />
+
+  <!-- Schema.org: Local Business -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Entre Dos",
+      "description": "Bistrot mediterráneo en el corazón de Barcelona. Tapas, entrantes, brunch, vinos y cócteles artesanales.",
+      "url": "https://entredos.es",
+      "telephone": "+34937308487",
+      "email": "toscadelcarme40@gmail.com",
+      "image": "/src/assets/logo-entre2.png",
+      "servesCuisine": ["Mediterránea", "Tapas", "Brunch"],
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer del Carme, 40",
+        "addressLocality": "Barcelona",
+        "postalCode": "08001",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.3815,
+        "longitude": 2.1695
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "12:00", "closes": "00:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "12:00", "closes": "01:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "11:00", "closes": "01:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "11:00", "closes": "00:00" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/toscacarme/"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
