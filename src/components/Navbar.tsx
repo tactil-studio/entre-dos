@@ -1,7 +1,7 @@
-import logo from "@/assets/logo-entre2.webp";
 import { Menu, X } from "lucide-react";
 import { useCallback, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from "@/assets/logo-entre2.svg";
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
 				navigate("/?section=" + sectionId);
 			}
 		},
-		[isHome, navigate]
+		[isHome, navigate],
 	);
 
 	const handleHomeClick = useCallback(() => {
