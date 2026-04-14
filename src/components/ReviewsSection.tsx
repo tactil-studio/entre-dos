@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DecoCircleOlive, DecoRing, DecoCircleBlue } from "./DecoShapes";
+import { DecoRing, DecoDot } from "./DecoShapes";
 
 const reviews = [
 	{
@@ -58,10 +58,19 @@ const ReviewsSection = () => {
 	};
 
 	return (
-		<section id="reviews" className="py-16 md:py-16 bg-card relative overflow-hidden">
-			<DecoCircleOlive className="w-80 h-80 -top-24 -right-10 md:right-10" />
-			<DecoCircleBlue className="w-60 h-60 bottom-10 -left-16" />
+		<section
+			id="reviews"
+			className="py-16 md:py-16 relative overflow-hidden"
+			style={{
+				background: `
+					radial-gradient(ellipse 500px 500px at 85% 10%, rgba(77, 77, 7, 0.10), transparent 70%),
+					radial-gradient(ellipse 350px 350px at 10% 80%, rgba(0, 7, 90, 0.08), transparent 70%),
+					hsl(var(--card))
+				`,
+			}}
+		>
 			<DecoRing className="w-36 h-36 bottom-1/4 right-1/3 hidden md:block" />
+			<DecoDot className="w-2 h-2 top-24 left-[12%] hidden md:block" color="olive" />
 			<div className="max-w-7xl mx-auto px-6 relative z-10">
 				<div
 					ref={headerRef}

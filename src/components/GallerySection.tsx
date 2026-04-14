@@ -11,7 +11,7 @@ import foodScrambled from "@/assets/food-scrambled.webp";
 import foodShakshuka from "@/assets/food-shakshuka.webp";
 import foodTacos from "@/assets/food-tacos.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DecoCircleBlue, DecoCircleOlive, DecoLine } from "./DecoShapes";
+import { DecoDot, DecoLine } from "./DecoShapes";
 
 const images = [
 	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán", className: "col-span-2 row-span-2" },
@@ -33,10 +33,19 @@ const GallerySection = () => {
 	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ rootMargin: "0px 0px -40px 0px" });
 
 	return (
-		<section id="gallery" className="py-16 md:py-16 bg-background relative overflow-hidden">
-			<DecoCircleBlue className="w-72 h-72 top-10 -right-20" />
-			<DecoCircleOlive className="w-56 h-56 bottom-20 -left-16" />
+		<section
+			id="gallery"
+			className="py-16 md:py-16 relative overflow-hidden"
+			style={{
+				background: `
+					radial-gradient(ellipse 450px 450px at 92% 20%, rgba(0, 7, 90, 0.08), transparent 70%),
+					radial-gradient(ellipse 400px 400px at 8% 75%, rgba(77, 77, 7, 0.10), transparent 70%),
+					hsl(var(--background))
+				`,
+			}}
+		>
 			<DecoLine className="w-1/3 bottom-12 left-10" color="olive" />
+			<DecoDot className="w-2.5 h-2.5 top-12 left-[8%] hidden md:block" color="blue" />
 			<div className="mx-auto max-w-[92rem] px-6 relative z-10">
 				<div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
