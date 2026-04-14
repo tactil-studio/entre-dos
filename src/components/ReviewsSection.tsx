@@ -63,8 +63,8 @@ const ReviewsSection = () => {
 			className="py-16 md:py-16 relative overflow-hidden"
 			style={{
 				background: `
-					radial-gradient(ellipse 500px 500px at 85% 10%, rgba(77, 77, 7, 0.06), transparent 70%),
-					radial-gradient(ellipse 350px 350px at 10% 80%, rgba(0, 7, 90, 0.05), transparent 70%),
+					radial-gradient(ellipse 500px 500px at 85% 10%, rgba(77, 77, 7, 0.10), transparent 70%),
+					radial-gradient(ellipse 350px 350px at 10% 80%, rgba(0, 7, 90, 0.08), transparent 70%),
 					hsl(var(--card))
 				`,
 			}}

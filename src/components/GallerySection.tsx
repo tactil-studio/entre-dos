@@ -38,8 +38,8 @@ const GallerySection = () => {
 			className="py-16 md:py-16 relative overflow-hidden"
 			style={{
 				background: `
-					radial-gradient(ellipse 450px 450px at 92% 20%, rgba(0, 7, 90, 0.05), transparent 70%),
-					radial-gradient(ellipse 400px 400px at 8% 75%, rgba(77, 77, 7, 0.06), transparent 70%),
+					radial-gradient(ellipse 450px 450px at 92% 20%, rgba(0, 7, 90, 0.08), transparent 70%),
+					radial-gradient(ellipse 400px 400px at 8% 75%, rgba(77, 77, 7, 0.10), transparent 70%),
 					hsl(var(--background))
 				`,
 			}}

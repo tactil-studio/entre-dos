@@ -38,8 +38,8 @@ const MenuPreviewSection = () => {
 			className="py-16 md:py-16 relative overflow-hidden"
 			style={{
 				background: `
-					radial-gradient(ellipse 500px 500px at 5% 15%, rgba(0, 7, 90, 0.06), transparent 70%),
-					radial-gradient(ellipse 400px 400px at 95% 85%, rgba(77, 77, 7, 0.05), transparent 70%),
+					radial-gradient(ellipse 500px 500px at 5% 15%, rgba(0, 7, 90, 0.10), transparent 70%),
+					radial-gradient(ellipse 400px 400px at 95% 85%, rgba(77, 77, 7, 0.08), transparent 70%),
 					hsl(var(--background))
 				`,
 			}}
