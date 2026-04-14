@@ -11,7 +11,7 @@ import foodScrambled from "@/assets/food-scrambled.webp";
 import foodShakshuka from "@/assets/food-shakshuka.webp";
 import foodTacos from "@/assets/food-tacos.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DecoCircleBlue, DecoLine } from "./DecoShapes";
+import { DecoCircleBlue, DecoCircleOlive, DecoLine } from "./DecoShapes";
 
 const images = [
 	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán", className: "col-span-2 row-span-2" },
