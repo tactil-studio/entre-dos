@@ -3,7 +3,6 @@ import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
 import foodMalibu from "@/assets/malibu.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DecoDot, DecoLine } from "./DecoShapes";
 
 const items = [
 	{
@@ -33,20 +32,8 @@ const MenuPreviewSection = () => {
 	});
 
 	return (
-		<section
-			id="menu"
-			className="py-16 md:py-16 relative overflow-hidden"
-			style={{
-				background: `
-					radial-gradient(ellipse 500px 500px at 5% 15%, rgba(0, 7, 90, 0.10), transparent 70%),
-					radial-gradient(ellipse 400px 400px at 95% 85%, rgba(77, 77, 7, 0.08), transparent 70%),
-					hsl(var(--background))
-				`,
-			}}
-		>
-			<DecoLine className="w-1/3 top-8 left-1/2 -translate-x-1/2" color="blue" />
-			<DecoDot className="w-2.5 h-2.5 top-16 right-[10%] hidden md:block" color="blue" />
-			<div className="max-w-7xl mx-auto px-6 relative z-10">
+		<section id="menu" className="py-16 md:py-16 bg-background">
+			<div className="max-w-7xl mx-auto px-6">
 				<div
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
