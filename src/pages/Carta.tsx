@@ -93,7 +93,7 @@ const Carta = () => {
 
 			{/* Fullscreen zoom dialog */}
 			<Dialog open={zoomed} onOpenChange={setZoomed}>
-				<DialogContent className="max-w-none w-screen h-screen p-4 md:p-8 border-none bg-black/95 overflow-auto flex items-center justify-center">
+				<DialogContent className="max-w-none w-screen h-screen p-4 md:p-8 border-none bg-black/95 overflow-auto flex items-center justify-center [&>button]:text-white [&>button]:hover:text-white/80 [&>button]:bg-white/10 [&>button]:hover:bg-white/20">
 					<VisuallyHidden>
 						<DialogTitle>Carta - {activeTab.label}</DialogTitle>
 					</VisuallyHidden>
