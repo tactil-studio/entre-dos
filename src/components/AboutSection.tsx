@@ -1,12 +1,27 @@
 import foodHam from "@/assets/food-ham.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { DecoRing, DecoDot } from "./DecoShapes";
 
 const AboutSection = () => {
 	const { ref, isVisible } = useScrollReveal();
 
 	return (
-		<section id="about" className="py-24 bg-background" ref={ref}>
-			<div className="max-w-7xl mx-auto px-6">
+		<section
+			id="about"
+			className="py-24 relative overflow-hidden"
+			ref={ref}
+			style={{
+				background: `
+					radial-gradient(ellipse 600px 600px at 90% 10%, rgba(77, 77, 7, 0.12), transparent 70%),
+					radial-gradient(ellipse 400px 400px at 5% 90%, rgba(0, 7, 90, 0.08), transparent 70%),
+					hsl(var(--background))
+				`,
+			}}
+		>
+			<DecoRing className="w-44 h-44 top-1/3 right-1/4 hidden md:block" color="blue" />
+			<DecoDot className="w-3 h-3 top-20 left-[15%] hidden md:block" color="olive" />
+			<DecoDot className="w-2 h-2 bottom-32 right-[20%] hidden md:block" color="blue" />
+			<div className="max-w-7xl mx-auto px-6 relative z-10">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
 						<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
