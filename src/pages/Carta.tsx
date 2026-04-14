@@ -1,3 +1,6 @@
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import menuBebidas from "@/assets/menu-bebidas.webp";
 import menuBrunch from "@/assets/menu-brunch.webp";
 import menuCarta from "@/assets/menu-carta.webp";
@@ -6,9 +9,6 @@ import menuVinos from "@/assets/menu-vinos.webp";
 import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 
 const tabs = [
 	{ id: "carta", label: "Carta", image: menuCarta },
@@ -55,10 +55,11 @@ const Carta = () => {
 							<button
 								key={tab.id}
 								onClick={() => setActive(tab.id)}
-								className={`px-6 py-2 text-xs tracking-[0.2em] uppercase font-body transition-all duration-300 ${active === tab.id
+								className={`px-6 py-2 text-xs tracking-[0.2em] uppercase font-body transition-all duration-300 ${
+									active === tab.id
 										? "text-foreground border-b-2 border-foreground"
 										: "text-muted-foreground hover:text-foreground"
-									}`}
+								}`}
 							>
 								{tab.label}
 							</button>
@@ -92,14 +93,14 @@ const Carta = () => {
 
 			{/* Fullscreen zoom dialog */}
 			<Dialog open={zoomed} onOpenChange={setZoomed}>
-				<DialogContent className="max-w-none w-screen h-screen p-0 border-none bg-black/95 overflow-auto">
+				<DialogContent className="max-w-none w-screen h-screen p-4 md:p-8 border-none bg-black/95 overflow-auto flex items-center justify-center">
 					<VisuallyHidden>
 						<DialogTitle>Carta - {activeTab.label}</DialogTitle>
 					</VisuallyHidden>
 					<img
 						src={activeTab.image}
 						alt={`Carta - ${activeTab.label}`}
-						className="w-full max-w-3xl mx-auto h-auto"
+						className="w-full max-w-3xl mx-auto h-auto max-h-full object-contain"
 					/>
 				</DialogContent>
 			</Dialog>
