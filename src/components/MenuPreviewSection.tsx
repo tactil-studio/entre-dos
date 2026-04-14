@@ -3,6 +3,7 @@ import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
 import foodMalibu from "@/assets/malibu.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { DecoCircleBlue, DecoCircleOlive, DecoLine } from "./DecoShapes";
 
 const items = [
 	{
@@ -32,8 +33,11 @@ const MenuPreviewSection = () => {
 	});
 
 	return (
-		<section id="menu" className="py-16 md:py-16 bg-background">
-			<div className="max-w-7xl mx-auto px-6">
+		<section id="menu" className="py-16 md:py-16 bg-background relative overflow-hidden">
+			<DecoCircleBlue className="w-64 h-64 -top-10 -left-20" />
+			<DecoCircleOlive className="w-40 h-40 bottom-20 right-0 md:right-20" />
+			<DecoLine className="w-1/3 top-8 left-1/2 -translate-x-1/2" color="blue" />
+			<div className="max-w-7xl mx-auto px-6 relative z-10">
 				<div
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}

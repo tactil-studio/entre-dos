@@ -1,12 +1,16 @@
 import foodHam from "@/assets/food-ham.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { DecoCircleOlive, DecoCircleBlue, DecoRing } from "./DecoShapes";
 
 const AboutSection = () => {
 	const { ref, isVisible } = useScrollReveal();
 
 	return (
-		<section id="about" className="py-24 bg-background" ref={ref}>
-			<div className="max-w-7xl mx-auto px-6">
+		<section id="about" className="py-24 bg-background relative overflow-hidden" ref={ref}>
+			<DecoCircleOlive className="w-72 h-72 -top-20 -right-20 md:right-10" />
+			<DecoCircleBlue className="w-48 h-48 bottom-10 -left-16" />
+			<DecoRing className="w-32 h-32 top-1/3 right-1/4 hidden md:block" color="blue" />
+			<div className="max-w-7xl mx-auto px-6 relative z-10">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
 						<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
