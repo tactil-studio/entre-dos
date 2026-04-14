@@ -11,7 +11,7 @@ import foodScrambled from "@/assets/food-scrambled.webp";
 import foodShakshuka from "@/assets/food-shakshuka.webp";
 import foodTacos from "@/assets/food-tacos.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { DecoCircleBlue, DecoLine } from "./DecoShapes";
+import { DecoCircleBlue, DecoCircleOlive, DecoLine } from "./DecoShapes";
 
 const images = [
 	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán", className: "col-span-2 row-span-2" },
@@ -34,8 +34,9 @@ const GallerySection = () => {
 
 	return (
 		<section id="gallery" className="py-16 md:py-16 bg-background relative overflow-hidden">
-			<DecoCircleBlue className="w-52 h-52 top-10 -right-16" />
-			<DecoLine className="w-1/4 bottom-12 left-10" color="olive" />
+			<DecoCircleBlue className="w-72 h-72 top-10 -right-20" />
+			<DecoCircleOlive className="w-56 h-56 bottom-20 -left-16" />
+			<DecoLine className="w-1/3 bottom-12 left-10" color="olive" />
 			<div className="mx-auto max-w-[92rem] px-6 relative z-10">
 				<div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">

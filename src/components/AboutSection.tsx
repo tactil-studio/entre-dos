@@ -7,9 +7,9 @@ const AboutSection = () => {
 
 	return (
 		<section id="about" className="py-24 bg-background relative overflow-hidden" ref={ref}>
-			<DecoCircleOlive className="w-72 h-72 -top-20 -right-20 md:right-10" />
-			<DecoCircleBlue className="w-48 h-48 bottom-10 -left-16" />
-			<DecoRing className="w-32 h-32 top-1/3 right-1/4 hidden md:block" color="blue" />
+			<DecoCircleOlive className="w-96 h-96 -top-32 -right-20 md:right-0" />
+			<DecoCircleBlue className="w-72 h-72 bottom-0 -left-24" />
+			<DecoRing className="w-44 h-44 top-1/3 right-1/4 hidden md:block" color="blue" />
 			<div className="max-w-7xl mx-auto px-6 relative z-10">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>

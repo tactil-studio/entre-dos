@@ -34,8 +34,8 @@ const MenuPreviewSection = () => {
 
 	return (
 		<section id="menu" className="py-16 md:py-16 bg-background relative overflow-hidden">
-			<DecoCircleBlue className="w-64 h-64 -top-10 -left-20" />
-			<DecoCircleOlive className="w-40 h-40 bottom-20 right-0 md:right-20" />
+			<DecoCircleBlue className="w-80 h-80 -top-20 -left-32" />
+			<DecoCircleOlive className="w-64 h-64 bottom-10 -right-10 md:right-10" />
 			<DecoLine className="w-1/3 top-8 left-1/2 -translate-x-1/2" color="blue" />
 			<div className="max-w-7xl mx-auto px-6 relative z-10">
 				<div

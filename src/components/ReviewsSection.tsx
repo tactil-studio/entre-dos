@@ -59,9 +59,9 @@ const ReviewsSection = () => {
 
 	return (
 		<section id="reviews" className="py-16 md:py-16 bg-card relative overflow-hidden">
-			<DecoCircleOlive className="w-56 h-56 -top-16 right-0 md:right-16" />
-			<DecoCircleBlue className="w-36 h-36 bottom-16 -left-10" />
-			<DecoRing className="w-24 h-24 bottom-1/4 right-1/3 hidden md:block" />
+			<DecoCircleOlive className="w-80 h-80 -top-24 -right-10 md:right-10" />
+			<DecoCircleBlue className="w-60 h-60 bottom-10 -left-16" />
+			<DecoRing className="w-36 h-36 bottom-1/4 right-1/3 hidden md:block" />
 			<div className="max-w-7xl mx-auto px-6 relative z-10">
 				<div
 					ref={headerRef}
