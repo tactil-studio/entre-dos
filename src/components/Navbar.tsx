@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useCallback, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
+import DayNightToggle from "@/components/DayNightToggle";
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
@@ -74,14 +75,17 @@ const Navbar = () => {
 					</li>
 				</ul>
 
-				<a
-					href="https://www.instagram.com/toscacarme/"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="hidden md:inline-block text-foreground/60 hover:text-foreground text-xs tracking-[0.2em] uppercase font-body transition-colors"
-				>
-					Instagram
-				</a>
+				<div className="hidden md:flex items-center gap-6">
+					<DayNightToggle size="compact" />
+					<a
+						href="https://www.instagram.com/toscacarme/"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-foreground/60 hover:text-foreground text-xs tracking-[0.2em] uppercase font-body transition-colors"
+					>
+						Instagram
+					</a>
+				</div>
 
 				<button
 					onClick={() => setOpen(!open)}
@@ -138,6 +142,9 @@ const Navbar = () => {
 							>
 								Instagram
 							</a>
+						</li>
+						<li className="pt-2">
+							<DayNightToggle size="compact" />
 						</li>
 					</ul>
 				</div>

@@ -2,30 +2,26 @@ import { Link } from "react-router-dom";
 import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
 import foodMalibu from "@/assets/malibu.jpg";
+import cocktail from "@/assets/cocktail.jpg";
+import wine from "@/assets/wine.jpg";
+import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const items = [
-	{
-		img: foodPrawns,
-		label: "Carta",
-		desc: "Tapas, entrantes, carnes y pescados",
-		tab: "carta",
-	},
-	{
-		img: foodBrunch1,
-		label: "Brunch",
-		desc: "Sábados y domingos, 11–16h",
-		tab: "brunch",
-	},
-	{
-		img: foodMalibu,
-		label: "Bebidas & Cocktails",
-		desc: "Vinos, cócteles y zumos naturales",
-		tab: "cocktails",
-	},
+const dayItems = [
+	{ img: foodPrawns, label: "Carta", desc: "Tapas, entrantes y mediterráneo", tab: "carta" },
+	{ img: foodBrunch1, label: "Brunch", desc: "Sábados y domingos, 11–16h", tab: "brunch" },
+	{ img: foodMalibu, label: "Café & Zumos", desc: "Café de especialidad y zumos naturales", tab: "bebidas" },
+];
+
+const nightItems = [
+	{ img: foodPrawns, label: "Cena", desc: "Cocina de autor para compartir", tab: "carta" },
+	{ img: cocktail, label: "Cócteles", desc: "Mixología de barra hasta tarde", tab: "cocktails" },
+	{ img: wine, label: "Vinos", desc: "Selección natural y referencias de autor", tab: "vinos" },
 ];
 
 const MenuPreviewSection = () => {
+	const { mode } = useMode();
+	const items = mode === "night" ? nightItems : dayItems;
 	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
 		rootMargin: "0px 0px -40px 0px",
@@ -39,15 +35,23 @@ const MenuPreviewSection = () => {
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
-						Nuestra carta
+						{mode === "night" ? "Carta de noche" : "Nuestra carta"}
 					</p>
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
-						Sabores{" "}
-						<span className="italic text-night-blue">mediterráneos</span>
+						{mode === "night" ? (
+							<>
+								Sabores de <span className="italic text-night-blue">noche</span>
+							</>
+						) : (
+							<>
+								Sabores <span className="italic text-night-blue">mediterráneos</span>
+							</>
+						)}
 					</h2>
 					<p className="mt-6 text-muted-foreground font-body text-sm max-w-lg mx-auto">
-						Platos elaborados con ingredientes frescos y de temporada. Una
-						propuesta gastronómica que fusiona tradición e innovación.
+						{mode === "night"
+							? "Cocina de autor, cócteles y vinos seleccionados para una velada íntima."
+							: "Platos elaborados con ingredientes frescos y de temporada. Una propuesta gastronómica que fusiona tradición e innovación."}
 					</p>
 				</div>
 
@@ -55,7 +59,7 @@ const MenuPreviewSection = () => {
 					{items.map((item, i) => (
 						<Link
 							to={`/carta?tab=${item.tab}`}
-							key={i}
+							key={`${mode}-${i}`}
 							className={`group relative overflow-hidden aspect-[3/4] cursor-pointer reveal-scale reveal-delay-${i + 1} ${gridVisible ? "visible" : ""}`}
 						>
 							<img
