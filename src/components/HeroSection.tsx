@@ -48,9 +48,9 @@ const HeroSection = () => {
 				<div className="mt-8 opacity-0 animate-fade-up animate-delay-600">
 					<a
 						href="#about"
-						className="inline-block border border-white/30 text-white px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-white hover:text-black transition-all duration-500"
+					className="inline-block border border-white/30 text-white px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-white hover:text-black transition-all duration-500"
 					>
-						{isNight ? "Reservar mesa" : "Descubrir"}
+						Descubrir
 					</a>
 				</div>
 			</div>
