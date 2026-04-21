@@ -53,23 +53,25 @@
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 40 20% 98%;
-    --card: 0 0% 8%;
-    --card-foreground: 40 20% 98%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 40 20% 98%;
-    --primary: 40 20% 98%;
-    --primary-foreground: 0 0% 5%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 20% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 40 8% 60%;
-    --accent: 0 0% 12%;
-    --accent-foreground: 40 20% 98%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 40 20% 98%;
+    --background: 230 25% 5%;
+    --foreground: 40 30% 92%;
+    --card: 225 30% 9%;
+    --card-foreground: 40 30% 92%;
+    --popover: 225 30% 9%;
+    --popover-foreground: 40 30% 92%;
+    --primary: 40 30% 92%;
+    --primary-foreground: 230 25% 5%;
+    --secondary: 225 28% 12%;
+    --secondary-foreground: 40 30% 92%;
+    --muted: 225 25% 14%;
+    --muted-foreground: 40 12% 65%;
+    --accent-olive: 60 40% 55%;
+    --accent-blue: 220 60% 60%;
+    --accent: 225 35% 18%;
+    --accent-foreground: 40 30% 92%;
+    --border: 225 25% 18%;
+    --input: 225 25% 18%;
+    --ring: 220 60% 60%;
   }
 }
 
@@ -81,6 +83,13 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  section, nav, footer, header, aside, main, div {
+    transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   h1, h2, h3, h4, h5, h6 {
