@@ -31,8 +31,8 @@ const HeroSection = () => {
 			<div className={`absolute inset-0 transition-colors duration-700 ${isNight ? "bg-black/65" : "bg-black/40"}`} />
 
 			<div className="relative z-10 text-center px-6">
-				<h1 className="text-7xl md:text-9xl lg:text-[11rem] font-heading uppercase text-white leading-[0.85] tracking-tight opacity-0 animate-fade-up">
-					Entre<br/>Dos<span className="text-white/70">.</span>
+				<h1 className="text-6xl md:text-8xl lg:text-9xl font-serif-italic text-white tracking-wide opacity-0 animate-fade-up" style={{ fontWeight: 300 }}>
+					Entre Dos
 				</h1>
 				<p
 					key={`tag-${mode}`}
