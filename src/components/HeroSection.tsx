@@ -31,12 +31,12 @@ const HeroSection = () => {
 			<div className={`absolute inset-0 transition-colors duration-700 ${isNight ? "bg-black/65" : "bg-black/40"}`} />
 
 			<div className="relative z-10 text-center px-6">
-				<h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-light text-white tracking-wide opacity-0 animate-fade-up">
-					Entre Dos
+				<h1 className="text-7xl md:text-9xl lg:text-[11rem] font-heading uppercase text-white leading-[0.85] tracking-tight opacity-0 animate-fade-up">
+					Entre<br/>Dos<span className="text-white/70">.</span>
 				</h1>
 				<p
 					key={`tag-${mode}`}
-					className="mt-6 text-white/70 text-base md:text-lg font-body tracking-[0.3em] uppercase opacity-0 animate-fade-up animate-delay-200"
+					className="mt-6 text-white/80 text-xs md:text-sm font-body font-semibold tracking-[0.3em] uppercase opacity-0 animate-fade-up animate-delay-200"
 				>
 					{isNight ? "Cena & Cócteles · Barcelona" : "Brunch & Café · Barcelona"}
 				</p>
@@ -48,9 +48,9 @@ const HeroSection = () => {
 				<div className="mt-8 opacity-0 animate-fade-up animate-delay-600">
 					<a
 						href="#about"
-						className="inline-block border border-white/30 text-white px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-white hover:text-black transition-all duration-500"
+					className="inline-block border border-white/30 text-white px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-white hover:text-black transition-all duration-500"
 					>
-						{isNight ? "Reservar mesa" : "Descubrir"}
+						Descubrir
 					</a>
 				</div>
 			</div>
