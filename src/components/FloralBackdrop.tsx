@@ -1,5 +1,5 @@
 import { useMode } from "@/contexts/ModeContext";
-import floral from "@/assets/floral-day-cutout.png";
+import floral from "@/assets/floral-day-cutout.webp";
 
 /**
  * Decorative floral illustration anchored to the page background.
