@@ -1,5 +1,5 @@
+import floral from "@/assets/floral-day.webp";
 import { useMode } from "@/contexts/ModeContext";
-import floral from "@/assets/floral-day-cutout.webp";
 
 const FloralBackdrop = () => {
 	const { mode } = useMode();

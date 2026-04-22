@@ -10,18 +10,28 @@ import SpotifySection from "@/components/SpotifySection";
 
 const Index = () => {
 	return (
-		<div className="min-h-screen relative isolation-isolate">
-			<div className="relative z-10">
-				<Navbar />
-				<HeroSection />
+		<div className="min-h-screen">
+			<Navbar />
+			<HeroSection />
+			<div className="day-band day-band-1">
 				<AboutSection />
-				<MenuPreviewSection />
-				<GallerySection />
-				<ReviewsSection />
-				<LocationSection />
-				<SpotifySection />
-				<FooterSection />
 			</div>
+			<div className="day-band day-band-2">
+				<MenuPreviewSection />
+			</div>
+			<div className="day-band day-band-3">
+				<GallerySection />
+			</div>
+			<div className="day-band day-band-4">
+				<ReviewsSection />
+			</div>
+			<div className="day-band day-band-5">
+				<LocationSection />
+			</div>
+			<div className="day-band day-band-6">
+				<SpotifySection />
+			</div>
+			<FooterSection />
 		</div>
 	);
 };

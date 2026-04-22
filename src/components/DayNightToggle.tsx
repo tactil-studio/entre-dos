@@ -7,7 +7,10 @@ interface DayNightToggleProps {
 	className?: string;
 }
 
-const DayNightToggle = ({ size = "compact", className }: DayNightToggleProps) => {
+const DayNightToggle = ({
+	size = "compact",
+	className,
+}: DayNightToggleProps) => {
 	const { mode, toggleMode } = useMode();
 	const isNight = mode === "night";
 
@@ -93,7 +96,7 @@ const DayNightToggle = ({ size = "compact", className }: DayNightToggleProps) =>
 					isNight ? "text-foreground/50" : "text-background",
 				)}
 			>
-				<Sun size={dims.icon} strokeWidth={1.5} />
+				{size === "large" && <Sun size={dims.icon} strokeWidth={1.75} />}
 				Día
 			</span>
 			<span
@@ -102,7 +105,7 @@ const DayNightToggle = ({ size = "compact", className }: DayNightToggleProps) =>
 					isNight ? "text-background" : "text-foreground/50",
 				)}
 			>
-				<Moon size={dims.icon} strokeWidth={1.5} />
+				{size === "large" && <Moon size={dims.icon} strokeWidth={1.75} />}
 				Noche
 			</span>
 		</button>
