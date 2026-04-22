@@ -66,9 +66,9 @@ const ReviewsSection = () => {
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 						Opiniones
 					</p>
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
+					<h2 className="text-4xl md:text-5xl lg:text-6xl font-serif-italic text-foreground" style={{ fontWeight: 300 }}>
 						Lo que dicen de{" "}
-						<span className="italic text-night-blue">nosotros</span>
+						<span className="text-night-blue">nosotros</span>
 					</h2>
 					<div className="flex items-center justify-center gap-2 mt-6">
 						<div className="flex">
