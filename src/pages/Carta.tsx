@@ -66,17 +66,16 @@ const Carta = () => {
 						))}
 					</div>
 
-					{/* Menu image */}
-					<div className="flex justify-center">
+					{/* Menu image - reserve min-height to avoid layout shift */}
+					<div className="flex justify-center min-h-[60vh]">
 						<div
 							className="w-full md:max-w-2xl shadow-lg flex items-start justify-center cursor-zoom-in"
 							onClick={() => setZoomed(true)}
 						>
 							<img
-								key={activeTab.id}
 								src={activeTab.image}
 								alt={`Carta - ${activeTab.label}`}
-								className="w-full max-w-full h-auto object-contain animate-fade-in"
+								className="w-full max-w-full h-auto object-contain"
 							/>
 						</div>
 					</div>

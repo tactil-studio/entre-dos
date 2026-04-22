@@ -32,7 +32,7 @@ const HeroSection = () => {
 
 			<div className="relative z-10 text-center px-6">
 				<h1 className="text-6xl md:text-8xl lg:text-9xl font-serif-italic text-white tracking-wide opacity-0 animate-fade-up" style={{ fontWeight: 300 }}>
-					Entre Dos
+					Entre <span style={{ color: isNight ? "hsl(220, 90%, 70%)" : "hsl(60, 84%, 35%)" }} className="transition-colors duration-700">Dos</span>
 				</h1>
 				<p
 					key={`tag-${mode}`}

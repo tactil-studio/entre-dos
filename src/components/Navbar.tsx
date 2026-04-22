@@ -76,7 +76,7 @@ const Navbar = () => {
 				</ul>
 
 				<div className="hidden md:flex items-center gap-6">
-					<DayNightToggle size="icon" />
+					<DayNightToggle size="compact" />
 					<a
 						href="https://www.instagram.com/toscacarme/"
 						target="_blank"
@@ -144,7 +144,7 @@ const Navbar = () => {
 							</a>
 						</li>
 						<li className="pt-2">
-							<DayNightToggle size="icon" />
+							<DayNightToggle size="compact" />
 						</li>
 					</ul>
 				</div>
