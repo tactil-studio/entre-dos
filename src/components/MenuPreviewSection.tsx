@@ -28,7 +28,7 @@ const MenuPreviewSection = () => {
 	});
 
 	return (
-		<section id="menu" className="py-16 md:py-16 bg-background">
+		<section id="menu" className="py-16 md:py-16 bg-transparent">
 			<div className="max-w-7xl mx-auto px-6">
 				<div
 					ref={headerRef}

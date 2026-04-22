@@ -57,7 +57,7 @@ const GallerySection = () => {
 	});
 
 	return (
-		<section id="gallery" className="py-16 md:py-16 bg-background">
+		<section id="gallery" className="py-16 md:py-16 bg-transparent">
 			<div className="mx-auto max-w-[92rem] px-6">
 				<div
 					ref={headerRef}

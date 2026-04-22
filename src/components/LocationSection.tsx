@@ -13,7 +13,7 @@ const LocationSection = () => {
 	const { ref: rightRef, isVisible: rightVisible } = useScrollReveal();
 
 	return (
-		<section id="location" className="py-8 md:py-12 bg-background">
+		<section id="location" className="py-8 md:py-12 bg-transparent">
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid md:grid-cols-2 gap-0 overflow-hidden border border-border shadow-lg">
 					{/* Left — info */}

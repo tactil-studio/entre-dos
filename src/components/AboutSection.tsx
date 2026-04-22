@@ -32,7 +32,7 @@ const AboutSection = () => {
 	const c = content[mode];
 
 	return (
-		<section id="about" className="py-24 bg-background" ref={ref}>
+		<section id="about" className="py-24 bg-transparent" ref={ref}>
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
