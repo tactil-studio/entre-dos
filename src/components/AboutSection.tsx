@@ -1,5 +1,5 @@
 import foodHam from "@/assets/food-ham.webp";
-import wine from "@/assets/wine.jpg";
+import wine from "@/assets/wine.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
-import foodMalibu from "@/assets/malibu.jpg";
+import foodMalibu from "@/assets/malibu.webp";
 import cocktail from "@/assets/cocktail.jpg";
-import wine from "@/assets/wine.jpg";
+import wine from "@/assets/wine.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
