@@ -22,7 +22,7 @@ const FooterSection = () => {
 						<img
 							src={logo}
 							alt="Entre 2"
-							className="h-12 brightness-0 invert mb-4"
+							className="h-12 brightness-0 invert dark:invert-0 mb-4"
 						/>
 						<p className="text-background/50 font-body text-sm text-center md:text-left italic">
 							Modern Bistrot en el corazón de Barcelona
