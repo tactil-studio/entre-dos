@@ -11,17 +11,19 @@ import FloralBackdrop from "@/components/FloralBackdrop";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative isolation-isolate">
       <FloralBackdrop />
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <MenuPreviewSection />
-      <GallerySection />
-      <ReviewsSection />
-      <LocationSection />
-      <SpotifySection />
-      <FooterSection />
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <MenuPreviewSection />
+        <GallerySection />
+        <ReviewsSection />
+        <LocationSection />
+        <SpotifySection />
+        <FooterSection />
+      </div>
     </div>
   );
 };

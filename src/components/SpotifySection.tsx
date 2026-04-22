@@ -28,13 +28,13 @@ const SpotifySection = () => {
 		<section id="spotify" className="py-16 md:py-16 bg-card">
 			<div ref={ref} className="max-w-4xl mx-auto px-6 text-center">
 				<div className={`reveal ${isVisible ? "visible" : ""}`}>
-					<Music className={`w-6 h-6 mx-auto mb-6 ${mode === "night" ? "text-night-blue" : "text-olive"}`} />
-					<p className={`text-xs tracking-[0.3em] uppercase font-body mb-4 ${mode === "night" ? "text-night-blue" : "text-olive"}`}>
+					<Music className="w-6 h-6 mx-auto mb-6 text-olive" />
+					<p className="text-xs tracking-[0.3em] uppercase font-body mb-4 text-olive">
 						{p.eyebrow}
 					</p>
 					<h2 className="text-4xl md:text-5xl font-heading font-light text-foreground mb-4">
 						La banda sonora de{" "}
-						<span className={`italic ${mode === "night" ? "text-night-blue" : "text-olive"}`}>
+						<span className="italic text-night-blue">
 							Entre Dos
 						</span>
 					</h2>

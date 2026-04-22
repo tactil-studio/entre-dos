@@ -22,11 +22,11 @@ const LocationSection = () => {
 						className={`bg-gradient-to-br from-background via-background to-background/95 text-foreground border-r border-border/30 p-6 md:p-8 flex flex-col justify-center relative reveal-left overflow-hidden ${leftVisible ? "visible" : ""}`}
 					>
 						{/* Decorative elements */}
-						<div className="absolute top-20 -right-32 w-64 h-64 bg-olive/5 rounded-full blur-3xl"></div>
-						<div className="absolute bottom-10 -left-32 w-48 h-48 bg-olive/5 rounded-full blur-3xl"></div>
+						<div className="absolute top-20 -right-32 w-64 h-64 bg-night-blue/5 rounded-full blur-3xl"></div>
+						<div className="absolute bottom-10 -left-32 w-48 h-48 bg-olive/8 rounded-full blur-3xl"></div>
 
 						{/* Top accent bar */}
-						<div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-olive via-olive to-olive/70"></div>
+						<div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-olive via-night-blue to-olive/70"></div>
 
 						<div className="relative z-10">
 							<p className="text-olive text-xs tracking-[0.4em] uppercase font-body mb-4 font-semibold">
