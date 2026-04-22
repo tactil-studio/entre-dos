@@ -1,5 +1,5 @@
 import foodBrunch1 from "@/assets/food-brunch1.webp";
-import cocktail from "@/assets/cocktail.jpg";
+import cocktail from "@/assets/cocktail.webp";
 import DayNightToggle from "@/components/DayNightToggle";
 import { useMode } from "@/contexts/ModeContext";
 

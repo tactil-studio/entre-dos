@@ -12,9 +12,9 @@ import foodScrambled from "@/assets/food-scrambled.webp";
 import foodShakshuka from "@/assets/food-shakshuka.webp";
 import foodTacos from "@/assets/food-tacos.webp";
 import foodHam from "@/assets/food-ham.webp";
-import cocktail from "@/assets/cocktail.jpg";
-import wine from "@/assets/wine.jpg";
-import malibu from "@/assets/malibu.jpg";
+import cocktail from "@/assets/cocktail.webp";
+import wine from "@/assets/wine.webp";
+import malibu from "@/assets/malibu.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
