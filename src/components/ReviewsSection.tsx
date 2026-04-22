@@ -117,7 +117,7 @@ const ReviewsSection = () => {
 											</div>
 											<div className="flex items-center justify-between flex-shrink-0">
 												<div>
-													<p className="font-heading text-base text-foreground">
+													<p className="font-serif-italic text-lg text-foreground" style={{ fontWeight: 400 }}>
 														{review.name}
 													</p>
 													<p className="text-muted-foreground/60 text-xs font-body">
@@ -180,7 +180,7 @@ const ReviewsSection = () => {
 							</p>
 							<div className="flex items-center justify-between">
 								<div>
-									<p className="font-heading text-lg text-foreground">
+									<p className="font-serif-italic text-xl text-foreground" style={{ fontWeight: 400 }}>
 										{review.name}
 									</p>
 									<p className="text-muted-foreground/60 text-xs font-body">
