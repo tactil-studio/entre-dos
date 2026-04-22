@@ -7,10 +7,12 @@ import ReviewsSection from "@/components/ReviewsSection";
 import LocationSection from "@/components/LocationSection";
 import SpotifySection from "@/components/SpotifySection";
 import FooterSection from "@/components/FooterSection";
+import FloralBackdrop from "@/components/FloralBackdrop";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <FloralBackdrop />
       <Navbar />
       <HeroSection />
       <AboutSection />
