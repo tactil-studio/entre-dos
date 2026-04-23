@@ -11,18 +11,24 @@ const HeroSection = () => {
 	const dayRef = useRef<HTMLVideoElement>(null);
 	const nightRef = useRef<HTMLVideoElement>(null);
 
-	// Resume autoplay on iOS when returning to the page (bfcache / tab switch)
+	// Resume autoplay on iOS bfcache restore and tab return
 	useEffect(() => {
 		const resumeVideos = () => {
-			dayRef.current?.play().catch(() => {});
-			nightRef.current?.play().catch(() => {});
+			[dayRef.current, nightRef.current].forEach((v) => {
+				if (v && v.paused) v.play().catch(() => {});
+			});
 		};
-		window.addEventListener("pageshow", resumeVideos);
-		document.addEventListener("visibilitychange", () => {
+		const onPageShow = (e: PageTransitionEvent) => {
+			if (e.persisted) resumeVideos();
+		};
+		const onVisibility = () => {
 			if (!document.hidden) resumeVideos();
-		});
+		};
+		window.addEventListener("pageshow", onPageShow);
+		document.addEventListener("visibilitychange", onVisibility);
 		return () => {
-			window.removeEventListener("pageshow", resumeVideos);
+			window.removeEventListener("pageshow", onPageShow);
+			document.removeEventListener("visibilitychange", onVisibility);
 		};
 	}, []);
 
@@ -52,6 +58,8 @@ const HeroSection = () => {
 				muted
 				loop
 				playsInline
+				preload="auto"
+				poster={foodBrunch1}
 				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-0" : "opacity-100"}`}
 			>
 				<source src={dayVideo} type="video/mp4" />
@@ -63,6 +71,8 @@ const HeroSection = () => {
 				muted
 				loop
 				playsInline
+				preload="auto"
+				poster={foodBrunch1}
 				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-100" : "opacity-0"}`}
 			>
 				<source src={nightVideo} type="video/mp4" />
