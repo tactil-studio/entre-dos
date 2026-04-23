@@ -32,6 +32,23 @@ const HeroSection = () => {
 		};
 	}, []);
 
+	// iOS-specific: intercept any unexpected pause and resume immediately
+	useEffect(() => {
+		const autoResume = (e: Event) => {
+			const video = e.target as HTMLVideoElement;
+			// Small timeout lets the browser finish its internal state before we call play()
+			setTimeout(() => video.play().catch(() => {}), 50);
+		};
+		const day = dayRef.current;
+		const night = nightRef.current;
+		day?.addEventListener("pause", autoResume);
+		night?.addEventListener("pause", autoResume);
+		return () => {
+			day?.removeEventListener("pause", autoResume);
+			night?.removeEventListener("pause", autoResume);
+		};
+	}, []);
+
 	// Restart the incoming video from the beginning on mode switch
 	useEffect(() => {
 		const incoming = isNight ? nightRef.current : dayRef.current;
