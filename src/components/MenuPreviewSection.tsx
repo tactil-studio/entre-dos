@@ -4,6 +4,8 @@ import foodPrawns from "@/assets/food-prawns.webp";
 import foodMalibu from "@/assets/malibu.webp";
 import cocktail from "@/assets/cocktail.webp";
 import wine from "@/assets/wine.webp";
+import lineartLight from "@/assets/floral-lineart-light.webp";
+import lineartOlive from "@/assets/floral-lineart.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -28,8 +30,16 @@ const MenuPreviewSection = () => {
 	});
 
 	return (
-		<section id="menu" className="py-16 md:py-16 bg-transparent">
-			<div className="max-w-7xl mx-auto px-6">
+		<section id="menu" className="py-16 md:py-16 bg-transparent relative overflow-hidden">
+			{/* Line-art floral decoration */}
+			<img
+				src={mode === "night" ? lineartLight : lineartOlive}
+				aria-hidden="true"
+				alt=""
+				loading="lazy"
+				className="pointer-events-none select-none absolute -left-24 top-8 w-72 md:w-[22rem] opacity-[0.10] dark:opacity-[0.12] transition-opacity duration-700 -rotate-6"
+			/>
+			<div className="max-w-7xl mx-auto px-6 relative">
 				<div
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}

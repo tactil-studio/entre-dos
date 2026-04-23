@@ -93,9 +93,9 @@
 
   :root:not(.dark) .day-band-1 { background: hsl(55 22% 93%); }
   :root:not(.dark) .day-band-2 { background: hsl(60 28% 90%); }
-  :root:not(.dark) .day-band-3 { background: hsl(50 12% 97%); }
+  :root:not(.dark) .day-band-3 { background: hsl(54 24% 94%); }
   :root:not(.dark) .day-band-4 { background: hsl(62 20% 90%); }
-  :root:not(.dark) .day-band-5 { background: hsl(50 10% 97%); }
+  :root:not(.dark) .day-band-5 { background: hsl(56 22% 93%); }
   :root:not(.dark) .day-band-6 { background: hsl(55 30% 92%); }
 
   :root:not(.dark) #reviews,
