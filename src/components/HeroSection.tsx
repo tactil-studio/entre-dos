@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import dayVideo from "@/assets/Entre-Dos-Day.mp4";
 import nightVideo from "@/assets/Entre-Dos-Night.mp4";
 import foodBrunch1 from "@/assets/food-brunch1.webp";
@@ -7,6 +8,32 @@ import { useMode } from "@/contexts/ModeContext";
 const HeroSection = () => {
 	const { mode } = useMode();
 	const isNight = mode === "night";
+	const dayRef = useRef<HTMLVideoElement>(null);
+	const nightRef = useRef<HTMLVideoElement>(null);
+
+	// Resume autoplay on iOS when returning to the page (bfcache / tab switch)
+	useEffect(() => {
+		const resumeVideos = () => {
+			dayRef.current?.play().catch(() => {});
+			nightRef.current?.play().catch(() => {});
+		};
+		window.addEventListener("pageshow", resumeVideos);
+		document.addEventListener("visibilitychange", () => {
+			if (!document.hidden) resumeVideos();
+		});
+		return () => {
+			window.removeEventListener("pageshow", resumeVideos);
+		};
+	}, []);
+
+	// Restart the incoming video from the beginning on mode switch
+	useEffect(() => {
+		const incoming = isNight ? nightRef.current : dayRef.current;
+		if (incoming) {
+			incoming.currentTime = 0;
+			incoming.play().catch(() => {});
+		}
+	}, [isNight]);
 
 	return (
 		<section
@@ -20,6 +47,7 @@ const HeroSection = () => {
 				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-0" : "opacity-100"}`}
 			/>
 			<video
+				ref={dayRef}
 				autoPlay
 				muted
 				loop
@@ -30,6 +58,7 @@ const HeroSection = () => {
 			</video>
 			{/* Night video */}
 			<video
+				ref={nightRef}
 				autoPlay
 				muted
 				loop
