@@ -1,6 +1,8 @@
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useState } from "react";
-import monstera from "@/assets/monstera-leaves.webp";
+import monsteraBlue from "@/assets/monstera-blue.webp";
+import monsteraGreen from "@/assets/monstera-leaves.webp";
+import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const reviews = [
@@ -43,6 +45,7 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+	const { mode } = useMode();
 	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
 		rootMargin: "0px 0px -40px 0px",
@@ -61,11 +64,11 @@ const ReviewsSection = () => {
 		<section id="reviews" className="py-16 md:py-16 bg-card relative overflow-hidden">
 			{/* Floral decoration */}
 			<img
-				src={monstera}
+				src={mode === "night" ? monsteraBlue : monsteraGreen}
 				aria-hidden="true"
 				alt=""
 				loading="lazy"
-				className="pointer-events-none select-none absolute -right-24 -top-16 w-72 md:w-96 opacity-15 dark:opacity-10 dark:invert transition-opacity duration-700 -scale-x-100 rotate-6"
+				className="pointer-events-none select-none absolute -right-24 -top-16 w-72 md:w-96 opacity-25 dark:opacity-22 transition-opacity duration-700 -scale-x-100 rotate-6"
 			/>
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div
