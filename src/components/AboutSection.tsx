@@ -8,13 +8,13 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const content = {
 	day: {
 		eyebrow: "Nuestra esencia · Día",
-		titleStart: "Donde el café",
+		titleStart: "Donde la tradición",
 		titleItalic: "se encuentra",
-		titleEnd: "con el brunch",
-		p1: "Por la mañana, Entre Dos es un refugio de café de especialidad, brunch mediterráneo y luz natural. Un espacio para empezar el día sin prisas.",
-		p2: "Pan recién hecho, huevos a tu manera y zumos exprimidos al momento.",
+		titleEnd: "con lo moderno",
+		p1: "En Entre Dos fusionamos la cocina mediterránea con toques internacionales. Un espacio pensado para compartir, disfrutar y descubrir sabores que conectan culturas y momentos.",
+		p2: "Cada plato cuenta una historia. Cada visita es una experiencia única.",
 		image: foodHam,
-		alt: "Brunch mediterráneo",
+		alt: "Cocina mediterránea en Entre Dos",
 	},
 	night: {
 		eyebrow: "Nuestra esencia · Noche",

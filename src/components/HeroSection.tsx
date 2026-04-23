@@ -110,7 +110,7 @@ const HeroSection = () => {
 				>
 					{isNight
 						? "Cena & Cócteles · Barcelona"
-						: "Brunch & Café · Barcelona"}
+						: "Modern Bistrot · Barcelona"}
 				</p>
 
 				<div className="mt-10 flex justify-center opacity-0 animate-fade-up animate-delay-400">
