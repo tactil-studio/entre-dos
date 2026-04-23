@@ -1,8 +1,6 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ArrowRight, Clock, Mail, MapPin } from "lucide-react";
-import lineartLight from "@/assets/floral-lineart-light.webp";
-import lineartOlive from "@/assets/floral-lineart.webp";
 import { useMode } from "@/contexts/ModeContext";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const schedule = [
 	{ day: "Lunes – Jueves", kitchen: "12:00 – 23:00", bar: "12:00 – 00:00" },
@@ -17,15 +15,10 @@ const LocationSection = () => {
 	const { ref: rightRef, isVisible: rightVisible } = useScrollReveal();
 
 	return (
-		<section id="location" className="py-8 md:py-12 bg-transparent relative overflow-hidden">
-			{/* Line-art floral decoration */}
-			<img
-				src={mode === "night" ? lineartLight : lineartOlive}
-				aria-hidden="true"
-				alt=""
-				loading="lazy"
-				className="pointer-events-none select-none absolute -right-20 -bottom-16 w-72 md:w-96 opacity-[0.10] dark:opacity-[0.12] transition-opacity duration-700 rotate-12"
-			/>
+		<section
+			id="location"
+			className="py-8 md:py-12 bg-transparent relative overflow-hidden"
+		>
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div className="grid md:grid-cols-2 gap-0 overflow-hidden border border-border shadow-lg">
 					{/* Left — info */}

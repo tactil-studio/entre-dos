@@ -1,7 +1,5 @@
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useState } from "react";
-import monsteraBlue from "@/assets/monstera-blue.webp";
-import monsteraGreen from "@/assets/monstera-leaves.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -61,15 +59,10 @@ const ReviewsSection = () => {
 	};
 
 	return (
-		<section id="reviews" className="py-16 md:py-16 bg-card relative overflow-hidden">
-			{/* Floral decoration */}
-			<img
-				src={mode === "night" ? monsteraBlue : monsteraGreen}
-				aria-hidden="true"
-				alt=""
-				loading="lazy"
-				className="pointer-events-none select-none absolute -right-24 -top-16 w-72 md:w-96 opacity-25 dark:opacity-22 transition-opacity duration-700 -scale-x-100 rotate-6"
-			/>
+		<section
+			id="reviews"
+			className="py-16 md:py-16 bg-card relative overflow-hidden"
+		>
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div
 					ref={headerRef}
@@ -78,9 +71,11 @@ const ReviewsSection = () => {
 					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
 						Opiniones
 					</p>
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-serif-italic text-foreground" style={{ fontWeight: 300 }}>
-						Lo que dicen de{" "}
-						<span className="text-night-blue">nosotros</span>
+					<h2
+						className="text-4xl md:text-5xl lg:text-6xl font-serif-italic text-foreground"
+						style={{ fontWeight: 300 }}
+					>
+						Lo que dicen de <span className="text-night-blue">nosotros</span>
 					</h2>
 					<div className="flex items-center justify-center gap-2 mt-6">
 						<div className="flex">
@@ -129,7 +124,10 @@ const ReviewsSection = () => {
 											</div>
 											<div className="flex items-center justify-between flex-shrink-0">
 												<div>
-													<p className="font-serif-italic text-lg text-foreground" style={{ fontWeight: 400 }}>
+													<p
+														className="font-serif-italic text-lg text-foreground"
+														style={{ fontWeight: 400 }}
+													>
 														{review.name}
 													</p>
 													<p className="text-muted-foreground/60 text-xs font-body">
@@ -192,7 +190,10 @@ const ReviewsSection = () => {
 							</p>
 							<div className="flex items-center justify-between">
 								<div>
-									<p className="font-serif-italic text-xl text-foreground" style={{ fontWeight: 400 }}>
+									<p
+										className="font-serif-italic text-xl text-foreground"
+										style={{ fontWeight: 400 }}
+									>
 										{review.name}
 									</p>
 									<p className="text-muted-foreground/60 text-xs font-body">

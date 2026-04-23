@@ -1,24 +1,52 @@
 import { Link } from "react-router-dom";
+import cocktail from "@/assets/cocktail.webp";
 import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
 import foodMalibu from "@/assets/malibu.webp";
-import cocktail from "@/assets/cocktail.webp";
 import wine from "@/assets/wine.webp";
-import lineartLight from "@/assets/floral-lineart-light.webp";
-import lineartOlive from "@/assets/floral-lineart.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const dayItems = [
-	{ img: foodPrawns, label: "Carta", desc: "Tapas, entrantes y mediterráneo", tab: "carta" },
-	{ img: foodBrunch1, label: "Brunch", desc: "Sábados y domingos, 11–16h", tab: "brunch" },
-	{ img: foodMalibu, label: "Café & Zumos", desc: "Café de especialidad y zumos naturales", tab: "bebidas" },
+	{
+		img: foodPrawns,
+		label: "Carta",
+		desc: "Tapas, entrantes y mediterráneo",
+		tab: "carta",
+	},
+	{
+		img: foodBrunch1,
+		label: "Brunch",
+		desc: "Sábados y domingos, 11–16h",
+		tab: "brunch",
+	},
+	{
+		img: foodMalibu,
+		label: "Café & Zumos",
+		desc: "Café de especialidad y zumos naturales",
+		tab: "bebidas",
+	},
 ];
 
 const nightItems = [
-	{ img: foodPrawns, label: "Cena", desc: "Cocina de autor para compartir", tab: "carta" },
-	{ img: cocktail, label: "Cócteles", desc: "Mixología de barra hasta tarde", tab: "cocktails" },
-	{ img: wine, label: "Vinos", desc: "Selección natural y referencias de autor", tab: "vinos" },
+	{
+		img: foodPrawns,
+		label: "Cena",
+		desc: "Cocina de autor para compartir",
+		tab: "carta",
+	},
+	{
+		img: cocktail,
+		label: "Cócteles",
+		desc: "Mixología de barra hasta tarde",
+		tab: "cocktails",
+	},
+	{
+		img: wine,
+		label: "Vinos",
+		desc: "Selección natural y referencias de autor",
+		tab: "vinos",
+	},
 ];
 
 const MenuPreviewSection = () => {
@@ -30,15 +58,10 @@ const MenuPreviewSection = () => {
 	});
 
 	return (
-		<section id="menu" className="py-16 md:py-16 bg-transparent relative overflow-hidden">
-			{/* Line-art floral decoration */}
-			<img
-				src={mode === "night" ? lineartLight : lineartOlive}
-				aria-hidden="true"
-				alt=""
-				loading="lazy"
-				className="pointer-events-none select-none absolute -left-24 top-8 w-72 md:w-[22rem] opacity-[0.10] dark:opacity-[0.12] transition-opacity duration-700 -rotate-6"
-			/>
+		<section
+			id="menu"
+			className="py-16 md:py-16 bg-transparent relative overflow-hidden"
+		>
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div
 					ref={headerRef}
@@ -54,7 +77,8 @@ const MenuPreviewSection = () => {
 							</>
 						) : (
 							<>
-								Sabores <span className="italic text-night-blue">mediterráneos</span>
+								Sabores{" "}
+								<span className="italic text-night-blue">mediterráneos</span>
 							</>
 						)}
 					</h2>
