@@ -34,27 +34,18 @@ const AboutSection = () => {
 	const c = content[mode];
 
 	return (
-		<section
-			id="about"
-			className="py-24 bg-transparent relative overflow-hidden"
-			ref={ref}
-		>
-			{/* Monstera leaves — bottom left */}
-			<img
-				src={mode === "night" ? monsteraBlue : monsteraGreen}
-				aria-hidden="true"
-				alt=""
-				loading="lazy"
-				className="pointer-events-none select-none absolute -left-20 -bottom-16 w-72 md:w-96 opacity-30 dark:opacity-25 transition-opacity duration-700 -rotate-12"
-			/>
-			{/* Monstera leaves — top right (mirrored) */}
-			<img
-				src={mode === "night" ? monsteraBlue : monsteraGreen}
-				aria-hidden="true"
-				alt=""
-				loading="lazy"
-				className="pointer-events-none select-none absolute -right-20 -top-16 w-64 md:w-80 opacity-20 dark:opacity-15 transition-opacity duration-700 rotate-12 -scale-x-100"
-			/>
+		<section id="about" className="py-24 bg-transparent relative" ref={ref}>
+			{/* Clip top-right monstera so it doesn't bleed upward into hero */}
+			<div className="absolute inset-0 overflow-hidden pointer-events-none">
+				<img
+					src={mode === "night" ? monsteraBlue : monsteraGreen}
+					aria-hidden="true"
+					alt=""
+					loading="lazy"
+					className="pointer-events-none select-none absolute -right-20 -top-16 w-64 md:w-80 opacity-20 dark:opacity-15 transition-opacity duration-700 rotate-12 -scale-x-100"
+				/>
+			</div>
+
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>

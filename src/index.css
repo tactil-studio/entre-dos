@@ -89,8 +89,9 @@
   }
 
   /* === Day-mode section bands === */
-  .day-band { transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+  .day-band { transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1); overflow: visible; }
 
+  :root:not(.dark) nav { background-color: hsl(55 22% 93% / 0.92) !important; }
   :root:not(.dark) .day-band-1 { background: hsl(55 22% 93%); }
   :root:not(.dark) .day-band-2 { background: hsl(60 28% 90%); }
   :root:not(.dark) .day-band-3 { background: hsl(54 24% 94%); }
