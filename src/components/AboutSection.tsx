@@ -1,4 +1,5 @@
 import foodHam from "@/assets/food-ham.webp";
+import monstera from "@/assets/monstera-leaves.webp";
 import wine from "@/assets/wine.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -32,8 +33,16 @@ const AboutSection = () => {
 	const c = content[mode];
 
 	return (
-		<section id="about" className="py-24 bg-transparent" ref={ref}>
-			<div className="max-w-7xl mx-auto px-6">
+		<section id="about" className="py-24 bg-transparent relative overflow-hidden" ref={ref}>
+			{/* Floral decoration */}
+			<img
+				src={monstera}
+				aria-hidden="true"
+				alt=""
+				loading="lazy"
+				className="pointer-events-none select-none absolute -left-20 -bottom-16 w-72 md:w-96 opacity-15 dark:opacity-10 dark:invert transition-opacity duration-700 -rotate-12"
+			/>
+			<div className="max-w-7xl mx-auto px-6 relative">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
 						<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
