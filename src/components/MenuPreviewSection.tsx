@@ -4,6 +4,8 @@ import foodPrawns from "@/assets/food-prawns.webp";
 import foodMalibu from "@/assets/malibu.webp";
 import cocktail from "@/assets/cocktail.webp";
 import wine from "@/assets/wine.webp";
+import lineartLight from "@/assets/floral-lineart-light.webp";
+import lineartOlive from "@/assets/floral-lineart.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
