@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import dayVideo from "@/assets/Entre-Dos-Day.mp4";
 import nightVideo from "@/assets/Entre-Dos-Night.mp4";
-import foodBrunch1 from "@/assets/food-brunch1.webp";
 import DayNightToggle from "@/components/DayNightToggle";
 import { useMode } from "@/contexts/ModeContext";
 
@@ -63,12 +62,6 @@ const HeroSection = () => {
 			id="hero"
 			className="relative h-screen flex items-center justify-center overflow-hidden bg-background"
 		>
-			{/* Day video (with image fallback while file is loading/empty) */}
-			<img
-				src={foodBrunch1}
-				alt="Brunch en Entre Dos"
-				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-0" : "opacity-100"}`}
-			/>
 			<video
 				ref={dayRef}
 				autoPlay
@@ -76,7 +69,6 @@ const HeroSection = () => {
 				loop
 				playsInline
 				preload="auto"
-				poster={foodBrunch1}
 				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-0" : "opacity-100"}`}
 			>
 				<source src={dayVideo} type="video/mp4" />
@@ -89,7 +81,6 @@ const HeroSection = () => {
 				loop
 				playsInline
 				preload="auto"
-				poster={foodBrunch1}
 				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-100" : "opacity-0"}`}
 			>
 				<source src={nightVideo} type="video/mp4" />
