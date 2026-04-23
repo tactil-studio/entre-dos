@@ -120,6 +120,12 @@
     background-image: none;
   }
 
+  /* Footer in night mode: dark elevated bg, softer warm text */
+  .dark footer#contact {
+    --foreground: 230 18% 13%;
+    --background: 40 20% 82%;
+  }
+
   section, nav, footer, header, aside, main, div {
     transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
