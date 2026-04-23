@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+	createContext,
+	type ReactNode,
+	useCallback,
+	useContext,
+	useEffect,
+	useMemo,
+	useState,
+} from "react";
 
 export type Mode = "day" | "night";
 
@@ -16,8 +24,7 @@ const getDefaultMode = (): Mode => {
 	if (typeof window === "undefined") return "day";
 	const stored = sessionStorage.getItem(STORAGE_KEY) as Mode | null;
 	if (stored === "day" || stored === "night") return stored;
-	const hour = new Date().getHours();
-	return hour >= 18 || hour < 6 ? "night" : "day";
+	return "day";
 };
 
 export const ModeProvider = ({ children }: { children: ReactNode }) => {
@@ -41,7 +48,10 @@ export const ModeProvider = ({ children }: { children: ReactNode }) => {
 		setModeState(next);
 	}, []);
 
-	const value = useMemo(() => ({ mode, toggleMode, setMode }), [mode, toggleMode, setMode]);
+	const value = useMemo(
+		() => ({ mode, toggleMode, setMode }),
+		[mode, toggleMode, setMode],
+	);
 
 	return <ModeContext.Provider value={value}>{children}</ModeContext.Provider>;
 };
