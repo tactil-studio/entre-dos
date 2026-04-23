@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useState } from "react";
+import monstera from "@/assets/monstera-leaves.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const reviews = [
@@ -57,8 +58,16 @@ const ReviewsSection = () => {
 	};
 
 	return (
-		<section id="reviews" className="py-16 md:py-16 bg-card">
-			<div className="max-w-7xl mx-auto px-6">
+		<section id="reviews" className="py-16 md:py-16 bg-card relative overflow-hidden">
+			{/* Floral decoration */}
+			<img
+				src={monstera}
+				aria-hidden="true"
+				alt=""
+				loading="lazy"
+				className="pointer-events-none select-none absolute -right-24 -top-16 w-72 md:w-96 opacity-15 dark:opacity-10 dark:invert transition-opacity duration-700 -scale-x-100 rotate-6"
+			/>
+			<div className="max-w-7xl mx-auto px-6 relative">
 				<div
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
