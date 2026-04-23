@@ -1,7 +1,9 @@
+import cocktail from "@/assets/cocktail.webp";
 import foodAvocado from "@/assets/food-avocado.webp";
 import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodBrunch2 from "@/assets/food-brunch2.webp";
 import foodCappuccino from "@/assets/food-cappuccino.webp";
+import foodHam from "@/assets/food-ham.webp";
 import foodMezze from "@/assets/food-mezze.webp";
 import foodMezze2 from "@/assets/food-mezze2.webp";
 import foodPancakes from "@/assets/food-pancakes.webp";
@@ -11,23 +13,37 @@ import foodSalad2 from "@/assets/food-salad2.webp";
 import foodScrambled from "@/assets/food-scrambled.webp";
 import foodShakshuka from "@/assets/food-shakshuka.webp";
 import foodTacos from "@/assets/food-tacos.webp";
-import foodHam from "@/assets/food-ham.webp";
-import cocktail from "@/assets/cocktail.webp";
-import wine from "@/assets/wine.webp";
 import malibu from "@/assets/malibu.webp";
+import wine from "@/assets/wine.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const dayImages = [
-	{ src: foodPrawns, alt: "Gambas al ajillo con pan catalán", className: "col-span-2 row-span-2" },
-	{ src: foodAvocado, alt: "Tostada de aguacate con ensalada y patatas", className: "" },
+	{
+		src: foodPrawns,
+		alt: "Gambas al ajillo con pan catalán",
+		className: "col-span-2 row-span-2",
+	},
+	{
+		src: foodAvocado,
+		alt: "Tostada de aguacate con ensalada y patatas",
+		className: "",
+	},
 	{ src: foodShakshuka, alt: "Shakshuka con huevos y feta", className: "" },
-	{ src: foodSalad1, alt: "Ensalada fresca con mango", className: "md:row-span-2" },
+	{
+		src: foodSalad1,
+		alt: "Ensalada fresca con mango",
+		className: "md:row-span-2",
+	},
 	{ src: foodPancakes, alt: "Tortitas con frutas y sirope", className: "" },
 	{ src: foodTacos, alt: "Breakfast tacos", className: "" },
 	{ src: foodScrambled, alt: "Revuelto con jamón y espárragos", className: "" },
 	{ src: foodBrunch1, alt: "Brunch con tostada artesana", className: "" },
-	{ src: foodMezze2, alt: "Tabla de hummus con crudités y pan", className: "md:col-span-1 md:row-span-2" },
+	{
+		src: foodMezze2,
+		alt: "Tabla de hummus con crudités y pan",
+		className: "md:col-span-1 md:row-span-2",
+	},
 	{ src: foodCappuccino, alt: "Cappuccino artesano", className: "" },
 	{ src: foodMezze, alt: "Mezze board con hummus y verduras", className: "" },
 	{ src: foodBrunch2, alt: "Tostada con granada", className: "" },
@@ -41,7 +57,11 @@ const nightImages = [
 	{ src: malibu, alt: "Cóctel tropical", className: "" },
 	{ src: foodMezze, alt: "Tabla para compartir", className: "" },
 	{ src: foodSalad2, alt: "Ensalada de noche", className: "" },
-	{ src: foodMezze2, alt: "Mezze para compartir", className: "md:col-span-1 md:row-span-2" },
+	{
+		src: foodMezze2,
+		alt: "Mezze para compartir",
+		className: "md:col-span-1 md:row-span-2",
+	},
 	{ src: foodShakshuka, alt: "Plato de cuchara", className: "" },
 	{ src: foodTacos, alt: "Bocado de noche", className: "" },
 	{ src: foodAvocado, alt: "Tapa fresca", className: "" },
@@ -73,7 +93,7 @@ const GallerySection = () => {
 							</>
 						) : (
 							<>
-								Nuestros <span className="italic text-night-blue">platos</span>
+								Nuestros <span className="italic text-olive">platos</span>
 							</>
 						)}
 					</h2>

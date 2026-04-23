@@ -73,7 +73,7 @@ const MenuPreviewSection = () => {
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
 						{mode === "night" ? (
 							<>
-								Sabores de <span className="italic text-night-blue">noche</span>
+								Sabores de <span className="italic text-olive">noche</span>
 							</>
 						) : (
 							<>
