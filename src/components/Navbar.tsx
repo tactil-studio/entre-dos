@@ -44,8 +44,12 @@ const Navbar = () => {
 		}
 	}, [isHome]);
 
-	const navLinkClass =
-		"text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase transition-all duration-300 dark:hover:text-foreground dark:hover:[text-shadow:_0_0_12px_hsl(var(--accent-blue)/0.7)]";
+	const transparentNav = isHome && !scrolled && !open;
+	const navLinkClass = `text-xs font-body tracking-[0.2em] uppercase transition-all duration-300 ${
+		transparentNav
+			? "text-white/85 hover:text-white [text-shadow:_0_1px_8px_rgb(0_0_0_/_0.5)]"
+			: "text-foreground/60 hover:text-foreground"
+	} dark:hover:[text-shadow:_0_0_12px_hsl(var(--accent-blue)/0.7)]`;
 
 	return (
 		<nav
@@ -58,7 +62,7 @@ const Navbar = () => {
 			<div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-center gap-6">
 				<div className="flex items-center">
 					<Link to="/" onClick={handleHomeClick}>
-						<img src={logo} alt="Entre 2" className="h-10 dark:invert" />
+						<img src={logo} alt="Entre 2" className={`h-10 transition-all duration-300 ${transparentNav ? "invert drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]" : "dark:invert"}`} />
 					</Link>
 				</div>
 
@@ -105,7 +109,7 @@ const Navbar = () => {
 
 				<button
 					onClick={() => setOpen(!open)}
-					className="md:hidden text-foreground justify-self-end"
+					className={`md:hidden justify-self-end transition-colors ${transparentNav ? "text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]" : "text-foreground"}`}
 					aria-label="Toggle menu"
 				>
 					{open ? <X size={24} /> : <Menu size={24} />}
