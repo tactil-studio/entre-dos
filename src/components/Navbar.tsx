@@ -48,7 +48,13 @@ const Navbar = () => {
 		"text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase transition-all duration-300 dark:hover:text-foreground dark:hover:[text-shadow:_0_0_12px_hsl(var(--accent-blue)/0.7)]";
 
 	return (
-		<nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border/50">
+		<nav
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+				scrolled || open
+					? "bg-background/90 backdrop-blur-md border-b border-border/50"
+					: "bg-transparent border-b border-transparent"
+			}`}
+		>
 			<div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-center gap-6">
 				<div className="flex items-center">
 					<Link to="/" onClick={handleHomeClick}>
