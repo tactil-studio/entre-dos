@@ -109,7 +109,7 @@ const Navbar = () => {
 
 				<button
 					onClick={() => setOpen(!open)}
-					className="md:hidden text-foreground justify-self-end"
+					className={`md:hidden justify-self-end transition-colors ${transparentNav ? "text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]" : "text-foreground"}`}
 					aria-label="Toggle menu"
 				>
 					{open ? <X size={24} /> : <Menu size={24} />}
