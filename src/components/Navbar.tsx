@@ -1,14 +1,26 @@
 import { Menu, X } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
 import DayNightToggle from "@/components/DayNightToggle";
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
 	const location = useLocation();
 	const navigate = useNavigate();
 	const isHome = location.pathname === "/";
+
+	useEffect(() => {
+		if (!isHome) {
+			setScrolled(true);
+			return;
+		}
+		const onScroll = () => setScrolled(window.scrollY > 40);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, [isHome]);
 
 	const scrollToSection = useCallback(
 		(sectionId: string) => {
