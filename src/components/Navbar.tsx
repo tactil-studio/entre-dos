@@ -44,8 +44,12 @@ const Navbar = () => {
 		}
 	}, [isHome]);
 
-	const navLinkClass =
-		"text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase transition-all duration-300 dark:hover:text-foreground dark:hover:[text-shadow:_0_0_12px_hsl(var(--accent-blue)/0.7)]";
+	const transparentNav = isHome && !scrolled && !open;
+	const navLinkClass = `text-xs font-body tracking-[0.2em] uppercase transition-all duration-300 ${
+		transparentNav
+			? "text-white/85 hover:text-white [text-shadow:_0_1px_8px_rgb(0_0_0_/_0.5)]"
+			: "text-foreground/60 hover:text-foreground"
+	} dark:hover:[text-shadow:_0_0_12px_hsl(var(--accent-blue)/0.7)]`;
 
 	return (
 		<nav
