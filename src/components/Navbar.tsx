@@ -62,7 +62,7 @@ const Navbar = () => {
 			<div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-center gap-6">
 				<div className="flex items-center">
 					<Link to="/" onClick={handleHomeClick}>
-						<img src={logo} alt="Entre 2" className="h-10 dark:invert" />
+						<img src={logo} alt="Entre 2" className={`h-10 transition-all duration-300 ${transparentNav ? "invert drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]" : "dark:invert"}`} />
 					</Link>
 				</div>
 
