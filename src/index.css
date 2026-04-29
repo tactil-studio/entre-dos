@@ -91,12 +91,12 @@
   /* === Day-mode section bands === */
   .day-band { transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
 
-  :root:not(.dark) .day-band-1 { background: hsl(72 22% 92%); }
-  :root:not(.dark) .day-band-2 { background: hsl(78 18% 88%); }
-  :root:not(.dark) .day-band-3 { background: hsl(70 16% 94%); }
-  :root:not(.dark) .day-band-4 { background: hsl(80 20% 89%); }
-  :root:not(.dark) .day-band-5 { background: hsl(68 14% 95%); }
-  :root:not(.dark) .day-band-6 { background: hsl(75 22% 91%); }
+  :root:not(.dark) .day-band-1 { background: hsl(75 20% 88%); }
+  :root:not(.dark) .day-band-2 { background: hsl(80 22% 84%); }
+  :root:not(.dark) .day-band-3 { background: hsl(72 18% 91%); }
+  :root:not(.dark) .day-band-4 { background: hsl(82 24% 85%); }
+  :root:not(.dark) .day-band-5 { background: hsl(70 16% 92%); }
+  :root:not(.dark) .day-band-6 { background: hsl(78 22% 87%); }
 
   :root:not(.dark) #reviews,
   :root:not(.dark) #spotify {
