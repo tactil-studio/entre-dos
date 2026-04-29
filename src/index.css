@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
+    --background: 70 18% 95%;
     --foreground: 0 0% 8%;
 
-    --card: 40 15% 96%;
+    --card: 72 16% 93%;
     --card-foreground: 0 0% 8%;
 
     --popover: 40 20% 98%;
@@ -25,7 +25,7 @@
     --muted-foreground: 0 0% 40%;
 
     --accent-olive: 60 84% 22%;
-    --accent-blue: 237 70% 32%;
+    --accent-blue: 236 99% 28%;
 
     --accent: 40 10% 93%;
     --accent-foreground: 0 0% 8%;
@@ -91,12 +91,12 @@
   /* === Day-mode section bands === */
   .day-band { transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
 
-  :root:not(.dark) .day-band-1 { background: hsl(55 22% 93%); }
-  :root:not(.dark) .day-band-2 { background: hsl(60 28% 90%); }
-  :root:not(.dark) .day-band-3 { background: hsl(50 12% 97%); }
-  :root:not(.dark) .day-band-4 { background: hsl(62 20% 90%); }
-  :root:not(.dark) .day-band-5 { background: hsl(50 10% 97%); }
-  :root:not(.dark) .day-band-6 { background: hsl(55 30% 92%); }
+  :root:not(.dark) .day-band-1 { background: hsl(72 22% 92%); }
+  :root:not(.dark) .day-band-2 { background: hsl(78 18% 88%); }
+  :root:not(.dark) .day-band-3 { background: hsl(70 16% 94%); }
+  :root:not(.dark) .day-band-4 { background: hsl(80 20% 89%); }
+  :root:not(.dark) .day-band-5 { background: hsl(68 14% 95%); }
+  :root:not(.dark) .day-band-6 { background: hsl(75 22% 91%); }
 
   :root:not(.dark) #reviews,
   :root:not(.dark) #spotify {
