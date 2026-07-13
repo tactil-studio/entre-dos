@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import dayVideo from "@/assets/Entre-Dos-Day.mp4";
+import logo from "@/assets/logo-entre2.svg";
 import nightVideo from "@/assets/Entre-Dos-Night.mp4";
 import DayNightToggle from "@/components/DayNightToggle";
 import { useMode } from "@/contexts/ModeContext";
@@ -90,20 +91,15 @@ const HeroSection = () => {
 			/>
 
 			<div className="relative z-10 text-center px-6">
-				<h1
-					className="text-6xl md:text-8xl lg:text-9xl font-serif-italic text-white tracking-wide opacity-0 animate-fade-up"
-					style={{ fontWeight: 300 }}
-				>
-					Entre{" "}
-					<span
-						style={{
-							color: isNight ? "hsl(220, 90%, 70%)" : "hsl(60, 84%, 35%)",
-						}}
-						className="transition-colors duration-700"
-					>
-						Dos
-					</span>
-				</h1>
+				<h1 className="sr-only">Entre Dos — Modern Bistrot · Barcelona</h1>
+				<img
+					src={logo}
+					alt="Entre 2"
+					className="h-20 md:h-28 lg:h-36 mx-auto opacity-0 animate-fade-up drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]"
+					style={{
+						filter: "invert(1) brightness(2)",
+					}}
+				/>
 				<p
 					key={`tag-${mode}`}
 					className="mt-6 text-white/80 text-xs md:text-sm font-body font-semibold tracking-[0.3em] uppercase opacity-0 animate-fade-up animate-delay-200"
