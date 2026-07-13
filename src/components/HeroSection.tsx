@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import dayVideo from "@/assets/Entre-Dos-Day.mp4";
+import logo from "@/assets/logo-entre2.svg";
 import nightVideo from "@/assets/Entre-Dos-Night.mp4";
 import DayNightToggle from "@/components/DayNightToggle";
 import { useMode } from "@/contexts/ModeContext";
