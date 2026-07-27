@@ -7,6 +7,7 @@ import { ModeProvider } from "@/contexts/ModeContext";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import Index from "./pages/Index.tsx";
 import Carta from "./pages/Carta.tsx";
+import QRLanguage from "./pages/QRLanguage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,7 +22,9 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/qr" element={<QRLanguage />} />
             <Route path="/carta" element={<Carta />} />
+            <Route path="/carta/:lang" element={<Carta />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
