@@ -87,10 +87,10 @@ const FooterSection = () => {
 							<li className="flex items-center gap-2 justify-center md:justify-start">
 								<Mail size={16} className="text-olive shrink-0" />
 								<a
-									href="mailto:toscadelcarme40@gmail.com"
+									href="mailto:info@restaurante-entredos.com"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
 								>
-									toscadelcarme40@gmail.com
+									info@restaurante-entredos.com
 								</a>
 							</li>
 							<li className="flex items-center gap-2 justify-center md:justify-start">
@@ -124,13 +124,13 @@ const FooterSection = () => {
 						</p>
 
 						<a
-							href="https://www.instagram.com/toscacarme/"
+							href="https://www.instagram.com/entredos.restaurante/"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="inline-flex items-center gap-2 text-background/50 hover:text-olive transition-colors font-body text-sm mt-4"
 						>
 							<Instagram size={20} />
-							<span>@toscacarme</span>
+							<span>@entredos.restaurante</span>
 						</a>
 					</div>
 				</div>
