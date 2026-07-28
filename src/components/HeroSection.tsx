@@ -97,7 +97,7 @@ const HeroSection = () => {
 					Entre{" "}
 					<span
 						style={{
-							color: isNight ? "hsl(220, 90%, 70%)" : "hsl(60, 84%, 35%)",
+							color: isNight ? "hsl(var(--accent-teal))" : "hsl(60, 84%, 35%)",
 						}}
 						className="transition-colors duration-700"
 					>
