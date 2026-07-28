@@ -170,7 +170,26 @@
   .border-night-blue {
     border-color: hsl(var(--accent-blue));
   }
+  .text-teal-accent {
+    color: hsl(var(--accent-teal));
+  }
+  .bg-teal-accent {
+    background-color: hsl(var(--accent-teal));
+  }
+  .border-teal-accent {
+    border-color: hsl(var(--accent-teal));
+  }
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover { animation-play-state: paused; }
 
 @keyframes fade-up {
   from {

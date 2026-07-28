@@ -5,6 +5,7 @@ import FooterSection from "@/components/FooterSection";
 import GallerySection from "@/components/GallerySection";
 import HeroSection from "@/components/HeroSection";
 import LocationSection from "@/components/LocationSection";
+import MarqueeBanner from "@/components/MarqueeBanner";
 import MenuPreviewSection from "@/components/MenuPreviewSection";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -15,6 +16,7 @@ const Index = () => {
 	const { mode } = useMode();
 	return (
 		<div className="min-h-screen">
+			<MarqueeBanner />
 			<Navbar />
 			<HeroSection />
 			<div className="day-band day-band-1 relative">
