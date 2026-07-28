@@ -67,7 +67,7 @@ const MenuPreviewSection = () => {
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
-					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
+					<p className="text-olive text-xs font-mono-label mb-4">
 						{mode === "night" ? "Carta de noche" : "Nuestra carta"}
 					</p>
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
@@ -107,7 +107,7 @@ const MenuPreviewSection = () => {
 								<h3 className="font-heading text-3xl md:text-4xl font-light mb-2">
 									{item.label}
 								</h3>
-								<p className="font-body text-white/70 text-xs tracking-[0.2em] uppercase">
+								<p className="font-mono-label text-white/70 text-[0.65rem]">
 									{item.desc}
 								</p>
 							</div>

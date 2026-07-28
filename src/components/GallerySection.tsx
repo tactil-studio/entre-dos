@@ -83,7 +83,7 @@ const GallerySection = () => {
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
-					<p className="text-xs tracking-[0.3em] uppercase font-body mb-4 text-olive">
+					<p className="text-xs font-mono-label mb-4 text-olive">
 						Galería
 					</p>
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">

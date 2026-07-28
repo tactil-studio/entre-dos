@@ -49,7 +49,7 @@ const AboutSection = () => {
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
-						<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
+						<p className="text-olive text-xs font-mono-label mb-4">
 							{c.eyebrow}
 						</p>
 						<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground leading-tight">
