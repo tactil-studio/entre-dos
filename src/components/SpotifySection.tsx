@@ -50,7 +50,7 @@ const SpotifySection = () => {
 			<div ref={ref} className="max-w-4xl mx-auto px-6 text-center">
 				<div className={`reveal ${isVisible ? "visible" : ""}`}>
 					<Music className="w-6 h-6 mx-auto mb-6 text-olive" />
-					<p className="text-xs tracking-[0.3em] uppercase font-body mb-4 text-olive">
+					<p className="text-xs font-mono-label mb-4 text-olive">
 						{p.eyebrow}
 					</p>
 					<h2 className="text-4xl md:text-5xl font-heading font-light text-foreground mb-4">

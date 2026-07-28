@@ -34,7 +34,7 @@ const LocationSection = () => {
 						<div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-olive via-night-blue to-olive/70"></div>
 
 						<div className="relative z-10">
-							<p className="text-olive text-xs tracking-[0.4em] uppercase font-body mb-4 font-semibold">
+							<p className="text-olive text-xs font-mono-label mb-4">
 								✦ Encuéntranos
 							</p>
 							<h2 className="text-3xl md:text-4xl font-heading font-light leading-tight mb-2 pb-4 border-b-2 border-olive/40">
@@ -50,7 +50,7 @@ const LocationSection = () => {
 
 							{/* Address */}
 							<div className="md:hidden mb-6">
-								<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-2 font-medium">
+								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-2">
 									Ubicación
 								</p>
 								<p className="font-body text-base text-foreground font-medium">
@@ -66,7 +66,7 @@ const LocationSection = () => {
 									<MapPin size={18} className="text-olive" />
 								</div>
 								<div>
-									<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-1 font-medium">
+									<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-1">
 										Ubicación
 									</p>
 									<p className="font-body text-base text-foreground font-medium">
@@ -80,7 +80,7 @@ const LocationSection = () => {
 
 							{/* Schedule */}
 							<div className="md:hidden mb-6">
-								<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-3 font-medium">
+								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-3">
 									Horario
 								</p>
 								<div className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-2 mb-3 border-b-2 border-olive/30">
@@ -120,7 +120,7 @@ const LocationSection = () => {
 									<Clock size={18} className="text-olive" />
 								</div>
 								<div className="w-full">
-									<p className="text-foreground/50 text-xs uppercase tracking-[0.2em] mb-3 font-medium">
+									<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-3">
 										Horario
 									</p>
 									<div className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-2 mb-3 border-b-2 border-olive/30">

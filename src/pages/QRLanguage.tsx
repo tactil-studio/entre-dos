@@ -58,7 +58,7 @@ const QRLanguage = () => {
 				/>
 
 				<p
-					className="text-[10px] tracking-[0.35em] uppercase font-body mb-3 opacity-80"
+					className="text-[10px] font-mono-label mb-3 opacity-80"
 					style={{ color: "#E8DCC8" }}
 				>
 					Entre Dos · Barcelona
@@ -85,7 +85,7 @@ const QRLanguage = () => {
 							<Link
 								key={code}
 								to={to}
-								className="group w-full py-4 text-xs tracking-[0.3em] uppercase font-body transition-all duration-500 flex items-center justify-between px-6"
+								className="group w-full py-4 text-xs font-mono-label transition-all duration-500 flex items-center justify-between px-6"
 								style={{
 									border: "1px solid rgba(232,220,200,0.35)",
 									color: "#E8DCC8",
@@ -113,7 +113,7 @@ const QRLanguage = () => {
 
 				<Link
 					to="/"
-					className="mt-12 text-[10px] tracking-[0.3em] uppercase font-body transition-opacity opacity-50 hover:opacity-100"
+					className="mt-12 text-[10px] font-mono-label transition-opacity opacity-50 hover:opacity-100"
 					style={{ color: "#E8DCC8" }}
 				>
 					← Web

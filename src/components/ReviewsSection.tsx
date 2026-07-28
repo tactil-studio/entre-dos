@@ -68,7 +68,7 @@ const ReviewsSection = () => {
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
-					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
+					<p className="text-olive text-xs font-mono-label mb-4">
 						Opiniones
 					</p>
 					<h2
@@ -88,7 +88,7 @@ const ReviewsSection = () => {
 							))}
 							<Star size={18} className="fill-yellow-500/50 text-yellow-500" />
 						</div>
-						<span className="text-muted-foreground font-body text-sm ml-2">
+						<span className="text-muted-foreground font-mono-label text-xs ml-2">
 							4.5 en Google Maps
 						</span>
 					</div>

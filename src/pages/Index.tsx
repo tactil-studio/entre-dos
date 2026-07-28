@@ -5,6 +5,7 @@ import FooterSection from "@/components/FooterSection";
 import GallerySection from "@/components/GallerySection";
 import HeroSection from "@/components/HeroSection";
 import LocationSection from "@/components/LocationSection";
+import MarqueeBanner from "@/components/MarqueeBanner";
 import MenuPreviewSection from "@/components/MenuPreviewSection";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -17,6 +18,7 @@ const Index = () => {
 		<div className="min-h-screen">
 			<Navbar />
 			<HeroSection />
+			<MarqueeBanner />
 			<div className="day-band day-band-1 relative">
 				<AboutSection />
 				{/* Monstera — bleeds from band-1 into band-2 */}

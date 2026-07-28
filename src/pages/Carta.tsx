@@ -33,7 +33,7 @@ const Carta = () => {
 
 			<section className="pt-32 pb-6 bg-background">
 				<div className="max-w-4xl mx-auto px-6 text-center">
-					<p className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4">
+					<p className="text-olive text-xs font-mono-label mb-4">
 						{config.eyebrow}
 					</p>
 					<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-light text-foreground">
@@ -51,7 +51,7 @@ const Carta = () => {
 								<Link
 									key={code}
 									to={to}
-									className={`px-4 py-1.5 text-[10px] tracking-[0.25em] uppercase font-body transition-all duration-300 border ${
+								className={`px-4 py-1.5 text-[10px] font-mono-label transition-all duration-300 border ${
 										isActive
 											? "border-foreground text-foreground"
 											: "border-transparent text-muted-foreground hover:text-foreground"
@@ -73,7 +73,7 @@ const Carta = () => {
 							<button
 								key={tab.id}
 								onClick={() => setActive(tab.id)}
-								className={`px-6 py-2 text-xs tracking-[0.2em] uppercase font-body transition-all duration-300 ${
+							className={`px-6 py-2 text-xs font-mono-label transition-all duration-300 ${
 									active === tab.id
 										? "text-foreground border-b-2 border-foreground"
 										: "text-muted-foreground hover:text-foreground"
@@ -97,11 +97,11 @@ const Carta = () => {
 						</div>
 					</div>
 
-					<p className="text-center mt-4 text-muted-foreground/50 text-xs font-body md:hidden">
+					<p className="text-center mt-4 text-muted-foreground/50 text-[0.65rem] font-mono-label md:hidden">
 						{config.tapHint}
 					</p>
 
-					<p className="text-center mt-8 text-muted-foreground/60 text-xs font-body">
+					<p className="text-center mt-8 text-muted-foreground/60 text-[0.65rem] font-mono-label">
 						{config.terraceNote}
 					</p>
 				</div>

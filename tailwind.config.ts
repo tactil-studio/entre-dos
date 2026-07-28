@@ -17,6 +17,7 @@ export default {
         heading: ['Archivo Black', 'Archivo', 'sans-serif'],
         body: ['DM Sans', 'sans-serif'],
         serif: ['Cormorant Garamond', 'serif'],
+        mono: ['Space Mono', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

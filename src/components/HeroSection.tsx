@@ -97,7 +97,7 @@ const HeroSection = () => {
 					Entre{" "}
 					<span
 						style={{
-							color: isNight ? "hsl(220, 90%, 70%)" : "hsl(60, 84%, 35%)",
+							color: isNight ? "hsl(var(--accent-teal))" : "hsl(60, 84%, 35%)",
 						}}
 						className="transition-colors duration-700"
 					>
@@ -106,7 +106,7 @@ const HeroSection = () => {
 				</h1>
 				<p
 					key={`tag-${mode}`}
-					className="mt-6 text-white/80 text-xs md:text-sm font-body font-semibold tracking-[0.3em] uppercase opacity-0 animate-fade-up animate-delay-200"
+					className="mt-6 text-white/80 text-xs md:text-sm font-mono-label opacity-0 animate-fade-up animate-delay-200"
 				>
 					{isNight
 						? "Cena & Cócteles · Barcelona"
