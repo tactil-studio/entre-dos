@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ModeProvider } from "@/contexts/ModeContext";
+import MarqueeBanner from "./components/MarqueeBanner.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import Index from "./pages/Index.tsx";
 import Carta from "./pages/Carta.tsx";
@@ -20,6 +21,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <MarqueeBanner />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/qr" element={<QRLanguage />} />
