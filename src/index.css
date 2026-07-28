@@ -25,7 +25,8 @@
     --muted-foreground: 0 0% 40%;
 
     --accent-olive: 60 84% 22%;
-    --accent-blue: 236 99% 28%;
+    --accent-blue: 209 54% 22%;
+    --accent-teal: 178 18% 48%;
 
     --accent: 40 10% 93%;
     --accent-foreground: 0 0% 8%;
@@ -67,7 +68,9 @@
     --muted: 225 25% 14%;
     --muted-foreground: 40 12% 65%;
     --accent-olive: 72 42% 56%;
-    --accent-blue: 220 75% 68%;
+    --accent-blue: 209 60% 60%;
+    --accent-teal: 178 22% 62%;
+    --surface-blue: 209 54% 22%;
     --accent: 225 35% 18%;
     --accent-foreground: 40 30% 92%;
     --border: 225 25% 18%;
