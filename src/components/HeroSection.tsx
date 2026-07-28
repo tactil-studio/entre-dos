@@ -106,7 +106,7 @@ const HeroSection = () => {
 				</h1>
 				<p
 					key={`tag-${mode}`}
-					className="mt-6 text-white/80 text-xs md:text-sm font-body font-semibold tracking-[0.3em] uppercase opacity-0 animate-fade-up animate-delay-200"
+					className="mt-6 text-white/80 text-xs md:text-sm font-mono-label opacity-0 animate-fade-up animate-delay-200"
 				>
 					{isNight
 						? "Cena & Cócteles · Barcelona"
