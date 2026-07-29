@@ -6,7 +6,9 @@ import GallerySection from "@/components/GallerySection";
 import HeroSection from "@/components/HeroSection";
 import LocationSection from "@/components/LocationSection";
 import MarqueeBanner from "@/components/MarqueeBanner";
+import MenuDelDiaSection from "@/components/MenuDelDiaSection";
 import MenuPreviewSection from "@/components/MenuPreviewSection";
+
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import SpotifySection from "@/components/SpotifySection";
@@ -33,7 +35,9 @@ const Index = () => {
 			</div>
 			<div className="day-band day-band-2">
 				<MenuPreviewSection />
+				<MenuDelDiaSection />
 			</div>
+
 			<div className="day-band day-band-3 relative">
 				<GallerySection />
 				{/* Monstera blue — bleeds from band-3 into band-4 */}
