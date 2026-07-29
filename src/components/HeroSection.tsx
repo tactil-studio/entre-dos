@@ -95,7 +95,7 @@ const HeroSection = () => {
 				<img
 					src={logo}
 					alt="Entre Dos"
-					className="w-56 md:w-72 lg:w-80 mx-auto opacity-0 animate-fade-up"
+					className="w-36 md:w-44 lg:w-52 mx-auto opacity-0 animate-fade-up"
 					style={{ filter: "brightness(0) invert(1)" }}
 				/>
 				<p
