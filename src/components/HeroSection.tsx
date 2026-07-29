@@ -94,7 +94,10 @@ const HeroSection = () => {
 			<div className="relative z-10 text-center px-6">
 				<img
 					src={logo}
-					alt
+					alt="Entre Dos"
+					className="w-36 md:w-44 lg:w-52 mx-auto opacity-0 animate-fade-up"
+					style={{ filter: "brightness(0) invert(1)" }}
+				/>
 				<p
 					key={`tag-${mode}`}
 					className="mt-6 text-white/80 text-xs md:text-sm font-mono-label opacity-0 animate-fade-up animate-delay-200"
