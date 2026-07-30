@@ -14,11 +14,11 @@ const MarqueeBanner = () => {
 
 	return (
 		<div className="relative z-30 bg-foreground text-background border-b border-foreground/10 overflow-hidden">
-			<div className="flex whitespace-nowrap animate-marquee py-2">
+			<div className="flex whitespace-nowrap animate-marquee py-4">
 				{items.map(({ text, key }) => (
 					<span
 						key={key}
-						className="mx-6 text-[0.7rem] md:text-xs font-mono-label font-bold flex items-center gap-6"
+						className="mx-10 text-sm md:text-base font-mono-label font-bold flex items-center gap-10"
 					>
 						{text}
 						<span className="opacity-40">◆</span>

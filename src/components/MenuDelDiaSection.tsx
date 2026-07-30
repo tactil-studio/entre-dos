@@ -10,24 +10,15 @@ const MenuDelDiaSection = () => {
 	if (mode === "night") return null;
 
 	return (
-		<section id="menu-del-dia" className="py-16 bg-transparent" ref={ref}>
+		<section
+			id="menu-del-dia"
+			className="py-16"
+			style={{ backgroundColor: "#C8C4AC" }}
+			ref={ref}
+		>
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-					<div className={`relative reveal-left ${isVisible ? "visible" : ""}`}>
-						<img
-							src={foodMezze}
-							alt="Menú del día en Entre Dos"
-							loading="lazy"
-							className="w-full aspect-[4/3] object-cover card-organic shape-a"
-						/>
-						<div className="absolute -bottom-5 -right-3 md:right-6 bg-background border border-foreground/10 px-6 py-4 shadow-lg rounded-2xl">
-							<span className="block font-heading text-4xl md:text-5xl text-foreground leading-none">
-								14,90€
-							</span>
-						</div>
-					</div>
-
-					<div className={`reveal-right ${isVisible ? "visible" : ""}`}>
+					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
 						<p className="text-olive text-xs font-mono-label mb-4">
 							Solo entre semana
 						</p>
@@ -49,6 +40,22 @@ const MenuDelDiaSection = () => {
 						>
 							Ver el menú
 						</Link>
+					</div>
+
+					<div
+						className={`relative reveal-right ${isVisible ? "visible" : ""}`}
+					>
+						<img
+							src={foodMezze}
+							alt="Menú del día en Entre Dos"
+							loading="lazy"
+							className="w-full aspect-[4/3] object-cover card-organic shape-a"
+						/>
+						<div className="absolute -bottom-5 -left-3 md:-left-6 bg-background border border-foreground/10 px-6 py-4 shadow-lg rounded-2xl">
+							<span className="block font-heading text-4xl md:text-5xl text-foreground leading-none">
+								14,90€
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

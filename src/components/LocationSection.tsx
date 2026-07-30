@@ -24,7 +24,7 @@ const LocationSection = () => {
 					{/* Left — info */}
 					<div
 						ref={leftRef}
-						className={`bg-gradient-to-br from-background via-background to-background/95 text-foreground border-r border-border/30 p-6 md:p-8 flex flex-col justify-center relative reveal-left overflow-hidden ${leftVisible ? "visible" : ""}`}
+						className={`text-foreground border-r border-border/30 p-6 md:p-8 flex flex-col justify-center relative reveal-left overflow-hidden ${leftVisible ? "visible" : ""} ${mode === "night" ? "bg-[#1A3C58]" : "bg-gradient-to-br from-background via-background to-background/95"}`}
 					>
 						{/* Decorative elements */}
 						<div className="absolute top-20 -right-32 w-64 h-64 bg-night-blue/5 rounded-full blur-3xl"></div>

@@ -27,6 +27,7 @@
     --accent-olive: 60 84% 22%;
     --accent-blue: 209 54% 22%;
     --accent-teal: 178 18% 48%;
+    --surface-sage: #AAAE97;
 
     --accent: 68 12% 84%;
     --accent-foreground: 0 0% 8%;
@@ -68,9 +69,10 @@
     --secondary-foreground: 40 30% 92%;
     --muted: 209 32% 16%;
     --muted-foreground: 40 12% 65%;
-    --accent-olive: 72 42% 56%;
-    --accent-blue: 209 60% 60%;
-    --accent-teal: 178 22% 62%;
+    --accent-olive: 50 18% 51%;     /* #99926D — warm tan */
+    --accent-blue: 178 31% 65%;     /* #89C1BF — light teal */
+    --accent-teal: 177 18% 48%;     /* #648F8D — deep teal */
+    --surface-sage: #1A3C58;        /* navy surfaces in night */
     --surface-blue: 209 54% 22%;
     --accent: 225 35% 18%;
     --accent-foreground: 40 30% 92%;
@@ -102,8 +104,7 @@
   :root:not(.dark) .day-band-5 { background: hsl(68 11% 83%); }
   :root:not(.dark) .day-band-6 { background: hsl(70 13% 78%); }
 
-  :root:not(.dark) #reviews,
-  :root:not(.dark) #spotify {
+  :root:not(.dark) #reviews {
     background: transparent;
   }
 
@@ -115,8 +116,7 @@
   .dark .day-band-5,
   .dark .day-band-6 { background: hsl(209 45% 7%); }
 
-  .dark #reviews,
-  .dark #spotify {
+  .dark #reviews {
     background: transparent;
   }
 
@@ -199,7 +199,7 @@
   to { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 25s linear infinite;
   will-change: transform;
 }
 .animate-marquee:hover { animation-play-state: paused; }

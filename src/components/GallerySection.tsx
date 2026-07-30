@@ -77,15 +77,16 @@ const GallerySection = () => {
 	});
 
 	return (
-		<section id="gallery" className="py-16 md:py-16 bg-transparent">
+		<section
+			id="gallery"
+			className="py-16 md:py-16 bg-transparent relative z-[30]"
+		>
 			<div className="mx-auto max-w-[92rem] px-6">
 				<div
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
-					<p className="text-xs font-mono-label mb-4 text-olive">
-						Galería
-					</p>
+					<p className="text-xs font-mono-label mb-4 text-olive">Galería</p>
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground">
 						{mode === "night" ? (
 							<>
@@ -101,21 +102,43 @@ const GallerySection = () => {
 
 				<div
 					ref={gridRef}
-					className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] xl:auto-rows-[260px] 2xl:auto-rows-[300px] gap-3 md:gap-4"
+					className="flex flex-wrap justify-center gap-6 md:gap-8"
 				>
-					{images.map((img, i) => (
-						<div
-							key={`${mode}-${i}`}
-							className={`overflow-hidden group reveal-scale reveal-delay-${Math.min((i % 4) + 1, 4)} ${img.className ?? ""} ${gridVisible ? "visible" : ""}`}
-						>
-							<img
-								src={img.src}
-								alt={img.alt}
-								className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-								loading="lazy"
-							/>
-						</div>
-					))}
+					{images.map((img, i) => {
+						const rotations = [
+							-3, 1.5, -1, 2.5, -2, 1, -1.5, 2, -0.5, 3, -2.5, 0.5,
+						];
+						const rot = rotations[i % rotations.length];
+						return (
+							<div
+								key={`${mode}-${i}`}
+								className={`reveal-scale reveal-delay-${Math.min((i % 4) + 1, 4)} ${gridVisible ? "visible" : ""} group`}
+								style={{
+									transform: `rotate(${rot}deg)`,
+									transition: "transform 0.4s ease",
+								}}
+								onMouseEnter={(e) =>
+									(e.currentTarget.style.transform = "rotate(0deg) scale(1.04)")
+								}
+								onMouseLeave={(e) =>
+									(e.currentTarget.style.transform = `rotate(${rot}deg)`)
+								}
+							>
+								{/* Polaroid frame */}
+								<div className="bg-white p-2 pb-8 shadow-[4px_6px_20px_rgba(0,0,0,0.18)] w-40 md:w-48">
+									<img
+										src={img.src}
+										alt={img.alt}
+										loading="lazy"
+										className="w-full aspect-square object-cover"
+									/>
+									<p className="mt-3 text-center text-base font-bold text-gray-800 font-serif-italic truncate px-1">
+										{img.alt}
+									</p>
+								</div>
+							</div>
+						);
+					})}
 				</div>
 
 				<div

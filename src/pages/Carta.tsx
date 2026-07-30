@@ -27,35 +27,40 @@ const Carta = () => {
 
 	const activeTab = config.tabs.find((t) => t.id === active) ?? config.tabs[0];
 
+	const BG = "#1A3C58";
+	const TEXT = "#E8DCC8";
+	const MUTED = "rgba(232,220,200,0.45)";
+
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen" style={{ backgroundColor: BG }}>
 			<Navbar />
 
-			<section className="pt-32 pb-6 bg-background">
+			<section className="pt-32 pb-6" style={{ backgroundColor: BG }}>
 				<div className="max-w-4xl mx-auto px-6 text-center">
-					<p className="text-olive text-xs font-mono-label mb-4">
+					<p className="text-xs font-mono-label mb-4" style={{ color: MUTED }}>
 						{config.eyebrow}
 					</p>
-					<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading text-foreground">
-						{config.title}{" "}
-						<span className="italic">{config.titleItalic}</span>
+					<h1
+						className="text-5xl md:text-6xl lg:text-7xl font-heading"
+						style={{ color: TEXT }}
+					>
+						{config.title} <span className="italic">{config.titleItalic}</span>
 					</h1>
 
 					{/* Language switcher */}
 					<div className="flex flex-wrap justify-center gap-1 mt-8">
 						{langOrder.map((code) => {
 							const isActive = code === lang;
-							const to =
-								code === "es" ? "/carta" : `/carta/${code}`;
+							const to = code === "es" ? "/carta" : `/carta/${code}`;
 							return (
 								<Link
 									key={code}
 									to={to}
-								className={`px-4 py-1.5 text-[10px] font-mono-label transition-all duration-300 border ${
-										isActive
-											? "border-foreground text-foreground"
-											: "border-transparent text-muted-foreground hover:text-foreground"
-									}`}
+									className="px-4 py-1.5 text-[10px] font-mono-label transition-all duration-300 border"
+									style={{
+										borderColor: isActive ? TEXT : "transparent",
+										color: isActive ? TEXT : MUTED,
+									}}
 								>
 									{languages[code].nativeName}
 								</Link>
@@ -65,19 +70,25 @@ const Carta = () => {
 				</div>
 			</section>
 
-			<section className="pb-24 bg-background">
+			<section className="pb-24" style={{ backgroundColor: BG }}>
 				<div className="max-w-4xl mx-auto px-6">
 					{/* Tabs */}
-					<div className="flex flex-wrap justify-center gap-2 mb-12 border-b border-border pb-4">
+					<div
+						className="flex flex-wrap justify-center gap-2 mb-12 pb-4"
+						style={{ borderBottom: `1px solid rgba(232,220,200,0.15)` }}
+					>
 						{config.tabs.map((tab) => (
 							<button
 								key={tab.id}
 								onClick={() => setActive(tab.id)}
-							className={`px-6 py-2 text-xs font-mono-label transition-all duration-300 ${
-									active === tab.id
-										? "text-foreground border-b-2 border-foreground"
-										: "text-muted-foreground hover:text-foreground"
-								}`}
+								className="px-6 py-2 text-xs font-mono-label transition-all duration-300"
+								style={{
+									color: active === tab.id ? TEXT : MUTED,
+									borderBottom:
+										active === tab.id
+											? `2px solid ${TEXT}`
+											: "2px solid transparent",
+								}}
 							>
 								{tab.label}
 							</button>
@@ -97,11 +108,17 @@ const Carta = () => {
 						</div>
 					</div>
 
-					<p className="text-center mt-4 text-muted-foreground/50 text-[0.65rem] font-mono-label md:hidden">
+					<p
+						className="text-center mt-4 text-[0.65rem] font-mono-label md:hidden"
+						style={{ color: MUTED }}
+					>
 						{config.tapHint}
 					</p>
 
-					<p className="text-center mt-8 text-muted-foreground/60 text-[0.65rem] font-mono-label">
+					<p
+						className="text-center mt-8 text-[0.65rem] font-mono-label"
+						style={{ color: MUTED }}
+					>
 						{config.terraceNote}
 					</p>
 				</div>

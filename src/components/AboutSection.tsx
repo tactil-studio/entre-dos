@@ -21,7 +21,7 @@ const content = {
 		titleStart: "Donde la cocina",
 		titleItalic: "se transforma",
 		titleEnd: "en cócteles",
-		p1: "Al caer el sol, Entre Dos cambia de piel. Un bistrot íntimo para cenas de autor, vinos seleccionados y cócteles de barra.",
+		p1: "Al caer el sol, Entre Dos cambia de piel. Una barra íntima para cenas de autor, vinos seleccionados y cócteles de temporada.",
 		p2: "Ambiente cálido, luz tenue y una carta pensada para compartir entre dos.",
 		image: wine,
 		alt: "Cena y vinos por la noche",
@@ -42,7 +42,7 @@ const AboutSection = () => {
 					aria-hidden="true"
 					alt=""
 					loading="lazy"
-					className="pointer-events-none select-none absolute -right-20 -top-16 w-64 md:w-80 opacity-20 dark:opacity-15 transition-opacity duration-700 rotate-12 -scale-x-100"
+					className="pointer-events-none select-none absolute -right-32 top-0 w-48 md:w-60 opacity-10 dark:opacity-10 transition-opacity duration-700 rotate-12 -scale-x-100"
 				/>
 			</div>
 
@@ -56,17 +56,17 @@ const AboutSection = () => {
 							{c.titleStart}
 							<br />
 							<span
-								className={`italic ${mode === "night" ? "text-night-blue" : "text-olive"}`}
+								className={`font-serif-italic ${mode === "night" ? "text-night-blue" : "text-olive"}`}
 							>
 								{c.titleItalic}
 							</span>
 							<br />
 							{c.titleEnd}
 						</h2>
-						<p className="mt-8 text-muted-foreground font-body leading-relaxed text-base max-w-md">
+						<p className="mt-8 text-foreground/80 font-body leading-relaxed text-base max-w-md">
 							{c.p1}
 						</p>
-						<p className="mt-4 text-muted-foreground font-body leading-relaxed text-base max-w-md">
+						<p className="mt-4 text-foreground/80 font-body leading-relaxed text-base max-w-md">
 							{c.p2}
 						</p>
 						<p className="mt-8 font-serif-italic text-3xl md:text-4xl text-foreground">
@@ -74,15 +74,23 @@ const AboutSection = () => {
 						</p>
 					</div>
 					<div
-						className={`relative reveal-right ${isVisible ? "visible" : ""}`}
+						className={`relative reveal-right ${isVisible ? "visible" : ""} flex justify-center`}
 					>
-						<img
-							key={mode}
-							src={c.image}
-							alt={c.alt}
-							loading="lazy"
-							className="w-full aspect-[4/5] object-cover animate-fade-in card-organic shape-b"
-						/>
+						{/* Olive colour block — peeks out from behind, shifted */}
+						<div className="absolute top-6 right-0 w-[85%] h-full bg-olive opacity-20 z-0" />
+
+						{/* Photo — tall portrait, shifted left to reveal the block */}
+						<div className="relative z-10 w-[85%] overflow-hidden shadow-2xl -translate-x-6 -translate-y-6 group">
+							<img
+								key={mode}
+								src={c.image}
+								alt={c.alt}
+								loading="lazy"
+								className="w-full aspect-[3/4] object-cover animate-fade-in group-hover:scale-105 transition-transform duration-700"
+							/>
+							{/* Thin inset frame */}
+							<div className="absolute inset-4 border border-white/20 pointer-events-none" />
+						</div>
 					</div>
 				</div>
 			</div>

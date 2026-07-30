@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { Instagram, Menu, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
@@ -106,9 +106,10 @@ const Navbar = () => {
 						href="https://www.instagram.com/entredos.restaurante/"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="Instagram"
 						className={navLinkClass}
 					>
-						Instagram
+						<Instagram size={18} />
 					</a>
 					<a
 						href="https://www.tiktok.com/@entredos.restaurante"

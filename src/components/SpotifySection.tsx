@@ -6,16 +6,14 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const playlists = {
 	day: {
 		id: "0CGVCIQ0OCc9ntNy5exaZL",
-		shareUrl:
-			"https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
+		shareUrl: "https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
 		eyebrow: "Playlist de día",
 		subtitle:
 			"Café, brunch y luz natural. La banda sonora de nuestras mañanas.",
 	},
 	night: {
 		id: "0CGVCIQ0OCc9ntNy5exaZL",
-		shareUrl:
-			"https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
+		shareUrl: "https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
 		eyebrow: "Playlist de noche",
 		subtitle: "Vinos, cócteles y conversaciones largas. La noche suena así.",
 	},
@@ -30,7 +28,7 @@ const SpotifySection = () => {
 		<section
 			id="spotify"
 			className="py-16 md:py-16 relative overflow-hidden"
-			style={{ background: "transparent" }}
+			style={{ backgroundColor: "var(--surface-sage)" }}
 		>
 			{/* Floral decoration */}
 			<img
@@ -50,9 +48,7 @@ const SpotifySection = () => {
 			<div ref={ref} className="max-w-4xl mx-auto px-6 text-center">
 				<div className={`reveal ${isVisible ? "visible" : ""}`}>
 					<Music className="w-6 h-6 mx-auto mb-6 text-olive" />
-					<p className="text-xs font-mono-label mb-4 text-olive">
-						{p.eyebrow}
-					</p>
+					<p className="text-xs font-mono-label mb-4 text-olive">{p.eyebrow}</p>
 					<h2 className="text-4xl md:text-5xl font-heading text-foreground mb-4">
 						La banda sonora de{" "}
 						<span className="italic text-olive">Entre Dos</span>

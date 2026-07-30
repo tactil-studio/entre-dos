@@ -1,5 +1,7 @@
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useState } from "react";
+import busyBrunch from "@/assets/busy brunch.jpg";
+import busyCoctails from "@/assets/busy-coctails.jpg";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -59,23 +61,31 @@ const ReviewsSection = () => {
 	};
 
 	return (
-		<section
-			id="reviews"
-			className="py-16 md:py-16 bg-card relative overflow-hidden"
-		>
+		<section id="reviews" className="py-16 md:py-16 relative overflow-hidden">
+			{/* Background photo */}
+			<img
+				src={mode === "night" ? busyCoctails : busyBrunch}
+				aria-hidden="true"
+				alt=""
+				className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+			/>
+			{/* Dark overlay — heavier in night for depth */}
+			<div
+				className={`absolute inset-0 pointer-events-none ${mode === "night" ? "bg-black/55" : "bg-foreground/50"}`}
+			/>
+
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
-					<p className="text-olive text-xs font-mono-label mb-4">
-						Opiniones
-					</p>
+					<p className="text-olive text-xs font-mono-label mb-4">Opiniones</p>
 					<h2
-						className="text-4xl md:text-5xl lg:text-6xl font-serif-italic text-foreground"
+						className="text-4xl md:text-5xl lg:text-6xl font-serif-italic text-white"
 						style={{ fontWeight: 300 }}
 					>
-						Lo que dicen de <span className="text-night-blue">nosotros</span>
+						Lo que dicen de{" "}
+						<span className="italic text-white/90">nosotros</span>
 					</h2>
 					<div className="flex items-center justify-center gap-2 mt-6">
 						<div className="flex">
@@ -83,12 +93,12 @@ const ReviewsSection = () => {
 								<Star
 									key={i}
 									size={18}
-									className="fill-yellow-500 text-yellow-500"
+									className="fill-yellow-400 text-yellow-400"
 								/>
 							))}
-							<Star size={18} className="fill-yellow-500/50 text-yellow-500" />
+							<Star size={18} className="fill-yellow-400/50 text-yellow-400" />
 						</div>
-						<span className="text-muted-foreground font-mono-label text-xs ml-2">
+						<span className="text-white/60 font-mono-label text-xs ml-2">
 							4.6 en Google Maps
 						</span>
 					</div>
@@ -182,21 +192,21 @@ const ReviewsSection = () => {
 					{reviews.map((review, i) => (
 						<div
 							key={i}
-							className={`bg-background p-8 relative group hover:shadow-lg transition-all duration-500 reveal reveal-delay-${Math.min(i + 1, 4)} ${gridVisible ? "visible" : ""}`}
+							className={`bg-black/40 backdrop-blur-md border border-white/10 p-8 relative group hover:bg-black/55 hover:border-white/20 transition-all duration-500 reveal reveal-delay-${Math.min(i + 1, 4)} ${gridVisible ? "visible" : ""}`}
 						>
-							<Quote size={24} className="text-olive/20 mb-4" />
-							<p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">
+							<Quote size={24} className="text-olive mb-4 opacity-60" />
+							<p className="text-white/80 font-body text-sm leading-relaxed mb-6">
 								"{review.text}"
 							</p>
 							<div className="flex items-center justify-between">
 								<div>
 									<p
-										className="font-serif-italic text-xl text-foreground"
+										className="font-serif-italic text-xl text-white"
 										style={{ fontWeight: 400 }}
 									>
 										{review.name}
 									</p>
-									<p className="text-muted-foreground/60 text-xs font-body">
+									<p className="text-white/40 text-xs font-body">
 										{review.date}
 									</p>
 								</div>
@@ -205,7 +215,7 @@ const ReviewsSection = () => {
 										<Star
 											key={j}
 											size={12}
-											className="fill-yellow-500 text-yellow-500"
+											className="fill-yellow-400 text-yellow-400"
 										/>
 									))}
 								</div>
@@ -221,7 +231,7 @@ const ReviewsSection = () => {
 						href="https://maps.app.goo.gl/by5H899MJv1qyLTy6"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
+						className="inline-block border border-white/50 text-white px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-white hover:text-foreground transition-all duration-500"
 					>
 						Ver todas en Google Maps
 					</a>
