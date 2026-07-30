@@ -11,6 +11,7 @@ const Navbar = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const isHome = location.pathname === "/";
+	const showToggle = location.pathname === "/";
 
 	useEffect(() => {
 		if (!isHome) {
@@ -101,7 +102,7 @@ const Navbar = () => {
 				</ul>
 
 				<div className="hidden md:flex items-center justify-end gap-6">
-					<DayNightToggle size="compact" />
+					{showToggle && <DayNightToggle size="compact" />}
 					<a
 						href="https://www.instagram.com/entredos.restaurante/"
 						target="_blank"
@@ -188,9 +189,11 @@ const Navbar = () => {
 								TikTok
 							</a>
 						</li>
-						<li className="pt-2">
-							<DayNightToggle size="compact" />
-						</li>
+						{showToggle && (
+							<li className="pt-2">
+								<DayNightToggle size="compact" />
+							</li>
+						)}
 					</ul>
 				</div>
 			)}

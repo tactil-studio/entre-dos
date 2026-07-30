@@ -1,13 +1,25 @@
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
 import TikTokIcon from "@/components/icons/TikTokIcon";
+import { useMode } from "@/contexts/ModeContext";
 
 const FooterSection = () => {
+	const { mode } = useMode();
+	const { pathname } = useLocation();
+	const isCarta = pathname.startsWith("/carta");
+
+	const bgColor = isCarta
+		? "#1A3C58"
+		: mode === "night"
+			? "hsl(0 0% 6%)"
+			: "#6C7856";
+
 	return (
 		<footer
 			id="contact"
-			className="py-16 bg-foreground text-background relative overflow-hidden"
+			className="py-16 text-background relative overflow-hidden"
+			style={{ backgroundColor: bgColor }}
 		>
 			{/* Decorative elements */}
 			<div className="absolute top-0 left-1/4 w-64 h-64 bg-olive/5 rounded-full blur-3xl"></div>
@@ -32,7 +44,7 @@ const FooterSection = () => {
 
 					{/* Quick Links */}
 					<div className="md:col-span-1 text-center md:text-left">
-						<h3 className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
+						<h3 className="text-background text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
 							Navegación
 						</h3>
 						<ul className="space-y-2">
@@ -73,12 +85,15 @@ const FooterSection = () => {
 
 					{/* Contact Info */}
 					<div className="md:col-span-1 text-center md:text-left">
-						<h3 className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
+						<h3 className="text-background text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
 							Contacto
 						</h3>
 						<ul className="space-y-3">
 							<li className="flex items-start gap-2 justify-center md:justify-start">
-								<MapPin size={16} className="text-olive mt-0.5 shrink-0" />
+								<MapPin
+									size={16}
+									className="text-background/70 mt-0.5 shrink-0"
+								/>
 								<span className="text-background/60 text-sm font-body">
 									Carrer del Carme, 40
 									<br />
@@ -86,7 +101,7 @@ const FooterSection = () => {
 								</span>
 							</li>
 							<li className="flex items-center gap-2 justify-center md:justify-start">
-								<Mail size={16} className="text-olive shrink-0" />
+								<Mail size={16} className="text-background/70 shrink-0" />
 								<a
 									href="mailto:info@restaurante-entredos.com"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
@@ -95,7 +110,7 @@ const FooterSection = () => {
 								</a>
 							</li>
 							<li className="flex items-center gap-2 justify-center md:justify-start">
-								<Phone size={16} className="text-olive shrink-0" />
+								<Phone size={16} className="text-background/70 shrink-0" />
 								<a
 									href="tel:+34937308487"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
@@ -108,7 +123,7 @@ const FooterSection = () => {
 
 					{/* Hours & Social */}
 					<div className="md:col-span-1 text-center md:text-left">
-						<h3 className="text-olive text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
+						<h3 className="text-background text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
 							Horario
 						</h3>
 						<p className="text-background/60 text-sm font-body mb-1">

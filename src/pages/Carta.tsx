@@ -4,6 +4,7 @@ import { Link, useParams, useSearchParams } from "react-router-dom";
 import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { useMode } from "@/contexts/ModeContext";
 import { langOrder, languages, resolveLang } from "@/lib/menuData";
 
 const Carta = () => {
@@ -11,10 +12,25 @@ const Carta = () => {
 	const [searchParams] = useSearchParams();
 	const lang = resolveLang(langParam);
 	const config = languages[lang];
+	const { mode } = useMode();
 
 	const initialTab = searchParams.get("tab") || config.tabs[0].id;
 	const [active, setActive] = useState(initialTab);
 	const [zoomed, setZoomed] = useState(false);
+
+	// Force dark class on <html> so navbar, footer and all theme tokens use night palette.
+	// On cleanup, restore the class based on the current mode so ModeContext stays in sync.
+	useEffect(() => {
+		const html = document.documentElement;
+		html.classList.add("dark");
+		return () => {
+			if (mode === "night") {
+				html.classList.add("dark");
+			} else {
+				html.classList.remove("dark");
+			}
+		};
+	}, [mode]);
 
 	useEffect(() => {
 		const tab = searchParams.get("tab");
@@ -27,23 +43,41 @@ const Carta = () => {
 
 	const activeTab = config.tabs.find((t) => t.id === active) ?? config.tabs[0];
 
-	const BG = "#1A3C58";
-	const TEXT = "#E8DCC8";
-	const MUTED = "rgba(232,220,200,0.45)";
-
 	return (
-		<div className="min-h-screen" style={{ backgroundColor: BG }}>
+		<div
+			className="min-h-screen bg-background relative overflow-hidden"
+			style={{ "--background": "209 54% 22%" } as React.CSSProperties}
+		>
+			{/* Floral background — mobile */}
+			<img
+				src="/bg-floral.svg"
+				alt=""
+				aria-hidden="true"
+				className="lg:hidden fixed inset-0 w-full h-full pointer-events-none select-none"
+				style={{ objectFit: "cover" }}
+			/>
+			{/* Floral background — desktop rotated */}
+			<img
+				src="/bg-floral.svg"
+				alt=""
+				aria-hidden="true"
+				className="hidden lg:block fixed pointer-events-none select-none"
+				style={{
+					top: "50%",
+					left: "50%",
+					width: "calc(100vh + 20px)",
+					height: "calc(100vw + 20px)",
+					transform: "translate(-50%, -50%) rotate(270deg)",
+				}}
+			/>
 			<Navbar />
 
-			<section className="pt-32 pb-6" style={{ backgroundColor: BG }}>
+			<section className="pt-32 pb-6 bg-transparent relative z-10">
 				<div className="max-w-4xl mx-auto px-6 text-center">
-					<p className="text-xs font-mono-label mb-4" style={{ color: MUTED }}>
+					<p className="text-xs font-mono-label mb-4 text-muted-foreground">
 						{config.eyebrow}
 					</p>
-					<h1
-						className="text-5xl md:text-6xl lg:text-7xl font-heading"
-						style={{ color: TEXT }}
-					>
+					<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading text-foreground">
 						{config.title} <span className="italic">{config.titleItalic}</span>
 					</h1>
 
@@ -56,11 +90,11 @@ const Carta = () => {
 								<Link
 									key={code}
 									to={to}
-									className="px-4 py-1.5 text-[10px] font-mono-label transition-all duration-300 border"
-									style={{
-										borderColor: isActive ? TEXT : "transparent",
-										color: isActive ? TEXT : MUTED,
-									}}
+									className={`px-4 py-1.5 text-[10px] font-mono-label transition-all duration-300 border ${
+										isActive
+											? "border-foreground text-foreground"
+											: "border-transparent text-muted-foreground hover:text-foreground"
+									}`}
 								>
 									{languages[code].nativeName}
 								</Link>
@@ -70,25 +104,19 @@ const Carta = () => {
 				</div>
 			</section>
 
-			<section className="pb-24" style={{ backgroundColor: BG }}>
+			<section className="pb-24 bg-transparent relative z-10">
 				<div className="max-w-4xl mx-auto px-6">
 					{/* Tabs */}
-					<div
-						className="flex flex-wrap justify-center gap-2 mb-12 pb-4"
-						style={{ borderBottom: `1px solid rgba(232,220,200,0.15)` }}
-					>
+					<div className="flex flex-wrap justify-center gap-2 mb-12 pb-4 border-b border-border">
 						{config.tabs.map((tab) => (
 							<button
 								key={tab.id}
 								onClick={() => setActive(tab.id)}
-								className="px-6 py-2 text-xs font-mono-label transition-all duration-300"
-								style={{
-									color: active === tab.id ? TEXT : MUTED,
-									borderBottom:
-										active === tab.id
-											? `2px solid ${TEXT}`
-											: "2px solid transparent",
-								}}
+								className={`px-6 py-2 text-xs font-mono-label transition-all duration-300 ${
+									active === tab.id
+										? "text-foreground border-b-2 border-foreground"
+										: "text-muted-foreground hover:text-foreground"
+								}`}
 							>
 								{tab.label}
 							</button>
@@ -108,17 +136,11 @@ const Carta = () => {
 						</div>
 					</div>
 
-					<p
-						className="text-center mt-4 text-[0.65rem] font-mono-label md:hidden"
-						style={{ color: MUTED }}
-					>
+					<p className="text-center mt-4 text-[0.65rem] font-mono-label md:hidden text-muted-foreground">
 						{config.tapHint}
 					</p>
 
-					<p
-						className="text-center mt-8 text-[0.65rem] font-mono-label"
-						style={{ color: MUTED }}
-					>
+					<p className="text-center mt-8 text-[0.65rem] font-mono-label text-muted-foreground">
 						{config.terraceNote}
 					</p>
 				</div>

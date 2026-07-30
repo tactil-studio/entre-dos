@@ -12,47 +12,84 @@ const MenuDelDiaSection = () => {
 	return (
 		<section
 			id="menu-del-dia"
-			className="py-16"
+			className="py-20 relative overflow-hidden"
 			style={{ backgroundColor: "#C8C4AC" }}
 			ref={ref}
 		>
-			<div className="max-w-7xl mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+			{/* Subtle background texture blobs */}
+			<div className="absolute top-0 right-0 w-96 h-96 bg-olive/10 rounded-full blur-3xl pointer-events-none" />
+			<div className="absolute bottom-0 left-0 w-64 h-64 bg-night-blue/8 rounded-full blur-3xl pointer-events-none" />
+
+			<div className="max-w-7xl mx-auto px-6 relative">
+				<div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+					{/* Left — text */}
 					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
-						<p className="text-olive text-xs font-mono-label mb-4">
-							Solo entre semana
-						</p>
+						{/* Eyebrow with flanking lines */}
+						<div className="flex items-center gap-3 mb-6">
+							<div className="h-px w-8 bg-olive/50" />
+							<p className="text-olive text-[0.65rem] font-mono-label tracking-[0.25em] uppercase">
+								Solo entre semana
+							</p>
+						</div>
+
 						<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground leading-tight">
 							Menú <span className="italic text-night-blue">del día</span>
 						</h2>
-						<p className="mt-6 text-muted-foreground font-body leading-relaxed text-base max-w-md">
+
+						<p className="mt-5 text-foreground/65 font-body leading-relaxed text-base max-w-md">
 							De lunes a viernes, de 12:00 a 16:00. Primero, segundo, postre y
 							bebida — cocina de mercado que cambia cada día.
 						</p>
-						<div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-xs font-mono-label text-foreground/70">
-							<span>Lun – Vie</span>
-							<span>12:00 – 16:00</span>
-							<span>14,90€</span>
+
+						{/* Info row */}
+						<div className="mt-8 border-t border-foreground/15 pt-6 flex flex-wrap items-center gap-6">
+							<div>
+								<p className="text-[0.6rem] font-mono-label text-foreground/40 mb-1 uppercase tracking-widest">
+									Días
+								</p>
+								<p className="text-sm font-mono-label text-foreground/80">
+									Lun – Vie
+								</p>
+							</div>
+							<div className="w-px h-8 bg-foreground/15" />
+							<div>
+								<p className="text-[0.6rem] font-mono-label text-foreground/40 mb-1 uppercase tracking-widest">
+									Horario
+								</p>
+								<p className="text-sm font-mono-label text-foreground/80">
+									12:00 – 16:00
+								</p>
+							</div>
 						</div>
+
 						<Link
 							to="/carta?tab=menu-dia"
-							className="mt-10 inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
+							className="mt-10 inline-flex items-center gap-3 bg-foreground text-background px-10 py-3.5 text-xs tracking-[0.25em] uppercase font-body hover:bg-olive transition-all duration-500"
 						>
 							Ver el menú
+							<span className="opacity-60">→</span>
 						</Link>
 					</div>
 
+					{/* Right — image */}
 					<div
 						className={`relative reveal-right ${isVisible ? "visible" : ""}`}
 					>
+						{/* Decorative frame offset */}
+						<div className="absolute -top-4 -right-4 w-full h-full border-2 border-olive/20 rounded-[3rem] pointer-events-none" />
 						<img
 							src={foodMezze}
 							alt="Menú del día en Entre Dos"
 							loading="lazy"
-							className="w-full aspect-[4/3] object-cover card-organic shape-a"
+							className="w-full aspect-[4/3] object-cover relative z-10"
+							style={{ borderRadius: "2.5rem 0.75rem 2.5rem 0.75rem" }}
 						/>
-						<div className="absolute -bottom-5 -left-3 md:-left-6 bg-background border border-foreground/10 px-6 py-4 shadow-lg rounded-2xl">
-							<span className="block font-heading text-4xl md:text-5xl text-foreground leading-none">
+						{/* Price badge */}
+						<div className="absolute -bottom-4 -left-4 z-20 bg-foreground text-background px-6 py-4 shadow-xl rounded-2xl">
+							<p className="text-[0.55rem] font-mono-label opacity-50 mb-0.5 uppercase tracking-widest">
+								Precio
+							</p>
+							<span className="block font-heading text-3xl md:text-4xl leading-none">
 								14,90€
 							</span>
 						</div>

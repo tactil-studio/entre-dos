@@ -125,14 +125,30 @@ const GallerySection = () => {
 								}
 							>
 								{/* Polaroid frame */}
-								<div className="bg-white p-2 pb-8 shadow-[4px_6px_20px_rgba(0,0,0,0.18)] w-40 md:w-48">
+								<div
+									className="p-2 pb-8 w-40 md:w-48"
+									style={{
+										backgroundColor: mode === "night" ? "#1a2a38" : "#ffffff",
+										boxShadow:
+											mode === "night"
+												? "4px 6px 20px rgba(0,0,0,0.45)"
+												: "4px 6px 20px rgba(0,0,0,0.18)",
+									}}
+								>
 									<img
 										src={img.src}
 										alt={img.alt}
 										loading="lazy"
 										className="w-full aspect-square object-cover"
 									/>
-									<p className="mt-3 text-center text-base font-bold text-gray-800 font-serif-italic truncate px-1">
+									<p
+										className="mt-3 text-center text-lg font-serif-italic truncate px-1"
+										style={{
+											color: mode === "night" ? "#E8DCC8" : "#111827",
+											fontWeight: 700,
+											letterSpacing: "0.01em",
+										}}
+									>
 										{img.alt}
 									</p>
 								</div>

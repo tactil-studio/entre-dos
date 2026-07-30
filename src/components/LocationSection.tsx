@@ -20,7 +20,7 @@ const LocationSection = () => {
 			className="py-8 md:py-12 bg-transparent relative overflow-hidden"
 		>
 			<div className="max-w-7xl mx-auto px-6 relative">
-				<div className="grid md:grid-cols-2 gap-0 overflow-hidden border border-border shadow-lg">
+				<div className="grid md:grid-cols-2 gap-0 overflow-hidden border border-border shadow-lg rounded-2xl">
 					{/* Left — info */}
 					<div
 						ref={leftRef}
