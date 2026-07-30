@@ -18,9 +18,9 @@ const MenuDelDiaSection = () => {
 							src={foodMezze}
 							alt="Menú del día en Entre Dos"
 							loading="lazy"
-							className="w-full aspect-[4/3] object-cover"
+							className="w-full aspect-[4/3] object-cover card-organic rounded-[6rem_1.75rem_6rem_1.75rem]"
 						/>
-						<div className="absolute -bottom-5 -right-3 md:right-6 bg-background border border-foreground/10 px-6 py-4 shadow-lg">
+						<div className="absolute -bottom-5 -right-3 md:right-6 bg-background border border-foreground/10 px-6 py-4 shadow-lg rounded-2xl">
 							<span className="block font-heading text-4xl md:text-5xl text-foreground leading-none">
 								14,90€
 							</span>

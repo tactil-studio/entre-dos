@@ -2,6 +2,7 @@ const MESSAGES = [
 	"Sala privada disponible en el piso inferior",
 	"Private room available downstairs",
 	"Reservas para grupos · Groups welcome",
+	"Ven tal como eres",
 	"Entre 2 · Barcelona",
 ];
 
@@ -17,7 +18,7 @@ const MarqueeBanner = () => {
 				{items.map(({ text, key }) => (
 					<span
 						key={key}
-						className="mx-6 text-[0.65rem] font-mono-label flex items-center gap-6"
+						className="mx-6 text-[0.7rem] md:text-xs font-mono-label font-bold flex items-center gap-6"
 					>
 						{text}
 						<span className="opacity-40">◆</span>

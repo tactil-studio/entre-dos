@@ -5,17 +5,17 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const playlists = {
 	day: {
-		id: "61T3a2uuAz7f6AAjaEJrLd",
+		id: "0CGVCIQ0OCc9ntNy5exaZL",
 		shareUrl:
-			"https://open.spotify.com/playlist/61T3a2uuAz7f6AAjaEJrLd?si=mAXF9oc5QnyHH7cDhh3JLg",
+			"https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
 		eyebrow: "Playlist de día",
 		subtitle:
 			"Café, brunch y luz natural. La banda sonora de nuestras mañanas.",
 	},
 	night: {
-		id: "0ekbRnS5z02YDU4lETdj4h",
+		id: "0CGVCIQ0OCc9ntNy5exaZL",
 		shareUrl:
-			"https://open.spotify.com/playlist/0ekbRnS5z02YDU4lETdj4h?si=yOa_hrtZRKmZm9bwomPSCw",
+			"https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
 		eyebrow: "Playlist de noche",
 		subtitle: "Vinos, cócteles y conversaciones largas. La noche suena así.",
 	},
