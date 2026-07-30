@@ -89,7 +89,7 @@ const ReviewsSection = () => {
 							<Star size={18} className="fill-yellow-500/50 text-yellow-500" />
 						</div>
 						<span className="text-muted-foreground font-mono-label text-xs ml-2">
-							4.5 en Google Maps
+							4.6 en Google Maps
 						</span>
 					</div>
 				</div>

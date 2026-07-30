@@ -1,6 +1,7 @@
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
+import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const FooterSection = () => {
 	return (
@@ -130,6 +131,15 @@ const FooterSection = () => {
 							className="inline-flex items-center gap-2 text-background/50 hover:text-olive transition-colors font-body text-sm mt-4"
 						>
 							<Instagram size={20} />
+							<span>@entredos.restaurante</span>
+						</a>
+						<a
+							href="https://www.tiktok.com/@entredos.restaurante"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-2 text-background/50 hover:text-olive transition-colors font-body text-sm mt-2"
+						>
+							<TikTokIcon size={20} />
 							<span>@entredos.restaurante</span>
 						</a>
 					</div>

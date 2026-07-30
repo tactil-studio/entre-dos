@@ -70,7 +70,7 @@ const MenuPreviewSection = () => {
 					<p className="text-olive text-xs font-mono-label mb-4">
 						{mode === "night" ? "Carta de noche" : "Nuestra carta"}
 					</p>
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
+					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground">
 						{mode === "night" ? (
 							<>
 								Sabores de <span className="italic text-olive">noche</span>
@@ -89,12 +89,12 @@ const MenuPreviewSection = () => {
 					</p>
 				</div>
 
-				<div ref={gridRef} className="grid md:grid-cols-3 gap-4">
+				<div ref={gridRef} className="grid md:grid-cols-3 gap-6">
 					{items.map((item, i) => (
 						<Link
 							to={`/carta?tab=${item.tab}`}
 							key={`${mode}-${i}`}
-							className={`group relative overflow-hidden aspect-[3/4] cursor-pointer reveal-scale reveal-delay-${i + 1} ${gridVisible ? "visible" : ""}`}
+							className={`group relative overflow-hidden aspect-[3/4] cursor-pointer card-organic ${i % 2 === 1 ? "shape-a" : "shape-b"} reveal-scale reveal-delay-${i + 1} ${gridVisible ? "visible" : ""}`}
 						>
 							<img
 								src={item.img}
@@ -104,7 +104,7 @@ const MenuPreviewSection = () => {
 							/>
 							<div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500" />
 							<div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6">
-								<h3 className="font-heading text-3xl md:text-4xl font-light mb-2">
+								<h3 className="font-heading text-3xl md:text-4xl mb-2">
 									{item.label}
 								</h3>
 								<p className="font-mono-label text-white/70 text-[0.65rem]">

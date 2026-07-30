@@ -52,7 +52,7 @@ const AboutSection = () => {
 						<p className="text-olive text-xs font-mono-label mb-4">
 							{c.eyebrow}
 						</p>
-						<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground leading-tight">
+						<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground leading-tight">
 							{c.titleStart}
 							<br />
 							<span
@@ -69,6 +69,9 @@ const AboutSection = () => {
 						<p className="mt-4 text-muted-foreground font-body leading-relaxed text-base max-w-md">
 							{c.p2}
 						</p>
+						<p className="mt-8 font-serif-italic text-3xl md:text-4xl text-foreground">
+							Ven tal como eres.
+						</p>
 					</div>
 					<div
 						className={`relative reveal-right ${isVisible ? "visible" : ""}`}
@@ -78,7 +81,7 @@ const AboutSection = () => {
 							src={c.image}
 							alt={c.alt}
 							loading="lazy"
-							className="w-full aspect-[4/5] object-cover animate-fade-in"
+							className="w-full aspect-[4/5] object-cover animate-fade-in card-organic shape-b"
 						/>
 					</div>
 				</div>

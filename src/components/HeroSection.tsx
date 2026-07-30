@@ -91,21 +91,25 @@ const HeroSection = () => {
 				className={`absolute inset-0 transition-colors duration-700 ${isNight ? "bg-black/65" : "bg-black/40"}`}
 			/>
 
-			<div className="relative z-10 text-center px-6">
+			<div className="relative z-10 text-center px-6 -mt-16 md:mt-0">
 				<img
 					src={logo}
 					alt="Entre Dos"
-					className="w-36 md:w-44 lg:w-52 mx-auto opacity-0 animate-fade-up"
+					className="w-52 md:w-48 lg:w-56 mx-auto opacity-0 animate-fade-up"
 					style={{ filter: "brightness(0) invert(1)" }}
 				/>
-				<p
+				<div
 					key={`tag-${mode}`}
-					className="mt-6 text-white/80 text-xs md:text-sm font-mono-label opacity-0 animate-fade-up animate-delay-200"
+					className="mt-7 opacity-0 animate-fade-up animate-delay-200"
 				>
-					{isNight
-						? "Cena & Cócteles · Barcelona"
-						: "Modern Bistrot · Barcelona"}
-				</p>
+					<p className="text-white text-sm md:text-base font-mono-label font-bold tracking-[0.18em] [text-shadow:_0_2px_12px_rgb(0_0_0_/_0.6)]">
+						Tapas <span className="text-white/60">·</span> Cocktails{" "}
+						<span className="text-white/60">·</span> Music
+					</p>
+					<p className="mt-2 text-white/85 text-xs md:text-sm font-mono-label tracking-[0.4em] [text-shadow:_0_2px_10px_rgb(0_0_0_/_0.6)]">
+						Barcelona
+					</p>
+				</div>
 
 
 				<div className="mt-10 flex justify-center opacity-0 animate-fade-up animate-delay-400">
