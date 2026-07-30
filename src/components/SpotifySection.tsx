@@ -53,7 +53,7 @@ const SpotifySection = () => {
 					<p className="text-xs font-mono-label mb-4 text-olive">
 						{p.eyebrow}
 					</p>
-					<h2 className="text-4xl md:text-5xl font-heading font-light text-foreground mb-4">
+					<h2 className="text-4xl md:text-5xl font-heading text-foreground mb-4">
 						La banda sonora de{" "}
 						<span className="italic text-olive">Entre Dos</span>
 					</h2>

@@ -52,7 +52,7 @@ const AboutSection = () => {
 						<p className="text-olive text-xs font-mono-label mb-4">
 							{c.eyebrow}
 						</p>
-						<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground leading-tight">
+						<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground leading-tight">
 							{c.titleStart}
 							<br />
 							<span

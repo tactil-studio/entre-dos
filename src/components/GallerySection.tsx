@@ -86,7 +86,7 @@ const GallerySection = () => {
 					<p className="text-xs font-mono-label mb-4 text-olive">
 						Galería
 					</p>
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
+					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground">
 						{mode === "night" ? (
 							<>
 								Nuestras <span className="italic text-night-blue">noches</span>

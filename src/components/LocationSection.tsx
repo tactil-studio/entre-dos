@@ -37,7 +37,7 @@ const LocationSection = () => {
 							<p className="text-olive text-xs font-mono-label mb-4">
 								✦ Encuéntranos
 							</p>
-							<h2 className="text-3xl md:text-4xl font-heading font-light leading-tight mb-2 pb-4 border-b-2 border-olive/40">
+							<h2 className="text-3xl md:text-4xl font-heading leading-tight mb-2 pb-4 border-b-2 border-olive/40">
 								Ven a{" "}
 								<span className="italic text-olive font-light block mt-1">
 									visitarnos

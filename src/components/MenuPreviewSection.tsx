@@ -70,7 +70,7 @@ const MenuPreviewSection = () => {
 					<p className="text-olive text-xs font-mono-label mb-4">
 						{mode === "night" ? "Carta de noche" : "Nuestra carta"}
 					</p>
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-foreground">
+					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground">
 						{mode === "night" ? (
 							<>
 								Sabores de <span className="italic text-olive">noche</span>

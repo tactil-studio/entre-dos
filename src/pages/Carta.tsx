@@ -36,7 +36,7 @@ const Carta = () => {
 					<p className="text-olive text-xs font-mono-label mb-4">
 						{config.eyebrow}
 					</p>
-					<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-light text-foreground">
+					<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading text-foreground">
 						{config.title}{" "}
 						<span className="italic">{config.titleItalic}</span>
 					</h1>
