@@ -81,7 +81,7 @@ const AboutSection = () => {
 							src={c.image}
 							alt={c.alt}
 							loading="lazy"
-							className="w-full aspect-[4/5] object-cover animate-fade-in card-organic rounded-[1.75rem_6rem_1.75rem_6rem]"
+							className="w-full aspect-[4/5] object-cover animate-fade-in card-organic shape-b"
 						/>
 					</div>
 				</div>

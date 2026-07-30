@@ -94,7 +94,7 @@ const MenuPreviewSection = () => {
 						<Link
 							to={`/carta?tab=${item.tab}`}
 							key={`${mode}-${i}`}
-							className={`group relative overflow-hidden aspect-[3/4] cursor-pointer card-organic ${i % 2 === 1 ? "rounded-[6rem_1.75rem_6rem_1.75rem]" : "rounded-[1.75rem_6rem_1.75rem_6rem]"} reveal-scale reveal-delay-${i + 1} ${gridVisible ? "visible" : ""}`}
+							className={`group relative overflow-hidden aspect-[3/4] cursor-pointer card-organic ${i % 2 === 1 ? "shape-a" : "shape-b"} reveal-scale reveal-delay-${i + 1} ${gridVisible ? "visible" : ""}`}
 						>
 							<img
 								src={item.img}
