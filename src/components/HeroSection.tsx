@@ -5,7 +5,6 @@ import logo from "@/assets/logo-entre2.svg";
 import DayNightToggle from "@/components/DayNightToggle";
 import { useMode } from "@/contexts/ModeContext";
 
-
 const HeroSection = () => {
 	const { mode } = useMode();
 	const isNight = mode === "night";
@@ -33,23 +32,6 @@ const HeroSection = () => {
 		};
 	}, []);
 
-	// iOS-specific: intercept any unexpected pause and resume immediately
-	useEffect(() => {
-		const autoResume = (e: Event) => {
-			const video = e.target as HTMLVideoElement;
-			// Small timeout lets the browser finish its internal state before we call play()
-			setTimeout(() => video.play().catch(() => {}), 50);
-		};
-		const day = dayRef.current;
-		const night = nightRef.current;
-		day?.addEventListener("pause", autoResume);
-		night?.addEventListener("pause", autoResume);
-		return () => {
-			day?.removeEventListener("pause", autoResume);
-			night?.removeEventListener("pause", autoResume);
-		};
-	}, []);
-
 	// Restart the incoming video from the beginning on mode switch
 	useEffect(() => {
 		const incoming = isNight ? nightRef.current : dayRef.current;
@@ -70,7 +52,9 @@ const HeroSection = () => {
 				muted
 				loop
 				playsInline
-				preload="auto"
+				preload="metadata"
+				disablePictureInPicture
+				x-webkit-airplay="deny"
 				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-0" : "opacity-100"}`}
 			>
 				<source src={dayVideo} type="video/mp4" />
@@ -82,7 +66,9 @@ const HeroSection = () => {
 				muted
 				loop
 				playsInline
-				preload="auto"
+				preload="metadata"
+				disablePictureInPicture
+				x-webkit-airplay="deny"
 				className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${isNight ? "opacity-100" : "opacity-0"}`}
 			>
 				<source src={nightVideo} type="video/mp4" />
@@ -110,7 +96,6 @@ const HeroSection = () => {
 						Barcelona
 					</p>
 				</div>
-
 
 				<div className="mt-10 flex justify-center opacity-0 animate-fade-up animate-delay-400">
 					<DayNightToggle size="large" />
