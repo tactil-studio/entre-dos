@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
 import DayNightToggle from "@/components/DayNightToggle";
+import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
@@ -45,7 +46,7 @@ const Navbar = () => {
 	}, [isHome]);
 
 	const transparentNav = isHome && !scrolled && !open;
-	const navLinkClass = `text-xs font-body tracking-[0.2em] uppercase transition-all duration-300 ${
+	const navLinkClass = `text-xs font-body font-semibold tracking-[0.2em] uppercase transition-all duration-300 ${
 		transparentNav
 			? "text-white/85 hover:text-white [text-shadow:_0_1px_8px_rgb(0_0_0_/_0.5)]"
 			: "text-foreground/60 hover:text-foreground"
@@ -109,6 +110,15 @@ const Navbar = () => {
 					>
 						Instagram
 					</a>
+					<a
+						href="https://www.tiktok.com/@entredos.restaurante"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="TikTok"
+						className={navLinkClass}
+					>
+						<TikTokIcon size={18} />
+					</a>
 				</div>
 
 				<button
@@ -165,6 +175,16 @@ const Navbar = () => {
 								className="text-foreground/60 hover:text-foreground text-xs tracking-[0.2em] uppercase font-body"
 							>
 								Instagram
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://www.tiktok.com/@entredos.restaurante"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-foreground/60 hover:text-foreground text-xs tracking-[0.2em] uppercase font-body"
+							>
+								TikTok
 							</a>
 						</li>
 						<li className="pt-2">
