@@ -2,10 +2,69 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import FooterSection from "@/components/FooterSection";
+import MenuRenderer from "@/components/MenuRenderer";
 import Navbar from "@/components/Navbar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useMode } from "@/contexts/ModeContext";
-import { langOrder, languages, resolveLang } from "@/lib/menuData";
+import { langOrder, languages, resolveLang, type MenuDiaData } from "@/lib/menuData";
+
+const MD_BG = "#F5EDE0";
+const MD_GREEN = "#2D5016";
+const MD_GREEN_DIM = "#5A7A3A";
+const MD_DIVIDER = "rgba(45,80,22,0.2)";
+
+const MenuDiaCard = ({ data, terraceNote }: { data: MenuDiaData; terraceNote: string }) => (
+	<div
+		className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl px-6 py-10 md:px-10 flex flex-col items-center"
+		style={{ backgroundColor: MD_BG }}
+	>
+		{/* Title with decorative rule — matches SectionBlock heading style */}
+		<div className="flex items-center gap-3 w-full mb-8">
+			<div className="flex-1 h-px" style={{ backgroundColor: MD_DIVIDER }} />
+			<h2
+				className="font-heading italic shrink-0"
+				style={{ color: MD_GREEN, fontSize: "clamp(2rem, 6vw, 3.5rem)", lineHeight: 1 }}
+			>
+				{data.title}
+			</h2>
+			<div className="flex-1 h-px" style={{ backgroundColor: MD_DIVIDER }} />
+		</div>
+
+		{/* Courses list */}
+		<div className="w-full flex flex-col items-center mb-8">
+			{data.courses.map((course, i) => (
+				<div
+					key={i}
+					className="w-full py-2.5 text-center"
+					style={{ borderBottom: `1px solid ${MD_DIVIDER}` }}
+				>
+					<span className="font-body text-lg" style={{ color: MD_GREEN_DIM }}>
+						{course}
+					</span>
+				</div>
+			))}
+		</div>
+
+		{/* Price + days/hours */}
+		<div className="flex items-center justify-center gap-8 mt-2">
+			<span
+				className="font-heading italic"
+				style={{ color: MD_GREEN, fontSize: "clamp(2.5rem, 8vw, 4rem)", lineHeight: 1 }}
+			>
+				{data.price}
+			</span>
+			<div className="w-px h-12" style={{ backgroundColor: MD_DIVIDER }} />
+			<div className="flex flex-col gap-1">
+				<span className="font-body font-semibold text-sm" style={{ color: MD_GREEN }}>{data.days}</span>
+				<span className="font-body text-sm" style={{ color: MD_GREEN_DIM }}>{data.hours}</span>
+			</div>
+		</div>
+
+		<p className="mt-10 text-xs font-body text-center" style={{ color: MD_GREEN_DIM }}>
+			{terraceNote}
+		</p>
+	</div>
+);
 
 const Carta = () => {
 	const { lang: langParam } = useParams();
@@ -123,43 +182,54 @@ const Carta = () => {
 						))}
 					</div>
 
-					<div className="flex justify-center min-h-[60vh]">
-						<div
-							className="w-full md:max-w-2xl shadow-lg flex items-start justify-center cursor-zoom-in"
-							onClick={() => setZoomed(true)}
-						>
-							<img
-								src={activeTab.image}
-								alt={`${config.titleItalic} - ${activeTab.label}`}
-								className="w-full max-w-full h-auto object-contain"
-							/>
-						</div>
-					</div>
-
-					<p className="text-center mt-4 text-[0.65rem] font-mono-label md:hidden text-muted-foreground">
-						{config.tapHint}
-					</p>
-
-					<p className="text-center mt-8 text-[0.65rem] font-mono-label text-muted-foreground">
-						{config.terraceNote}
-					</p>
+					{activeTab.sections ? (
+						<MenuRenderer
+							sections={activeTab.sections}
+							terraceNote={config.terraceNote}
+						/>
+					) : activeTab.menuDia ? (
+						<MenuDiaCard data={activeTab.menuDia} terraceNote={config.terraceNote} />
+					) : (
+						<>
+							<div className="flex justify-center min-h-[60vh]">
+								<div
+									className="w-full md:max-w-2xl shadow-lg flex items-start justify-center cursor-zoom-in"
+									onClick={() => setZoomed(true)}
+								>
+									<img
+										src={activeTab.image}
+										alt={`${config.titleItalic} - ${activeTab.label}`}
+										className="w-full max-w-full h-auto object-contain"
+									/>
+								</div>
+							</div>
+							<p className="text-center mt-4 text-[0.65rem] font-mono-label md:hidden text-muted-foreground">
+								{config.tapHint}
+							</p>
+							<p className="text-center mt-8 text-[0.65rem] font-mono-label text-muted-foreground">
+								{config.terraceNote}
+							</p>
+						</>
+					)}
 				</div>
 			</section>
 
-			<Dialog open={zoomed} onOpenChange={setZoomed}>
-				<DialogContent className="max-w-none w-screen h-screen p-4 md:p-8 border-none bg-black/95 overflow-auto flex items-center justify-center [&>button]:text-white [&>button]:hover:text-white/80 [&>button]:bg-white/10 [&>button]:hover:bg-white/20">
-					<VisuallyHidden>
-						<DialogTitle>
-							{config.titleItalic} - {activeTab.label}
-						</DialogTitle>
-					</VisuallyHidden>
-					<img
-						src={activeTab.image}
-						alt={`${config.titleItalic} - ${activeTab.label}`}
-						className="w-full max-w-3xl mx-auto h-auto max-h-full object-contain"
-					/>
-				</DialogContent>
-			</Dialog>
+			{activeTab.image && (
+				<Dialog open={zoomed} onOpenChange={setZoomed}>
+					<DialogContent className="max-w-none w-screen h-screen p-4 md:p-8 border-none bg-black/95 overflow-auto flex items-center justify-center [&>button]:text-white [&>button]:hover:text-white/80 [&>button]:bg-white/10 [&>button]:hover:bg-white/20">
+						<VisuallyHidden>
+							<DialogTitle>
+								{config.titleItalic} - {activeTab.label}
+							</DialogTitle>
+						</VisuallyHidden>
+						<img
+							src={activeTab.image}
+							alt={`${config.titleItalic} - ${activeTab.label}`}
+							className="w-full max-w-3xl mx-auto h-auto max-h-full object-contain"
+						/>
+					</DialogContent>
+				</Dialog>
+			)}
 
 			<FooterSection />
 		</div>
