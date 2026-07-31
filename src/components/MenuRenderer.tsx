@@ -107,7 +107,7 @@ const MenuRenderer = ({ sections, terraceNote }: MenuRendererProps) => {
 					return (
 						<div
 							key={section.title}
-							className="mt-10 first:mt-0 grid grid-cols-2 gap-6"
+							className="mt-10 first:mt-0 grid grid-cols-1 md:grid-cols-2 gap-6"
 						>
 							<SectionBlock section={section} />
 							<SectionBlock section={section.pairWith} />
