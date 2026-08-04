@@ -161,7 +161,7 @@ const GallerySection = () => {
 					className={`text-center mt-12 reveal reveal-delay-3 ${gridVisible ? "visible" : ""}`}
 				>
 					<a
-						href="https://www.instagram.com/toscacarme/"
+						href="https://www.instagram.com/entredos.restaurante/"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
