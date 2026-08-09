@@ -1,19 +1,30 @@
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import FooterSection from "@/components/FooterSection";
 import MenuRenderer from "@/components/MenuRenderer";
 import Navbar from "@/components/Navbar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useMode } from "@/contexts/ModeContext";
-import { langOrder, languages, resolveLang, type MenuDiaData } from "@/lib/menuData";
+import {
+	langOrder,
+	languages,
+	type MenuDiaData,
+	resolveLang,
+} from "@/lib/menuData";
 
 const MD_BG = "#F5EDE0";
 const MD_GREEN = "#2D5016";
 const MD_GREEN_DIM = "#5A7A3A";
 const MD_DIVIDER = "rgba(45,80,22,0.2)";
 
-const MenuDiaCard = ({ data, terraceNote }: { data: MenuDiaData; terraceNote: string }) => (
+const MenuDiaCard = ({
+	data,
+	terraceNote,
+}: {
+	data: MenuDiaData;
+	terraceNote: string;
+}) => (
 	<div
 		className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl px-6 py-10 md:px-10 flex flex-col items-center"
 		style={{ backgroundColor: MD_BG }}
@@ -23,7 +34,11 @@ const MenuDiaCard = ({ data, terraceNote }: { data: MenuDiaData; terraceNote: st
 			<div className="flex-1 h-px" style={{ backgroundColor: MD_DIVIDER }} />
 			<h2
 				className="font-heading italic shrink-0"
-				style={{ color: MD_GREEN, fontSize: "clamp(2rem, 6vw, 3.5rem)", lineHeight: 1 }}
+				style={{
+					color: MD_GREEN,
+					fontSize: "clamp(2rem, 6vw, 3.5rem)",
+					lineHeight: 1,
+				}}
 			>
 				{data.title}
 			</h2>
@@ -49,18 +64,32 @@ const MenuDiaCard = ({ data, terraceNote }: { data: MenuDiaData; terraceNote: st
 		<div className="flex items-center justify-center gap-8 mt-2">
 			<span
 				className="font-heading italic"
-				style={{ color: MD_GREEN, fontSize: "clamp(2.5rem, 8vw, 4rem)", lineHeight: 1 }}
+				style={{
+					color: MD_GREEN,
+					fontSize: "clamp(2.5rem, 8vw, 4rem)",
+					lineHeight: 1,
+				}}
 			>
 				{data.price}
 			</span>
 			<div className="w-px h-12" style={{ backgroundColor: MD_DIVIDER }} />
 			<div className="flex flex-col gap-1">
-				<span className="font-body font-semibold text-sm" style={{ color: MD_GREEN }}>{data.days}</span>
-				<span className="font-body text-sm" style={{ color: MD_GREEN_DIM }}>{data.hours}</span>
+				<span
+					className="font-body font-semibold text-sm"
+					style={{ color: MD_GREEN }}
+				>
+					{data.days}
+				</span>
+				<span className="font-body text-sm" style={{ color: MD_GREEN_DIM }}>
+					{data.hours}
+				</span>
 			</div>
 		</div>
 
-		<p className="mt-10 text-xs font-body text-center" style={{ color: MD_GREEN_DIM }}>
+		<p
+			className="mt-10 text-xs font-body text-center"
+			style={{ color: MD_GREEN_DIM }}
+		>
 			{terraceNote}
 		</p>
 	</div>
@@ -73,13 +102,24 @@ const Carta = () => {
 	const config = languages[lang];
 	const { mode } = useMode();
 
-	const initialTab = searchParams.get("tab") || config.tabs[0].id;
-	const [active, setActive] = useState(initialTab);
+	const [active, setActive] = useState<string>(() =>
+		searchParams.get("tab") &&
+		config.tabs.some((t) => t.id === searchParams.get("tab"))
+			? searchParams.get("tab")!
+			: config.tabs[0].id,
+	);
 	const [zoomed, setZoomed] = useState(false);
 
-	// Force dark class on <html> so navbar, footer and all theme tokens use night palette.
-	// On cleanup, restore the class based on the current mode so ModeContext stays in sync.
+	// Reset active tab when language changes
 	useEffect(() => {
+		const tab = searchParams.get("tab");
+		setActive(
+			tab && config.tabs.some((t) => t.id === tab) ? tab : config.tabs[0].id,
+		);
+	}, [lang]);
+
+	// Force dark class before paint so there's no flash of wrong theme on refresh
+	useLayoutEffect(() => {
 		const html = document.documentElement;
 		html.classList.add("dark");
 		return () => {
@@ -90,15 +130,6 @@ const Carta = () => {
 			}
 		};
 	}, [mode]);
-
-	useEffect(() => {
-		const tab = searchParams.get("tab");
-		if (tab && config.tabs.some((t) => t.id === tab)) {
-			setActive(tab);
-		} else if (!config.tabs.some((t) => t.id === active)) {
-			setActive(config.tabs[0].id);
-		}
-	}, [searchParams, config, active]);
 
 	const activeTab = config.tabs.find((t) => t.id === active) ?? config.tabs[0];
 
@@ -188,7 +219,10 @@ const Carta = () => {
 							terraceNote={config.terraceNote}
 						/>
 					) : activeTab.menuDia ? (
-						<MenuDiaCard data={activeTab.menuDia} terraceNote={config.terraceNote} />
+						<MenuDiaCard
+							data={activeTab.menuDia}
+							terraceNote={config.terraceNote}
+						/>
 					) : (
 						<>
 							<div className="flex justify-center min-h-[60vh]">

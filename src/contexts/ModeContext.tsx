@@ -32,6 +32,11 @@ export const ModeProvider = ({ children }: { children: ReactNode }) => {
 
 	useEffect(() => {
 		const root = document.documentElement;
+		// Carta manages its own dark class; don't interfere
+		if (window.location.pathname.startsWith("/carta")) {
+			sessionStorage.setItem(STORAGE_KEY, mode);
+			return;
+		}
 		if (mode === "night") {
 			root.classList.add("dark");
 		} else {
