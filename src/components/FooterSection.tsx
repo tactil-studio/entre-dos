@@ -9,11 +9,7 @@ const FooterSection = () => {
 	const { pathname } = useLocation();
 	const isCarta = pathname.startsWith("/carta");
 
-	const bgColor = isCarta
-		? "#1A3C58"
-		: mode === "night"
-			? "hsl(0 0% 6%)"
-			: "#6C7856";
+	const bgColor = mode === "night" && !isCarta ? "hsl(0 0% 6%)" : "#6C7856";
 
 	return (
 		<footer

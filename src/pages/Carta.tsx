@@ -1,6 +1,7 @@
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
+import floral from "@/assets/floral-day.webp";
 import FooterSection from "@/components/FooterSection";
 import MenuRenderer from "@/components/MenuRenderer";
 import Navbar from "@/components/Navbar";
@@ -118,11 +119,12 @@ const Carta = () => {
 		);
 	}, [lang]);
 
-	// Force dark class before paint so there's no flash of wrong theme on refresh
+	// Carta always renders in light mode regardless of the user's day/night toggle
 	useLayoutEffect(() => {
 		const html = document.documentElement;
-		html.classList.add("dark");
+		html.classList.remove("dark");
 		return () => {
+			// Restore the user's actual mode on unmount
 			if (mode === "night") {
 				html.classList.add("dark");
 			} else {
@@ -135,30 +137,24 @@ const Carta = () => {
 
 	return (
 		<div
-			className="min-h-screen bg-background relative overflow-hidden"
-			style={{ "--background": "209 54% 22%" } as React.CSSProperties}
+			className="min-h-screen relative overflow-hidden"
+			style={{ backgroundColor: "var(--surface-sage)" }}
 		>
-			{/* Floral background — mobile */}
+			{/* Floral decoration — top left, mirrors SpotifySection */}
 			<img
-				src="/bg-floral.svg"
-				alt=""
+				src={floral}
 				aria-hidden="true"
-				className="lg:hidden fixed inset-0 w-full h-full pointer-events-none select-none"
-				style={{ objectFit: "cover" }}
+				alt=""
+				loading="lazy"
+				className="pointer-events-none select-none fixed -left-16 -top-10 w-72 md:w-96 opacity-20 -scale-x-100 rotate-6"
 			/>
-			{/* Floral background — desktop rotated */}
+			{/* Floral decoration — bottom right */}
 			<img
-				src="/bg-floral.svg"
-				alt=""
+				src={floral}
 				aria-hidden="true"
-				className="hidden lg:block fixed pointer-events-none select-none"
-				style={{
-					top: "50%",
-					left: "50%",
-					width: "calc(100vh + 20px)",
-					height: "calc(100vw + 20px)",
-					transform: "translate(-50%, -50%) rotate(270deg)",
-				}}
+				alt=""
+				loading="lazy"
+				className="pointer-events-none select-none fixed -right-16 -bottom-10 w-72 md:w-96 opacity-20"
 			/>
 			<Navbar />
 
@@ -172,7 +168,13 @@ const Carta = () => {
 					</h1>
 
 					{/* Language switcher */}
-					<div className="flex flex-wrap justify-center gap-1 mt-8">
+					<div
+						className="inline-flex flex-wrap justify-center gap-1 mt-8 p-1.5 rounded-xl"
+						style={{
+							backgroundColor: "rgba(255,255,255,0.35)",
+							backdropFilter: "blur(6px)",
+						}}
+					>
 						{langOrder.map((code) => {
 							const isActive = code === lang;
 							const to = code === "es" ? "/carta" : `/carta/${code}`;
@@ -180,10 +182,10 @@ const Carta = () => {
 								<Link
 									key={code}
 									to={to}
-									className={`px-4 py-1.5 text-[10px] font-mono-label transition-all duration-300 border ${
+									className={`px-4 py-1.5 text-[10px] font-mono-label transition-all duration-300 rounded-lg ${
 										isActive
-											? "border-foreground text-foreground"
-											: "border-transparent text-muted-foreground hover:text-foreground"
+											? "bg-foreground text-background"
+											: "text-foreground/60 hover:text-foreground hover:bg-white/40"
 									}`}
 								>
 									{languages[code].nativeName}
@@ -197,15 +199,22 @@ const Carta = () => {
 			<section className="pb-24 bg-transparent relative z-10">
 				<div className="max-w-4xl mx-auto px-6">
 					{/* Tabs */}
-					<div className="flex flex-wrap justify-center gap-2 mb-12 pb-4 border-b border-border">
+					<div
+						className="flex flex-wrap justify-center gap-x-1 gap-y-1 mb-6 p-2 rounded-xl w-fit mx-auto"
+						style={{
+							backgroundColor: "rgba(255,255,255,0.35)",
+							backdropFilter: "blur(6px)",
+						}}
+					>
 						{config.tabs.map((tab) => (
 							<button
+								type="button"
 								key={tab.id}
 								onClick={() => setActive(tab.id)}
-								className={`px-6 py-2 text-xs font-mono-label transition-all duration-300 ${
+								className={`px-4 py-2 text-xs font-mono-label rounded-lg transition-all duration-300 ${
 									active === tab.id
-										? "text-foreground border-b-2 border-foreground"
-										: "text-muted-foreground hover:text-foreground"
+										? "bg-foreground text-background"
+										: "text-foreground/60 hover:text-foreground hover:bg-white/40"
 								}`}
 							>
 								{tab.label}
