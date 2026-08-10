@@ -6,56 +6,29 @@ import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
 import foodMalibu from "@/assets/malibu.webp";
 import wine from "@/assets/wine.webp";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const dayItems = [
-	{
-		img: foodPrawns,
-		label: "Carta",
-		desc: "Tapas, entrantes y mediterráneo",
-		tab: "carta",
-	},
-	{
-		img: foodBrunch1,
-		label: "Brunch",
-		desc: "Sábados y domingos, 11–16h",
-		tab: "brunch",
-	},
-	{
-		img: foodMalibu,
-		label: "Café & Zumos",
-		desc: "Café de especialidad y zumos naturales",
-		tab: "bebidas",
-	},
-];
-
-const nightItems = [
-	{
-		img: foodPrawns,
-		label: "Cena",
-		desc: "Cocina de autor para compartir",
-		tab: "carta",
-	},
-	{
-		img: cocktail,
-		label: "Cócteles",
-		desc: "Mixología de barra hasta tarde",
-		tab: "cocktails",
-	},
-	{
-		img: wine,
-		label: "Vinos",
-		desc: "Selección natural y referencias de autor",
-		tab: "vinos",
-	},
-];
+const dayImgs = [foodPrawns, foodBrunch1, foodMalibu];
+const nightImgs = [foodPrawns, cocktail, wine];
 
 const CARD_RADIUS = "1.75rem";
 
 const MenuPreviewSection = () => {
 	const { mode } = useMode();
-	const items = mode === "night" ? nightItems : dayItems;
+	const { t } = useLang();
+	const tabs =
+		mode === "night"
+			? ["carta", "cocktails", "vinos"]
+			: ["carta", "brunch", "bebidas"];
+	const imgs = mode === "night" ? nightImgs : dayImgs;
+	const tm = t.menu[mode];
+	const items = tm.items.map((item, i) => ({
+		...item,
+		img: imgs[i],
+		tab: tabs[i],
+	}));
 	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 	const { ref: mobileGridRef, isVisible: mobileGridVisible } = useScrollReveal({
 		rootMargin: "0px",
@@ -80,21 +53,17 @@ const MenuPreviewSection = () => {
 					<div className="flex items-center gap-4 mb-5">
 						<div className="h-px flex-1 bg-foreground/10" />
 						<p className="text-olive text-xs font-mono-label tracking-[0.2em] uppercase">
-							{mode === "night" ? "Carta de noche" : "Nuestra carta"}
+							{tm.eyebrow}
 						</p>
 						<div className="h-px flex-1 bg-foreground/10" />
 					</div>
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground text-center">
-						{mode === "night" ? (
-							<>
-								Sabores de <span className="italic text-olive">noche</span>
-							</>
-						) : (
-							<>
-								Sabores{" "}
-								<span className="italic text-night-blue">mediterráneos</span>
-							</>
-						)}
+						{tm.titleStart}{" "}
+						<span
+							className={`italic ${mode === "night" ? "text-olive" : "text-night-blue"}`}
+						>
+							{tm.titleItalic}
+						</span>
 					</h2>
 				</div>
 			</div>
@@ -235,7 +204,7 @@ const MenuPreviewSection = () => {
 						to="/carta"
 						className="inline-flex items-center gap-3 border border-foreground/40 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
 					>
-						Ver carta completa
+						{t.menu.cta}
 						<ArrowUpRight size={12} />
 					</Link>
 				</div>

@@ -17,6 +17,7 @@ import malibu from "@/assets/malibu.webp";
 import monsteraBlue from "@/assets/monstera-blue.webp";
 import nightFlowers2 from "@/assets/Night flowers 2.svg";
 import wine from "@/assets/wine.webp";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -72,6 +73,7 @@ const nightImages = [
 
 const GallerySection = () => {
 	const { mode } = useMode();
+	const { t } = useLang();
 	const images = mode === "night" ? nightImages : dayImages;
 	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
@@ -106,15 +108,23 @@ const GallerySection = () => {
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
-					<p className="text-xs font-mono-label mb-4 text-olive">Galería</p>
+					<p className="text-xs font-mono-label mb-4 text-olive">
+						{t.gallery.eyebrow}
+					</p>
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-foreground">
 						{mode === "night" ? (
 							<>
-								Nuestras <span className="italic text-night-blue">noches</span>
+								{t.gallery.nightTitle}{" "}
+								<span className="italic text-night-blue">
+									{t.gallery.nightTitleItalic}
+								</span>
 							</>
 						) : (
 							<>
-								Nuestros <span className="italic text-olive">platos</span>
+								{t.gallery.dayTitle}{" "}
+								<span className="italic text-olive">
+									{t.gallery.dayTitleItalic}
+								</span>
 							</>
 						)}
 					</h2>
@@ -186,7 +196,7 @@ const GallerySection = () => {
 						rel="noopener noreferrer"
 						className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
 					>
-						Ver más en Instagram
+						{t.gallery.cta}
 					</a>
 				</div>
 			</div>

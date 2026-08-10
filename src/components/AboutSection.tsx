@@ -2,36 +2,18 @@ import foodHam from "@/assets/food-ham.webp";
 import monsteraGreen from "@/assets/monstera-leaves.webp";
 import nightFlowers from "@/assets/Night Flowers.svg";
 import wine from "@/assets/wine.webp";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const content = {
-	day: {
-		eyebrow: "Nuestra esencia · Día",
-		titleStart: "Donde la tradición",
-		titleItalic: "se encuentra",
-		titleEnd: "con lo moderno",
-		p1: "En Entre Dos fusionamos la cocina mediterránea con toques internacionales. Un espacio pensado para compartir, disfrutar y descubrir sabores que conectan culturas y momentos.",
-		p2: "Cada plato cuenta una historia. Cada visita es una experiencia única.",
-		image: foodHam,
-		alt: "Cocina mediterránea en Entre Dos",
-	},
-	night: {
-		eyebrow: "Nuestra esencia · Noche",
-		titleStart: "Donde la cocina",
-		titleItalic: "se transforma",
-		titleEnd: "en cócteles",
-		p1: "Al caer el sol, Entre Dos cambia de piel. Una barra íntima para cenas de autor, vinos seleccionados y cócteles de temporada.",
-		p2: "Ambiente cálido, luz tenue y una carta pensada para compartir entre dos.",
-		image: wine,
-		alt: "Cena y vinos por la noche",
-	},
-};
+const images = { day: foodHam, night: wine };
 
 const AboutSection = () => {
 	const { mode } = useMode();
+	const { t } = useLang();
 	const { ref, isVisible } = useScrollReveal();
-	const c = content[mode];
+	const c = t.about[mode];
+	const img = images[mode];
 
 	return (
 		<section id="about" className="py-24 bg-transparent relative" ref={ref}>
@@ -94,7 +76,7 @@ const AboutSection = () => {
 							{c.p2}
 						</p>
 						<p className="mt-8 font-serif-italic text-3xl md:text-4xl text-foreground">
-							Ven tal como eres.
+							{t.about.tagline}
 						</p>
 					</div>
 					<div
@@ -107,7 +89,7 @@ const AboutSection = () => {
 						<div className="relative z-10 w-[85%] overflow-hidden shadow-2xl -translate-x-6 -translate-y-6 group">
 							<img
 								key={mode}
-								src={c.image}
+								src={img}
 								alt={c.alt}
 								loading="lazy"
 								className="w-full aspect-[3/4] object-cover animate-fade-in group-hover:scale-105 transition-transform duration-700"

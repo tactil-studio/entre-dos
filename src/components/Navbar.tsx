@@ -1,11 +1,13 @@
-import { Instagram, Menu, X } from "lucide-react";
+import { Globe, Instagram, Menu, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
 import DayNightToggle from "@/components/DayNightToggle";
 import TikTokIcon from "@/components/icons/TikTokIcon";
+import { useLang } from "@/contexts/LangContext";
 
 const Navbar = () => {
+	const { lang, setLang, t } = useLang();
 	const [open, setOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const location = useLocation();
@@ -75,7 +77,7 @@ const Navbar = () => {
 				<ul className="hidden md:flex items-center justify-center gap-8">
 					<li>
 						<Link to="/" onClick={handleHomeClick} className={navLinkClass}>
-							Inicio
+							{t.nav.home}
 						</Link>
 					</li>
 					<li>
@@ -83,12 +85,12 @@ const Navbar = () => {
 							onClick={() => scrollToSection("about")}
 							className={navLinkClass}
 						>
-							Nosotros
+							{t.nav.about}
 						</button>
 					</li>
 					<li>
 						<Link to="/carta" className={navLinkClass}>
-							Carta
+							{t.nav.menu}
 						</Link>
 					</li>
 					<li>
@@ -96,13 +98,22 @@ const Navbar = () => {
 							onClick={() => scrollToSection("gallery")}
 							className={navLinkClass}
 						>
-							Galería
+							{t.nav.gallery}
 						</button>
 					</li>
 				</ul>
 
 				<div className="hidden md:flex items-center justify-end gap-6">
 					{showToggle && <DayNightToggle size="compact" />}
+					<button
+						onClick={() => setLang(lang === "es" ? "en" : "es")}
+						className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[0.6rem] font-mono-label tracking-widest uppercase transition-all duration-300 ${transparentNav ? "border-white/30 text-white/80 hover:border-white hover:text-white" : "border-foreground/20 text-foreground/60 hover:border-foreground/60 hover:text-foreground"}`}
+						aria-label="Switch language"
+						title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+					>
+						<Globe size={12} strokeWidth={1.75} />
+						{lang === "es" ? "EN" : "ES"}
+					</button>
 					<a
 						href="https://www.instagram.com/entredos.restaurante/"
 						target="_blank"
@@ -141,7 +152,7 @@ const Navbar = () => {
 								onClick={handleHomeClick}
 								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
 							>
-								Inicio
+								{t.nav.home}
 							</Link>
 						</li>
 						<li>
@@ -149,7 +160,7 @@ const Navbar = () => {
 								onClick={() => scrollToSection("about")}
 								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
 							>
-								Nosotros
+								{t.nav.about}
 							</button>
 						</li>
 						<li>
@@ -158,7 +169,7 @@ const Navbar = () => {
 								onClick={() => setOpen(false)}
 								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
 							>
-								Carta
+								{t.nav.menu}
 							</Link>
 						</li>
 						<li>
@@ -166,7 +177,7 @@ const Navbar = () => {
 								onClick={() => scrollToSection("gallery")}
 								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
 							>
-								Galería
+								{t.nav.gallery}
 							</button>
 						</li>
 						<li>
@@ -188,6 +199,19 @@ const Navbar = () => {
 							>
 								TikTok
 							</a>
+						</li>
+						<li>
+							<button
+								onClick={() => setLang(lang === "es" ? "en" : "es")}
+								className="inline-flex items-center gap-1.5 rounded-full border border-foreground/20 text-foreground/60 hover:border-foreground/60 hover:text-foreground px-2.5 py-1 text-[0.6rem] font-mono-label tracking-widest uppercase transition-all duration-300"
+								aria-label="Switch language"
+								title={
+									lang === "es" ? "Switch to English" : "Cambiar a Español"
+								}
+							>
+								<Globe size={12} strokeWidth={1.75} />
+								{lang === "es" ? "EN" : "ES"}
+							</button>
 						</li>
 						{showToggle && (
 							<li className="pt-2">

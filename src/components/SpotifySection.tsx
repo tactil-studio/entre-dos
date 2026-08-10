@@ -1,27 +1,20 @@
 import { Music } from "lucide-react";
 import floral from "@/assets/floral-day.webp";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const playlists = {
-	day: {
-		id: "0CGVCIQ0OCc9ntNy5exaZL",
-		shareUrl: "https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
-		eyebrow: "Playlist de día",
-		subtitle:
-			"Café, brunch y luz natural. La banda sonora de nuestras mañanas.",
-	},
-	night: {
-		id: "0CGVCIQ0OCc9ntNy5exaZL",
-		shareUrl: "https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL",
-		eyebrow: "Playlist de noche",
-		subtitle: "Vinos, cócteles y conversaciones largas. La noche suena así.",
-	},
+const playlistIds = {
+	day: "0CGVCIQ0OCc9ntNy5exaZL",
+	night: "0CGVCIQ0OCc9ntNy5exaZL",
 };
+const shareUrl = "https://open.spotify.com/playlist/0CGVCIQ0OCc9ntNy5exaZL";
 
 const SpotifySection = () => {
 	const { mode } = useMode();
-	const p = playlists[mode];
+	const { t } = useLang();
+	const p = t.spotify[mode];
+	const playlistId = playlistIds[mode];
 	const { ref, isVisible } = useScrollReveal();
 
 	return (
@@ -50,8 +43,8 @@ const SpotifySection = () => {
 					<Music className="w-6 h-6 mx-auto mb-6 text-olive" />
 					<p className="text-xs font-mono-label mb-4 text-olive">{p.eyebrow}</p>
 					<h2 className="text-4xl md:text-5xl font-heading text-foreground mb-4">
-						La banda sonora de{" "}
-						<span className="italic text-olive">Entre Dos</span>
+						{t.spotify.titleStart}{" "}
+						<span className="italic text-olive">{t.spotify.titleItalic}</span>
 					</h2>
 					<p className="text-muted-foreground font-body mb-12 max-w-md mx-auto text-sm">
 						{p.subtitle}
@@ -62,9 +55,9 @@ const SpotifySection = () => {
 					className={`max-w-xl mx-auto mb-10 reveal-scale reveal-delay-2 ${isVisible ? "visible" : ""}`}
 				>
 					<iframe
-						key={p.id}
+						key={playlistId}
 						title={`Entre Dos Spotify Playlist - ${mode}`}
-						src={`https://open.spotify.com/embed/playlist/${p.id}?utm_source=generator&theme=0`}
+						src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`}
 						width="100%"
 						height="352"
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -76,12 +69,12 @@ const SpotifySection = () => {
 
 				<div className={`reveal reveal-delay-3 ${isVisible ? "visible" : ""}`}>
 					<a
-						href={p.shareUrl}
+						href={shareUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-block border border-foreground/20 text-foreground px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-500"
 					>
-						Abrir en Spotify
+						{t.spotify.cta}
 					</a>
 				</div>
 			</div>

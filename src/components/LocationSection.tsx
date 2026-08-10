@@ -1,16 +1,13 @@
 import { ArrowRight, Clock, Mail, MapPin } from "lucide-react";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const schedule = [
-	{ day: "Lunes – Jueves", kitchen: "12:00 – 23:00", bar: "12:00 – 00:00" },
-	{ day: "Viernes", kitchen: "12:00 – 00:00", bar: "12:00 – 01:00" },
-	{ day: "Sábado", kitchen: "11:00 – 00:00", bar: "11:00 – 01:00" },
-	{ day: "Domingo", kitchen: "11:00 – 23:00", bar: "11:00 – 00:00" },
-];
-
 const LocationSection = () => {
 	const { mode } = useMode();
+	const { t } = useLang();
+	const tl = t.location;
+	const schedule = tl.schedule;
 	const { ref: leftRef, isVisible: leftVisible } = useScrollReveal();
 	const { ref: rightRef, isVisible: rightVisible } = useScrollReveal();
 
@@ -35,12 +32,12 @@ const LocationSection = () => {
 
 						<div className="relative z-10">
 							<p className="text-olive text-xs font-mono-label mb-4">
-								✦ Encuéntranos
+								{tl.eyebrow}
 							</p>
 							<h2 className="text-3xl md:text-4xl font-heading leading-tight mb-2 pb-4 border-b-2 border-olive/40">
-								Ven a{" "}
+								{tl.titleStart}{" "}
 								<span className="italic text-olive font-light block mt-1">
-									visitarnos
+									{tl.titleItalic}
 								</span>
 							</h2>
 							<div className="flex items-center gap-3 mt-3 mb-6">
@@ -51,7 +48,7 @@ const LocationSection = () => {
 							{/* Address */}
 							<div className="md:hidden mb-6">
 								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-2">
-									Ubicación
+									{tl.addressLabel}
 								</p>
 								<p className="font-body text-base text-foreground font-medium">
 									Carrer del Carme, 40
@@ -67,7 +64,7 @@ const LocationSection = () => {
 								</div>
 								<div>
 									<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-1">
-										Ubicación
+										{tl.addressLabel}
 									</p>
 									<p className="font-body text-base text-foreground font-medium">
 										Carrer del Carme, 40
@@ -81,15 +78,15 @@ const LocationSection = () => {
 							{/* Schedule */}
 							<div className="md:hidden mb-6">
 								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-3">
-									Horario
+									{tl.hoursLabel}
 								</p>
 								<div className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-2 mb-3 border-b-2 border-olive/30">
 									<span></span>
 									<span className="text-olive font-semibold uppercase">
-										Cocina
+										{tl.kitchenLabel}
 									</span>
 									<span className="text-olive font-semibold uppercase">
-										Bar
+										{tl.barLabel}
 									</span>
 								</div>
 								<div className="space-y-1.5">
@@ -110,7 +107,7 @@ const LocationSection = () => {
 									<p className="font-body text-xs text-foreground/75 flex items-center gap-2">
 										<span className="inline-block w-1.5 h-1.5 bg-olive rounded-full"></span>
 										<span className="text-olive font-semibold">Brunch</span> ·
-										Sáb & Dom 11:00 – 16:00
+										{tl.brunch}
 									</p>
 								</div>
 							</div>
@@ -121,15 +118,15 @@ const LocationSection = () => {
 								</div>
 								<div className="w-full">
 									<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-3">
-										Horario
+										{tl.hoursLabel}
 									</p>
 									<div className="grid grid-cols-[100px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-2 mb-3 border-b-2 border-olive/30">
 										<span></span>
 										<span className="text-olive font-semibold uppercase">
-											Cocina
+											{tl.kitchenLabel}
 										</span>
 										<span className="text-olive font-semibold uppercase">
-											Bar
+											{tl.barLabel}
 										</span>
 									</div>
 									<div className="space-y-1.5">
@@ -150,7 +147,7 @@ const LocationSection = () => {
 										<p className="font-body text-xs text-foreground/75 flex items-center gap-2">
 											<span className="inline-block w-1.5 h-1.5 bg-olive rounded-full"></span>
 											<span className="text-olive font-semibold">Brunch</span> ·
-											Sáb & Dom 11:00 – 16:00
+											{tl.brunch}
 										</p>
 									</div>
 								</div>

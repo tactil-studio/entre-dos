@@ -2,50 +2,50 @@ import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useState } from "react";
 import busyBrunch from "@/assets/busy brunch.jpg";
 import busyCoctails from "@/assets/busy-coctails.jpg";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const reviews = [
+const reviewsData = [
 	{
 		name: "Brent V.",
 		rating: 5,
 		text: "Mi novia y yo cenamos aquí hace unos días. El ambiente era muy acogedor, con buena música de fondo. El personal fue muy amable y atento. Pedimos el salmón al horno, el pollo con tzatziki y las patatas gajo, todo delicioso. Además, los cócteles estaban increíbles.",
-		date: "Hace 1 semana",
 	},
 	{
 		name: "Laudenor P.",
 		rating: 5,
 		text: "Ambiente auténtico y acogedor, comida excelente, precios justos y un servicio impecable.",
-		date: "Hace 1 semana",
 	},
 	{
 		name: "Alexandra D.",
 		rating: 5,
 		text: "Great discovery in El Raval! The food was excellent and the atmosphere perfect for a relaxed dinner. The staff is super friendly and attentive. We'll definitely be back!",
-		date: "Hace 1 semana",
 	},
 	{
 		name: "Sandra D.",
 		rating: 5,
 		text: "Un restaurante muy especial, con muy buen ambiente y muy bien situado. Los platos que comimos estuvieron deliciosos. Tiene vinos y bebidas a buen precio. Personal atento y amable.",
-		date: "Hace 2 días",
 	},
 	{
 		name: "Elodie B.",
 		rating: 5,
 		text: "A wonderful welcome for families with children. Truly a charming place with delicious food and a lovely terrace. Highly recommend for brunch!",
-		date: "Hace 1 semana",
 	},
 	{
 		name: "Valentyn N.",
 		rating: 5,
 		text: "Amazing spot in Barcelona! The cocktails are fantastic and the food is fresh and tasty. Loved the cozy vibe and the music playlist. Perfect place for dinner or drinks.",
-		date: "Hace 2 días",
 	},
 ];
 
 const ReviewsSection = () => {
 	const { mode } = useMode();
+	const { t } = useLang();
+	const reviews = reviewsData.map((r, i) => ({
+		...r,
+		date: t.reviews.dates[i],
+	}));
 	const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 	const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
 		rootMargin: "0px 0px -40px 0px",
@@ -79,13 +79,17 @@ const ReviewsSection = () => {
 					ref={headerRef}
 					className={`text-center mb-16 reveal ${headerVisible ? "visible" : ""}`}
 				>
-					<p className="text-olive text-xs font-mono-label mb-4">Opiniones</p>
+					<p className="text-olive text-xs font-mono-label mb-4">
+						{t.reviews.eyebrow}
+					</p>
 					<h2
 						className="text-4xl md:text-5xl lg:text-6xl font-serif-italic text-white"
 						style={{ fontWeight: 300 }}
 					>
-						Lo que dicen de{" "}
-						<span className="italic text-white/90">nosotros</span>
+						{t.reviews.titleStart}{" "}
+						<span className="italic text-white/90">
+							{t.reviews.titleItalic}
+						</span>
 					</h2>
 					<div className="flex items-center justify-center gap-2 mt-6">
 						<div className="flex">
@@ -99,7 +103,7 @@ const ReviewsSection = () => {
 							<Star size={18} className="fill-yellow-400/50 text-yellow-400" />
 						</div>
 						<span className="text-white/60 font-mono-label text-xs ml-2">
-							4.6 en Google Maps
+							{t.reviews.rating}
 						</span>
 					</div>
 				</div>
@@ -233,7 +237,7 @@ const ReviewsSection = () => {
 						rel="noopener noreferrer"
 						className="inline-block border border-white/50 text-white px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-white hover:text-foreground transition-all duration-500"
 					>
-						Ver todas en Google Maps
+						{t.reviews.cta}
 					</a>
 				</div>
 			</div>

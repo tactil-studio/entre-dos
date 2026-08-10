@@ -1,39 +1,20 @@
 import brunchTable from "@/assets/brunch-table.jpeg";
 import monsteraGreen from "@/assets/monstera-leaves.webp";
 import nightFlowers from "@/assets/Night Flowers.svg";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
-
-const content = {
-	day: {
-		eyebrow: "Nuestra esencia",
-		titleLine1: "Come bien.",
-		titleLine2: "Comparte más.",
-		body: "Un bar de tapas moderno donde la comida es excusa para estar juntos. Ingredientes de temporada, recetas con alma y una mesa siempre lista para ti.",
-		cta: "+ Nuestra historia",
-		photo: brunchTable,
-		photoBg: "var(--surface-sage)",
-	},
-	night: {
-		eyebrow: "La noche en Entre Dos",
-		titleLine1: "Bebe bien.",
-		titleLine2: "Quédate más.",
-		body: "Cuando cae el sol, Entre Dos cambia de piel. Cócteles de autor, vinos naturales y una atmósfera pensada para las noches que no se olvidan.",
-		cta: "+ Nuestra carta de noche",
-		photo: brunchTable, // swap for night photo when ready
-		photoBg: "var(--surface-sage)",
-	},
-};
 
 const AtmosphereSection = () => {
 	const { mode } = useMode();
-	const c = content[mode];
+	const { t } = useLang();
+	const c = t.atmosphere[mode];
 
 	return (
 		<section className="w-full flex flex-col md:flex-row min-h-[540px] overflow-hidden">
 			{/* Left — photo, fills half */}
 			<div className="w-full md:w-1/2 h-72 md:h-auto relative overflow-hidden">
 				<img
-					src={c.photo}
+					src={brunchTable}
 					alt="Ambiente Entre Dos"
 					className="w-full h-full object-cover object-center"
 				/>
@@ -42,7 +23,7 @@ const AtmosphereSection = () => {
 			{/* Right — text */}
 			<div
 				className="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 transition-colors duration-700 relative overflow-hidden"
-				style={{ backgroundColor: c.photoBg }}
+				style={{ backgroundColor: "var(--surface-sage)" }}
 			>
 				{mode === "night" ? (
 					<img

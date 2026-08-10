@@ -2,10 +2,13 @@ import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
 import TikTokIcon from "@/components/icons/TikTokIcon";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 
 const FooterSection = () => {
 	const { mode } = useMode();
+	const { t } = useLang();
+	const tf = t.footer;
 	const { pathname } = useLocation();
 	const isCarta = pathname.startsWith("/carta");
 
@@ -34,14 +37,14 @@ const FooterSection = () => {
 							className="h-12 brightness-0 invert mb-4"
 						/>
 						<p className="text-background/50 font-body text-sm text-center md:text-left italic">
-							Bar de tapas moderno en el corazón de Barcelona
+							{tf.tagline}
 						</p>
 					</div>
 
 					{/* Quick Links */}
 					<div className="md:col-span-1 text-center md:text-left">
 						<h3 className="text-background text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
-							Navegación
+							{tf.navTitle}
 						</h3>
 						<ul className="space-y-2">
 							<li>
@@ -49,7 +52,7 @@ const FooterSection = () => {
 									to="/"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
 								>
-									Inicio
+									{tf.navHome}
 								</Link>
 							</li>
 							<li>
@@ -57,7 +60,7 @@ const FooterSection = () => {
 									to="/carta"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
 								>
-									Nuestra Carta
+									{tf.navMenu}
 								</Link>
 							</li>
 							<li>
@@ -65,7 +68,7 @@ const FooterSection = () => {
 									href="/#about"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
 								>
-									Nosotros
+									{tf.navAbout}
 								</a>
 							</li>
 							<li>
@@ -73,7 +76,7 @@ const FooterSection = () => {
 									href="/#gallery"
 									className="text-background/60 hover:text-background transition-colors text-sm font-body"
 								>
-									Galería
+									{tf.navGallery}
 								</a>
 							</li>
 						</ul>
@@ -82,7 +85,7 @@ const FooterSection = () => {
 					{/* Contact Info */}
 					<div className="md:col-span-1 text-center md:text-left">
 						<h3 className="text-background text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
-							Contacto
+							{tf.contactTitle}
 						</h3>
 						<ul className="space-y-3">
 							<li className="flex items-start gap-2 justify-center md:justify-start">
@@ -120,19 +123,19 @@ const FooterSection = () => {
 					{/* Hours & Social */}
 					<div className="md:col-span-1 text-center md:text-left">
 						<h3 className="text-background text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
-							Horario
+							{tf.hoursTitle}
 						</h3>
 						<p className="text-background/60 text-sm font-body mb-1">
-							Lun - Jue: 12:00 - 00:00
+							{tf.monThu}
 						</p>
 						<p className="text-background/60 text-sm font-body mb-1">
-							Vie: 12:00 - 01:00
+							{tf.fri}
 						</p>
 						<p className="text-background/60 text-sm font-body mb-1">
-							Sáb: 11:00 - 01:00
+							{tf.sat}
 						</p>
 						<p className="text-background/60 text-sm font-body mb-4">
-							Dom: 11:00 - 00:00
+							{tf.sun}
 						</p>
 
 						<a
@@ -159,11 +162,10 @@ const FooterSection = () => {
 				{/* Bottom bar */}
 				<div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
 					<p className="text-background/30 text-xs font-body tracking-widest uppercase">
-						© {new Date().getFullYear()} Entre Dos · Todos los derechos
-						reservados
+						© {new Date().getFullYear()} Entre Dos · {tf.rights}
 					</p>
 					<p className="text-background/20 text-xs font-body">
-						Diseñado con <span className="text-olive">♥</span> en Barcelona
+						{tf.design} <span className="text-olive">♥</span> {tf.designSuffix}
 					</p>
 				</div>
 			</div>

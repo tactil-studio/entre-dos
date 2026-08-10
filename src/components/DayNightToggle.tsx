@@ -1,4 +1,5 @@
 import { Moon, Sun } from "lucide-react";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +13,7 @@ const DayNightToggle = ({
 	className,
 }: DayNightToggleProps) => {
 	const { mode, toggleMode } = useMode();
+	const { t } = useLang();
 	const isNight = mode === "night";
 
 	// Icon-only variant (for navbar): two icons side-by-side, the active one highlighted
@@ -22,7 +24,7 @@ const DayNightToggle = ({
 				onClick={toggleMode}
 				role="switch"
 				aria-checked={isNight}
-				aria-label={`Cambiar a modo ${isNight ? "día" : "noche"}`}
+				aria-label={`Switch to ${isNight ? t.toggle.day : t.toggle.night} mode`}
 				className={cn(
 					"relative inline-flex items-center gap-1 rounded-full border border-foreground/20 bg-background/40 backdrop-blur-md p-1 transition-colors duration-500",
 					className,
@@ -76,7 +78,7 @@ const DayNightToggle = ({
 			onClick={toggleMode}
 			role="switch"
 			aria-checked={isNight}
-			aria-label={`Cambiar a modo ${isNight ? "día" : "noche"}`}
+			aria-label={`Switch to ${isNight ? t.toggle.day : t.toggle.night} mode`}
 			className={cn(
 				"relative inline-flex items-center rounded-full border border-foreground/20 bg-background/40 backdrop-blur-md font-body tracking-[0.25em] uppercase transition-colors duration-500",
 				dims.track,
@@ -97,7 +99,7 @@ const DayNightToggle = ({
 				)}
 			>
 				{size === "large" && <Sun size={dims.icon} strokeWidth={1.75} />}
-				Día
+				{t.toggle.day}
 			</span>
 			<span
 				className={cn(
@@ -106,7 +108,7 @@ const DayNightToggle = ({
 				)}
 			>
 				{size === "large" && <Moon size={dims.icon} strokeWidth={1.75} />}
-				Noche
+				{t.toggle.night}
 			</span>
 		</button>
 	);

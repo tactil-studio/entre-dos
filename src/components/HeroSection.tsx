@@ -3,10 +3,12 @@ import dayVideo from "@/assets/Entre-Dos-Day.mp4";
 import nightVideo from "@/assets/Entre-Dos-Night.mp4";
 import logo from "@/assets/logo-entre2.svg";
 import DayNightToggle from "@/components/DayNightToggle";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 
 const HeroSection = () => {
 	const { mode } = useMode();
+	const { t } = useLang();
 	const isNight = mode === "night";
 	const dayRef = useRef<HTMLVideoElement>(null);
 	const nightRef = useRef<HTMLVideoElement>(null);
@@ -106,7 +108,7 @@ const HeroSection = () => {
 						href="#about"
 						className="inline-block border border-white/30 text-white px-10 py-3 text-xs tracking-[0.25em] uppercase font-body hover:bg-white hover:text-black transition-all duration-500"
 					>
-						Descubrir
+						{t.hero.discover}
 					</a>
 				</div>
 			</div>
