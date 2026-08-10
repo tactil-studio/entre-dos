@@ -1,6 +1,6 @@
 import foodHam from "@/assets/food-ham.webp";
-import monsteraBlue from "@/assets/monstera-blue.webp";
 import monsteraGreen from "@/assets/monstera-leaves.webp";
+import nightFlowers from "@/assets/Night Flowers.svg";
 import wine from "@/assets/wine.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -37,14 +37,38 @@ const AboutSection = () => {
 		<section id="about" className="py-24 bg-transparent relative" ref={ref}>
 			{/* Clip top-right monstera so it doesn't bleed upward into hero */}
 			<div className="absolute inset-0 overflow-hidden pointer-events-none">
+				{mode === "day" && (
+					<img
+						src={monsteraGreen}
+						aria-hidden="true"
+						alt=""
+						loading="lazy"
+						className="pointer-events-none select-none absolute -right-32 top-0 w-48 md:w-60 opacity-10 transition-opacity duration-700 rotate-12 -scale-x-100"
+					/>
+				)}
+			</div>
+			{/* Bottom-left: night flowers clipped, day monstera bleeds into next section */}
+			{mode === "night" ? (
+				<div className="absolute inset-0 overflow-hidden pointer-events-none">
+					<img
+						src={nightFlowers}
+						aria-hidden="true"
+						alt=""
+						loading="lazy"
+						style={{ bottom: "-6rem" }}
+						className="pointer-events-none select-none absolute -left-8 w-[20rem] md:w-[28rem] opacity-30 transition-opacity duration-700 rotate-6"
+					/>
+				</div>
+			) : (
 				<img
-					src={mode === "night" ? monsteraBlue : monsteraGreen}
+					src={monsteraGreen}
 					aria-hidden="true"
 					alt=""
 					loading="lazy"
-					className="pointer-events-none select-none absolute -right-32 top-0 w-48 md:w-60 opacity-10 dark:opacity-10 transition-opacity duration-700 rotate-12 -scale-x-100"
+					style={{ bottom: "-8rem" }}
+					className="pointer-events-none select-none absolute -left-8 w-[22rem] md:w-[32rem] opacity-30 transition-opacity duration-700 rotate-6"
 				/>
-			</div>
+			)}
 
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div className="grid md:grid-cols-2 gap-16 items-center">

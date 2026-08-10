@@ -14,6 +14,8 @@ import foodScrambled from "@/assets/food-scrambled.webp";
 import foodShakshuka from "@/assets/food-shakshuka.webp";
 import foodTacos from "@/assets/food-tacos.webp";
 import malibu from "@/assets/malibu.webp";
+import monsteraBlue from "@/assets/monstera-blue.webp";
+import nightFlowers2 from "@/assets/Night flowers 2.svg";
 import wine from "@/assets/wine.webp";
 import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -81,6 +83,24 @@ const GallerySection = () => {
 			id="gallery"
 			className="py-16 md:py-16 bg-transparent relative z-[30]"
 		>
+			{mode === "night" ? (
+				<img
+					src={nightFlowers2}
+					aria-hidden="true"
+					alt=""
+					loading="lazy"
+					className="pointer-events-none select-none absolute -left-16 top-24 w-[18rem] md:w-[26rem] opacity-30 transition-opacity duration-700"
+				/>
+			) : (
+				<img
+					src={monsteraBlue}
+					aria-hidden="true"
+					alt=""
+					loading="lazy"
+					style={{ bottom: "-4rem" }}
+					className="pointer-events-none select-none absolute -right-20 w-[22rem] md:w-[32rem] opacity-25 transition-opacity duration-700 rotate-6"
+				/>
+			)}
 			<div className="mx-auto max-w-[92rem] px-6">
 				<div
 					ref={headerRef}

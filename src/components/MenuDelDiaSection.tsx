@@ -5,7 +5,10 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const MenuDelDiaSection = () => {
 	const { mode } = useMode();
-	const { ref, isVisible } = useScrollReveal();
+	const { ref, isVisible } = useScrollReveal({
+		rootMargin: "200px 0px 0px 0px",
+		threshold: 0.01,
+	});
 
 	if (mode === "night") return null;
 

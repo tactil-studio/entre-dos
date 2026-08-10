@@ -1,5 +1,3 @@
-import monsteraBlue from "@/assets/monstera-blue.webp";
-import monsteraGreen from "@/assets/monstera-leaves.webp";
 import AboutSection from "@/components/AboutSection";
 import AtmosphereSection from "@/components/AtmosphereSection";
 import FooterSection from "@/components/FooterSection";
@@ -24,15 +22,6 @@ const Index = () => {
 			<MarqueeBanner />
 			<div className="day-band day-band-1 relative">
 				<AboutSection />
-				{/* Monstera — bleeds from band-1 into band-2 */}
-				<img
-					src={mode === "night" ? monsteraBlue : monsteraGreen}
-					aria-hidden="true"
-					alt=""
-					loading="lazy"
-					style={{ bottom: "-9rem" }}
-					className="pointer-events-none select-none absolute -left-20 w-80 md:w-[30rem] opacity-30 dark:opacity-25 transition-opacity duration-700 -rotate-12 z-[20]"
-				/>
 			</div>
 			<div className="day-band day-band-2">
 				<MenuPreviewSection />
@@ -42,15 +31,6 @@ const Index = () => {
 			<AtmosphereSection />
 			<div className="day-band day-band-3 relative">
 				<GallerySection />
-				{/* Monstera blue — bleeds from band-3 into band-4 */}
-				<img
-					src={monsteraBlue}
-					aria-hidden="true"
-					alt=""
-					loading="lazy"
-					style={{ bottom: "-4rem" }}
-					className="pointer-events-none select-none absolute -right-20 w-80 md:w-[32rem] opacity-25 dark:opacity-30 transition-opacity duration-700 rotate-6 z-[20]"
-				/>
 			</div>
 			<div className="day-band day-band-4">
 				<ReviewsSection />

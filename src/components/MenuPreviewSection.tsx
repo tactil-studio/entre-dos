@@ -165,7 +165,7 @@ const MenuPreviewSection = () => {
 							alt={item.label}
 							className="w-full h-full object-cover"
 							style={{
-								transform: hoveredIndex === i ? "scale(1)" : "scale(1.08)",
+								transform: hoveredIndex === i ? "scale(1)" : "scale(1.015)",
 								transition: "transform 0.65s cubic-bezier(0.4, 0, 0.2, 1)",
 							}}
 							loading="lazy"

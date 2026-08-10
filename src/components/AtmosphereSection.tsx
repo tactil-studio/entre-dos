@@ -1,4 +1,6 @@
 import brunchTable from "@/assets/brunch-table.jpeg";
+import monsteraGreen from "@/assets/monstera-leaves.webp";
+import nightFlowers from "@/assets/Night Flowers.svg";
 import { useMode } from "@/contexts/ModeContext";
 
 const content = {
@@ -27,7 +29,7 @@ const AtmosphereSection = () => {
 	const c = content[mode];
 
 	return (
-		<section className="w-full flex flex-col md:flex-row min-h-[540px]">
+		<section className="w-full flex flex-col md:flex-row min-h-[540px] overflow-hidden">
 			{/* Left — photo, fills half */}
 			<div className="w-full md:w-1/2 h-72 md:h-auto relative overflow-hidden">
 				<img
@@ -39,9 +41,24 @@ const AtmosphereSection = () => {
 
 			{/* Right — text */}
 			<div
-				className="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 transition-colors duration-700"
+				className="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 transition-colors duration-700 relative overflow-hidden"
 				style={{ backgroundColor: c.photoBg }}
 			>
+				{mode === "night" ? (
+					<img
+						src={nightFlowers}
+						aria-hidden="true"
+						alt=""
+						className="pointer-events-none select-none absolute -bottom-20 -right-20 w-80 md:w-[28rem] opacity-35 -scale-x-100 -rotate-12"
+					/>
+				) : (
+					<img
+						src={monsteraGreen}
+						aria-hidden="true"
+						alt=""
+						className="pointer-events-none select-none absolute -top-16 -right-12 w-[28rem] md:w-[40rem] opacity-20 transition-opacity duration-700 -rotate-12 -scale-x-100"
+					/>
+				)}
 				<p className="text-foreground/50 text-[10px] tracking-[0.4em] uppercase font-body mb-6">
 					{c.eyebrow}
 				</p>
