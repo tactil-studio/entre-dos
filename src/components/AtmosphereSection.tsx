@@ -1,4 +1,5 @@
 import brunchTable from "@/assets/brunch-table.jpeg";
+import cena2 from "@/assets/cena-2.jpg";
 import monsteraGreen from "@/assets/monstera-leaves.webp";
 import nightFlowers from "@/assets/Night Flowers.svg";
 import { useLang } from "@/contexts/LangContext";
@@ -14,7 +15,7 @@ const AtmosphereSection = () => {
 			{/* Left — photo, fills half */}
 			<div className="w-full md:w-1/2 h-72 md:h-auto relative overflow-hidden">
 				<img
-					src={brunchTable}
+					src={mode === "night" ? cena2 : brunchTable}
 					alt="Ambiente Entre Dos"
 					className="w-full h-full object-cover object-center"
 				/>
@@ -48,12 +49,9 @@ const AtmosphereSection = () => {
 					<br />
 					{c.titleLine2}
 				</h2>
-				<p className="text-foreground/70 font-body text-base md:text-lg leading-relaxed max-w-md mb-8">
+				<p className="text-foreground/70 font-body text-base md:text-lg leading-relaxed max-w-md">
 					{c.body}
 				</p>
-				<span className="text-foreground/50 font-body text-sm tracking-wide cursor-pointer hover:text-foreground transition-colors">
-					{c.cta}
-				</span>
 			</div>
 		</section>
 	);

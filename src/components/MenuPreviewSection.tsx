@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import cena from "@/assets/cena.jpg";
 import cocktail from "@/assets/cocktail.webp";
 import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
@@ -11,7 +12,7 @@ import { useMode } from "@/contexts/ModeContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const dayImgs = [foodPrawns, foodBrunch1, foodMalibu];
-const nightImgs = [foodPrawns, cocktail, wine];
+const nightImgs = [cena, cocktail, wine];
 
 const CARD_RADIUS = "1.75rem";
 

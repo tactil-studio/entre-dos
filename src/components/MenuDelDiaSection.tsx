@@ -2,16 +2,11 @@ import { Link } from "react-router-dom";
 import foodMezze from "@/assets/food-mezze.webp";
 import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const MenuDelDiaSection = () => {
 	const { mode } = useMode();
 	const { t } = useLang();
 	const td = t.menuDia;
-	const { ref, isVisible } = useScrollReveal({
-		rootMargin: "200px 0px 0px 0px",
-		threshold: 0.01,
-	});
 
 	if (mode === "night") return null;
 
@@ -20,7 +15,6 @@ const MenuDelDiaSection = () => {
 			id="menu-del-dia"
 			className="py-20 relative overflow-hidden"
 			style={{ backgroundColor: "#C8C4AC" }}
-			ref={ref}
 		>
 			{/* Subtle background texture blobs */}
 			<div className="absolute top-0 right-0 w-96 h-96 bg-olive/10 rounded-full blur-3xl pointer-events-none" />
@@ -29,7 +23,7 @@ const MenuDelDiaSection = () => {
 			<div className="max-w-7xl mx-auto px-6 relative">
 				<div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
 					{/* Left — text */}
-					<div className={`reveal-left ${isVisible ? "visible" : ""}`}>
+					<div>
 						{/* Eyebrow with flanking lines */}
 						<div className="flex items-center gap-3 mb-6">
 							<div className="h-px w-8 bg-olive/50" />
@@ -78,9 +72,7 @@ const MenuDelDiaSection = () => {
 					</div>
 
 					{/* Right — image */}
-					<div
-						className={`relative reveal-right ${isVisible ? "visible" : ""}`}
-					>
+					<div className="relative">
 						{/* Decorative frame offset */}
 						<div className="absolute -top-4 -right-4 w-full h-full border-2 border-olive/20 rounded-[3rem] pointer-events-none" />
 						<img

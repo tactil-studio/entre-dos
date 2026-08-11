@@ -1,21 +1,25 @@
+import cena from "@/assets/cena.jpg";
+import cena2 from "@/assets/cena-2.jpg";
 import cocktail from "@/assets/cocktail.webp";
 import foodAvocado from "@/assets/food-avocado.webp";
 import foodBrunch1 from "@/assets/food-brunch1.webp";
 import foodBrunch2 from "@/assets/food-brunch2.webp";
 import foodCappuccino from "@/assets/food-cappuccino.webp";
-import foodHam from "@/assets/food-ham.webp";
 import foodMezze from "@/assets/food-mezze.webp";
 import foodMezze2 from "@/assets/food-mezze2.webp";
 import foodPancakes from "@/assets/food-pancakes.webp";
 import foodPrawns from "@/assets/food-prawns.webp";
 import foodSalad1 from "@/assets/food-salad1.webp";
-import foodSalad2 from "@/assets/food-salad2.webp";
 import foodScrambled from "@/assets/food-scrambled.webp";
 import foodShakshuka from "@/assets/food-shakshuka.webp";
 import foodTacos from "@/assets/food-tacos.webp";
-import malibu from "@/assets/malibu.webp";
+
+import mojitoFresa from "@/assets/mojito-fresa.jpg";
 import monsteraBlue from "@/assets/monstera-blue.webp";
 import nightFlowers2 from "@/assets/Night flowers 2.svg";
+import nightAtmosphere from "@/assets/night-atmosphere.jpg";
+import nightAtmosphere2 from "@/assets/night-atmosphere-2.jpg";
+import nightAtmosphere3 from "@/assets/night-atmosphere-3.jpg";
 import wine from "@/assets/wine.webp";
 import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
@@ -54,21 +58,17 @@ const dayImages = [
 
 const nightImages = [
 	{ src: cocktail, alt: "Cóctel de autor", className: "col-span-2 row-span-2" },
-	{ src: foodHam, alt: "Jamón curado catalán", className: "" },
-	{ src: foodPrawns, alt: "Gambas al ajillo", className: "" },
-	{ src: wine, alt: "Vinos de la casa", className: "md:row-span-2" },
-	{ src: malibu, alt: "Cóctel tropical", className: "" },
-	{ src: foodMezze, alt: "Tabla para compartir", className: "" },
-	{ src: foodSalad2, alt: "Ensalada de noche", className: "" },
+	{ src: wine, alt: "Vinos de la casa", className: "" },
+	{ src: mojitoFresa, alt: "Mojito de fresa", className: "" },
+	{ src: cena, alt: "Cena de autor", className: "md:row-span-2" },
+	{ src: nightAtmosphere, alt: "Ambiente nocturno", className: "" },
+	{ src: cena2, alt: "Platos para compartir", className: "" },
+	{ src: nightAtmosphere2, alt: "Noche en Entre Dos", className: "" },
 	{
-		src: foodMezze2,
-		alt: "Mezze para compartir",
+		src: nightAtmosphere3,
+		alt: "Ambiente Entre Dos",
 		className: "md:col-span-1 md:row-span-2",
 	},
-	{ src: foodShakshuka, alt: "Plato de cuchara", className: "" },
-	{ src: foodTacos, alt: "Bocado de noche", className: "" },
-	{ src: foodAvocado, alt: "Tapa fresca", className: "" },
-	{ src: foodBrunch2, alt: "Plato compartido", className: "" },
 ];
 
 const GallerySection = () => {
@@ -135,6 +135,11 @@ const GallerySection = () => {
 					className="flex flex-wrap justify-center gap-6 md:gap-8"
 				>
 					{images.map((img, i) => {
+						const captions =
+							mode === "night"
+								? t.gallery.nightCaptions
+								: t.gallery.dayCaptions;
+						const caption = captions[i] ?? img.alt;
 						const rotations = [
 							-3, 1.5, -1, 2.5, -2, 1, -1.5, 2, -0.5, 3, -2.5, 0.5,
 						];
@@ -167,7 +172,7 @@ const GallerySection = () => {
 								>
 									<img
 										src={img.src}
-										alt={img.alt}
+										alt={caption}
 										loading="lazy"
 										className="w-full aspect-square object-cover"
 									/>
@@ -179,7 +184,7 @@ const GallerySection = () => {
 											letterSpacing: "0.01em",
 										}}
 									>
-										{img.alt}
+										{caption}
 									</p>
 								</div>
 							</div>
