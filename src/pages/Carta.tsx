@@ -111,6 +111,16 @@ const Carta = () => {
 	);
 	const [zoomed, setZoomed] = useState(false);
 
+	// Always force day mode on this page
+	useEffect(() => {
+		const root = document.documentElement;
+		const wasDark = root.classList.contains("dark");
+		root.classList.remove("dark");
+		return () => {
+			if (wasDark) root.classList.add("dark");
+		};
+	}, []);
+
 	// Reset active tab when language changes
 	useEffect(() => {
 		const tab = searchParams.get("tab");

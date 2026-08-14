@@ -31,11 +31,9 @@ const Navbar = () => {
 			setOpen(false);
 			if (isHome) {
 				const el = document.getElementById(sectionId);
-				if (el) {
-					el.scrollIntoView({ behavior: "smooth" });
-				}
+				if (el) el.scrollIntoView({ behavior: "smooth" });
 			} else {
-				navigate("/?section=" + sectionId);
+				navigate(`/?section=${sectionId}`);
 			}
 		},
 		[isHome, navigate],
@@ -82,24 +80,16 @@ const Navbar = () => {
 					</li>
 					<li>
 						<button
-							onClick={() => scrollToSection("about")}
+							onClick={() => scrollToSection("gallery")}
 							className={navLinkClass}
 						>
-							{t.nav.about}
+							{t.nav.gallery}
 						</button>
 					</li>
 					<li>
 						<Link to="/carta" className={navLinkClass}>
 							{t.nav.menu}
 						</Link>
-					</li>
-					<li>
-						<button
-							onClick={() => scrollToSection("gallery")}
-							className={navLinkClass}
-						>
-							{t.nav.gallery}
-						</button>
 					</li>
 					<li>
 						<Link to="/contacto" className={navLinkClass}>
@@ -162,10 +152,10 @@ const Navbar = () => {
 						</li>
 						<li>
 							<button
-								onClick={() => scrollToSection("about")}
+								onClick={() => scrollToSection("gallery")}
 								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
 							>
-								{t.nav.about}
+								{t.nav.gallery}
 							</button>
 						</li>
 						<li>
@@ -176,14 +166,6 @@ const Navbar = () => {
 							>
 								{t.nav.menu}
 							</Link>
-						</li>
-						<li>
-							<button
-								onClick={() => scrollToSection("gallery")}
-								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
-							>
-								{t.nav.gallery}
-							</button>
 						</li>
 						<li>
 							<Link

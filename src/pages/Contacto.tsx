@@ -1,14 +1,24 @@
-import { useEffect } from "react";
 import { Clock, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { useEffect } from "react";
 import FooterSection from "@/components/FooterSection";
-import Navbar from "@/components/Navbar";
 import TikTokIcon from "@/components/icons/TikTokIcon";
+import Navbar from "@/components/Navbar";
 import { useLang } from "@/contexts/LangContext";
 
 const Contacto = () => {
 	const { t, lang } = useLang();
 	const tl = t.location;
 	const tf = t.footer;
+
+	// Always force day mode on this page
+	useEffect(() => {
+		const root = document.documentElement;
+		const wasDark = root.classList.contains("dark");
+		root.classList.remove("dark");
+		return () => {
+			if (wasDark) root.classList.add("dark");
+		};
+	}, []);
 
 	useEffect(() => {
 		document.title =
@@ -37,7 +47,6 @@ const Contacto = () => {
 			{/* Main content */}
 			<section className="px-6 pb-16 max-w-7xl mx-auto">
 				<div className="grid md:grid-cols-2 gap-0 overflow-hidden border border-border shadow-lg rounded-2xl">
-
 					{/* Left — info */}
 					<div className="bg-gradient-to-br from-background via-background to-background/95 border-r border-border/30 p-8 md:p-12 flex flex-col gap-8 relative overflow-hidden">
 						<div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-olive via-night-blue to-olive/70" />
@@ -51,15 +60,21 @@ const Contacto = () => {
 								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-1 uppercase tracking-widest">
 									{tl.addressLabel}
 								</p>
-								<p className="font-body text-base text-foreground font-medium">Carrer del Carme, 40</p>
-								<p className="font-body text-sm text-foreground/60">08001 Barcelona</p>
+								<p className="font-body text-base text-foreground font-medium">
+									Carrer del Carme, 40
+								</p>
+								<p className="font-body text-sm text-foreground/60">
+									08001 Barcelona
+								</p>
 								<a
 									href="https://maps.google.com/?q=Carrer+del+Carme+40+Barcelona"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-olive text-xs font-mono-label tracking-widest uppercase mt-2 inline-block hover:underline"
 								>
-									{lang === "es" ? "Abrir en Google Maps →" : "Open in Google Maps →"}
+									{lang === "es"
+										? "Abrir en Google Maps →"
+										: "Open in Google Maps →"}
 								</a>
 							</div>
 						</address>
@@ -73,7 +88,10 @@ const Contacto = () => {
 								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-1 uppercase tracking-widest">
 									{lang === "es" ? "Teléfono" : "Phone"}
 								</p>
-								<a href="tel:+34937308487" className="font-body text-base text-foreground hover:text-olive transition-colors">
+								<a
+									href="tel:+34937308487"
+									className="font-body text-base text-foreground hover:text-olive transition-colors"
+								>
 									937 308 487
 								</a>
 							</div>
@@ -84,8 +102,13 @@ const Contacto = () => {
 								<Mail size={18} className="text-olive" />
 							</div>
 							<div>
-								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-1 uppercase tracking-widest">Email</p>
-								<a href="mailto:info@restaurante-entredos.com" className="font-body text-sm text-foreground hover:text-olive transition-colors">
+								<p className="text-foreground/50 text-[0.65rem] font-mono-label mb-1 uppercase tracking-widest">
+									Email
+								</p>
+								<a
+									href="mailto:info@restaurante-entredos.com"
+									className="font-body text-sm text-foreground hover:text-olive transition-colors"
+								>
 									info@restaurante-entredos.com
 								</a>
 							</div>
@@ -102,32 +125,50 @@ const Contacto = () => {
 								</p>
 								<div className="grid grid-cols-[120px_1fr_1fr] gap-x-3 items-baseline font-body text-xs pb-2 mb-2 border-b-2 border-olive/30">
 									<span />
-									<span className="text-olive font-semibold uppercase">{tl.kitchenLabel}</span>
-									<span className="text-olive font-semibold uppercase">{tl.barLabel}</span>
+									<span className="text-olive font-semibold uppercase">
+										{tl.kitchenLabel}
+									</span>
+									<span className="text-olive font-semibold uppercase">
+										{tl.barLabel}
+									</span>
 								</div>
 								<div className="space-y-1.5">
 									{tl.schedule.map((s, i) => (
-										<div key={i} className="grid grid-cols-[120px_1fr_1fr] gap-x-3 font-body text-xs pb-1.5 border-b border-border/10">
-											<span className="text-foreground font-medium">{s.day}</span>
+										<div
+											key={i}
+											className="grid grid-cols-[120px_1fr_1fr] gap-x-3 font-body text-xs pb-1.5 border-b border-border/10"
+										>
+											<span className="text-foreground font-medium">
+												{s.day}
+											</span>
 											<span className="text-foreground/60">{s.kitchen}</span>
 											<span className="text-foreground/60">{s.bar}</span>
 										</div>
 									))}
 								</div>
 								<p className="mt-3 font-body text-xs text-foreground/60">
-									<span className="text-olive font-semibold">Brunch</span> · {tl.brunch}
+									<span className="text-olive font-semibold">Brunch</span> ·{" "}
+									{tl.brunch}
 								</p>
 							</div>
 						</div>
 
 						{/* Social */}
 						<div className="flex gap-4 pt-2 border-t border-border/20">
-							<a href="https://www.instagram.com/entredos.restaurante/" target="_blank" rel="noopener noreferrer"
-								className="flex items-center gap-2 text-foreground/50 hover:text-foreground transition-colors font-body text-xs tracking-widest uppercase">
+							<a
+								href="https://www.instagram.com/entredos.restaurante/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center gap-2 text-foreground/50 hover:text-foreground transition-colors font-body text-xs tracking-widest uppercase"
+							>
 								<Instagram size={16} /> Instagram
 							</a>
-							<a href="https://www.tiktok.com/@entredos.restaurante" target="_blank" rel="noopener noreferrer"
-								className="flex items-center gap-2 text-foreground/50 hover:text-foreground transition-colors font-body text-xs tracking-widest uppercase">
+							<a
+								href="https://www.tiktok.com/@entredos.restaurante"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center gap-2 text-foreground/50 hover:text-foreground transition-colors font-body text-xs tracking-widest uppercase"
+							>
 								<TikTokIcon size={16} /> TikTok
 							</a>
 						</div>
@@ -136,7 +177,11 @@ const Contacto = () => {
 					{/* Right — Google Map */}
 					<div className="relative min-h-[420px]">
 						<iframe
-							title={lang === "es" ? "Ubicación Entre Dos Barcelona" : "Entre Dos Barcelona Location"}
+							title={
+								lang === "es"
+									? "Ubicación Entre Dos Barcelona"
+									: "Entre Dos Barcelona Location"
+							}
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.5!2d2.1695!3d41.3815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f60abccc9f%3A0xaace6fe6205cca37!2sTosca%20del%20Carme!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
 							width="100%"
 							height="100%"

@@ -1,5 +1,5 @@
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 import { useLang } from "@/contexts/LangContext";
@@ -7,10 +7,7 @@ import { useLang } from "@/contexts/LangContext";
 const FooterSection = () => {
 	const { t } = useLang();
 	const tf = t.footer;
-	const { pathname } = useLocation();
-	const isCarta = pathname.startsWith("/carta");
-
-	const bgColor = isCarta ? "#6C7856" : "hsl(0 0% 6%)";
+	const bgColor = "hsl(0 0% 6%)";
 
 	return (
 		<footer

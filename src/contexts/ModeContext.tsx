@@ -32,8 +32,12 @@ export const ModeProvider = ({ children }: { children: ReactNode }) => {
 
 	useEffect(() => {
 		const root = document.documentElement;
-		// Carta manages its own dark class; don't interfere
-		if (window.location.pathname.startsWith("/carta")) {
+		// Carta and Contacto are always day mode; don't apply dark class
+		if (
+			window.location.pathname.startsWith("/carta") ||
+			window.location.pathname.startsWith("/contacto")
+		) {
+			root.classList.remove("dark");
 			sessionStorage.setItem(STORAGE_KEY, mode);
 			return;
 		}
