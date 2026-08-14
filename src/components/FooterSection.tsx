@@ -3,16 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-entre2.svg";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 import { useLang } from "@/contexts/LangContext";
-import { useMode } from "@/contexts/ModeContext";
 
 const FooterSection = () => {
-	const { mode } = useMode();
 	const { t } = useLang();
 	const tf = t.footer;
 	const { pathname } = useLocation();
 	const isCarta = pathname.startsWith("/carta");
 
-	const bgColor = mode === "night" && !isCarta ? "hsl(0 0% 6%)" : "#6C7856";
+	const bgColor = isCarta ? "#6C7856" : "hsl(0 0% 6%)";
 
 	return (
 		<footer
@@ -36,7 +34,7 @@ const FooterSection = () => {
 							alt="Entre 2"
 							className="h-12 brightness-0 invert mb-4"
 						/>
-						<p className="text-background/50 font-body text-sm text-center md:text-left italic">
+						<p className="text-background/70 font-body text-sm text-center md:text-left italic">
 							{tf.tagline}
 						</p>
 					</div>
@@ -50,7 +48,7 @@ const FooterSection = () => {
 							<li>
 								<Link
 									to="/"
-									className="text-background/60 hover:text-background transition-colors text-sm font-body"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>
 									{tf.navHome}
 								</Link>
@@ -58,7 +56,7 @@ const FooterSection = () => {
 							<li>
 								<Link
 									to="/carta"
-									className="text-background/60 hover:text-background transition-colors text-sm font-body"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>
 									{tf.navMenu}
 								</Link>
@@ -66,7 +64,7 @@ const FooterSection = () => {
 							<li>
 								<a
 									href="/#about"
-									className="text-background/60 hover:text-background transition-colors text-sm font-body"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>
 									{tf.navAbout}
 								</a>
@@ -74,10 +72,18 @@ const FooterSection = () => {
 							<li>
 								<a
 									href="/#gallery"
-									className="text-background/60 hover:text-background transition-colors text-sm font-body"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>
 									{tf.navGallery}
 								</a>
+							</li>
+							<li>
+								<Link
+									to="/contacto"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
+								>
+									{t.nav.contact}
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -91,28 +97,28 @@ const FooterSection = () => {
 							<li className="flex items-start gap-2 justify-center md:justify-start">
 								<MapPin
 									size={16}
-									className="text-background/70 mt-0.5 shrink-0"
+									className="text-background/80 mt-0.5 shrink-0"
 								/>
-								<span className="text-background/60 text-sm font-body">
+								<span className="text-background/80 text-sm font-body">
 									Carrer del Carme, 40
 									<br />
 									08001 Barcelona
 								</span>
 							</li>
 							<li className="flex items-center gap-2 justify-center md:justify-start">
-								<Mail size={16} className="text-background/70 shrink-0" />
+								<Mail size={16} className="text-background/80 shrink-0" />
 								<a
 									href="mailto:info@restaurante-entredos.com"
-									className="text-background/60 hover:text-background transition-colors text-sm font-body"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>
 									info@restaurante-entredos.com
 								</a>
 							</li>
 							<li className="flex items-center gap-2 justify-center md:justify-start">
-								<Phone size={16} className="text-background/70 shrink-0" />
+								<Phone size={16} className="text-background/80 shrink-0" />
 								<a
 									href="tel:+34937308487"
-									className="text-background/60 hover:text-background transition-colors text-sm font-body"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>
 									937308487
 								</a>
@@ -125,16 +131,16 @@ const FooterSection = () => {
 						<h3 className="text-background text-xs tracking-[0.3em] uppercase font-body mb-4 font-semibold">
 							{tf.hoursTitle}
 						</h3>
-						<p className="text-background/60 text-sm font-body mb-1">
+						<p className="text-background/80 text-sm font-body mb-1">
 							{tf.monThu}
 						</p>
-						<p className="text-background/60 text-sm font-body mb-1">
+						<p className="text-background/80 text-sm font-body mb-1">
 							{tf.fri}
 						</p>
-						<p className="text-background/60 text-sm font-body mb-1">
+						<p className="text-background/80 text-sm font-body mb-1">
 							{tf.sat}
 						</p>
-						<p className="text-background/60 text-sm font-body mb-4">
+						<p className="text-background/80 text-sm font-body mb-4">
 							{tf.sun}
 						</p>
 
@@ -142,7 +148,7 @@ const FooterSection = () => {
 							href="https://www.instagram.com/entredos.restaurante/"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-2 text-background/50 hover:text-olive transition-colors font-body text-sm mt-4"
+							className="inline-flex items-center gap-2 text-background/70 hover:text-background transition-colors font-body text-sm mt-4"
 						>
 							<Instagram size={20} />
 							<span>@entredos.restaurante</span>
@@ -151,7 +157,7 @@ const FooterSection = () => {
 							href="https://www.tiktok.com/@entredos.restaurante"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-2 text-background/50 hover:text-olive transition-colors font-body text-sm mt-2"
+							className="inline-flex items-center gap-2 text-background/70 hover:text-background transition-colors font-body text-sm mt-2"
 						>
 							<TikTokIcon size={20} />
 							<span>@entredos.restaurante</span>
@@ -161,11 +167,12 @@ const FooterSection = () => {
 
 				{/* Bottom bar */}
 				<div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-					<p className="text-background/30 text-xs font-body tracking-widest uppercase">
+					<p className="text-background/50 text-xs font-body tracking-widest uppercase">
 						© {new Date().getFullYear()} Entre Dos · {tf.rights}
 					</p>
-					<p className="text-background/20 text-xs font-body">
-						{tf.design} <span className="text-olive">♥</span> {tf.designSuffix}
+					<p className="text-background/40 text-xs font-body">
+						{tf.design} <span className="text-background/60">♥</span>{" "}
+						{tf.designSuffix}
 					</p>
 				</div>
 			</div>

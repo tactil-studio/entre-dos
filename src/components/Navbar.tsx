@@ -101,6 +101,11 @@ const Navbar = () => {
 							{t.nav.gallery}
 						</button>
 					</li>
+					<li>
+						<Link to="/contacto" className={navLinkClass}>
+							{t.nav.contact}
+						</Link>
+					</li>
 				</ul>
 
 				<div className="hidden md:flex items-center justify-end gap-6">
@@ -179,6 +184,15 @@ const Navbar = () => {
 							>
 								{t.nav.gallery}
 							</button>
+						</li>
+						<li>
+							<Link
+								to="/contacto"
+								onClick={() => setOpen(false)}
+								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
+							>
+								{t.nav.contact}
+							</Link>
 						</li>
 						<li>
 							<a

@@ -7,6 +7,7 @@ import { LangProvider } from "@/contexts/LangContext";
 import { ModeProvider } from "@/contexts/ModeContext";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import Carta from "./pages/Carta.tsx";
+import Contacto from "./pages/Contacto.tsx";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import QRLanguage from "./pages/QRLanguage.tsx";
@@ -27,6 +28,7 @@ const App = () => (
 							<Route path="/qr" element={<QRLanguage />} />
 							<Route path="/carta" element={<Carta />} />
 							<Route path="/carta/:lang" element={<Carta />} />
+							<Route path="/contacto" element={<Contacto />} />
 							{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 							<Route path="*" element={<NotFound />} />
 						</Routes>

@@ -7,6 +7,7 @@ export const translations = {
 			about: "Nosotros",
 			menu: "Carta",
 			gallery: "Galería",
+			contact: "Contacto",
 		},
 		toggle: { day: "Día", night: "Noche" },
 		langSwitch: { label: "EN" },
@@ -188,7 +189,13 @@ export const translations = {
 		},
 	},
 	en: {
-		nav: { home: "Home", about: "About", menu: "Menu", gallery: "Gallery" },
+		nav: {
+			home: "Home",
+			about: "About",
+			menu: "Menu",
+			gallery: "Gallery",
+			contact: "Contact",
+		},
 		toggle: { day: "Day", night: "Night" },
 		langSwitch: { label: "ES" },
 		hero: { discover: "Discover" },
