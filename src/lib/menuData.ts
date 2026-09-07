@@ -483,7 +483,7 @@ export const cartaEnSections: MenuSection[] = [
 		],
 	},
 	{
-		title: "From the ocean",
+		title: "From the sea",
 		items: [
 			{ name: "Fried baby squid", price: "€9,90" },
 			{ name: "Grilled salmon with Bok Choi", price: "€10,90" },
