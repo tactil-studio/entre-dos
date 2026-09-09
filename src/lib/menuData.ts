@@ -65,14 +65,18 @@ export const cartaEsSections: MenuSection[] = [
 	{
 		title: "Pan",
 		items: [
-			{ name: "Pan con tomate", price: "€2,20" },
+			{ name: "Pan con tomate", price: "€2,50" },
+			{
+				name: "Montadito de jamón del país, rúcula, parmesano y aceite balsámico caramelizado",
+				price: "€2,80",
+			},
 			{
 				name: "Montadito de queso brie, mermelada de tomate y almendras laminadas",
-				price: "€2,50",
+				price: "€2,80",
 			},
 			{
 				name: "Montadito de salmón ahumado con queso crema y tomate cherry",
-				price: "€2,90",
+				price: "€2,80",
 			},
 			{ name: "Hummus con tostaditas y finas hierbas", price: "€5,90" },
 		],
@@ -95,28 +99,28 @@ export const cartaEsSections: MenuSection[] = [
 	{
 		title: "Vegetales",
 		items: [
-			{ name: "Olivas", price: "€3,30" },
+			{ name: "Olivas", price: "€3,50" },
 			{
 				name: "Empanada de cebolla caramelizada, nueces, queso de cabra y mozzarella",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{
 				name: "Empanada de espinacas, queso crema, mozzarella y piñones",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{ name: "Pimientos de Padrón", price: "€5,90" },
 			{
 				name: "Ensalada de queso de cabra (mezclum, tomate cherry, almendras, vinagreta de miel y lima)",
-				price: "€7,70",
+				price: "€7,90",
 			},
 			{
 				name: "Ensalada del chef (mezclum, aguacate, tomate seco, nueces)",
-				price: "€7,70",
+				price: "€7,90",
 			},
-			{ name: "Wok de verduras", price: "€7,70" },
+			{ name: "Wok de verduras", price: "€7,90" },
 			{
 				name: "Alcachofa confitada con salsa gremolata sobre puré de boniato",
-				price: "€8,50",
+				price: "€8,90",
 			},
 			{
 				name: "Mini hamburguesas veganas con mayonesa de jalapeño y mermelada de tomate x2",
@@ -128,10 +132,10 @@ export const cartaEsSections: MenuSection[] = [
 		title: "Carne",
 		items: [
 			{ name: "Albóndigas danesas con salsa de almendras", price: "€7,90" },
-			{ name: "Brocheta de pollo con salsa de miel y curry", price: "€10,50" },
+			{ name: "Brocheta de pollo con salsa de miel y curry", price: "€10,90" },
 			{
 				name: "Pollo marinado estilo marroquí con salsa tzatziki, menta, almendras tostadas y cilantro",
-				price: "€10,50",
+				price: "€10,90",
 			},
 			{ name: "Cazuela de ternera al ajillo", price: "€11,90" },
 			{
@@ -183,14 +187,18 @@ export const cartaCaSections: MenuSection[] = [
 	{
 		title: "Pà",
 		items: [
-			{ name: "Pà amb tomàquet", price: "€2,20" },
+			{ name: "Pà amb tomàquet", price: "€2,50" },
 			{
-				name: "Barquete de formatge brie, mermelada de tomàquet i ametlles llaminades",
-				price: "€2,50",
+				name: "Montadito de pernil del país, rúcula, parmesà i oli balsàmic caramel·litzat",
+				price: "€2,80",
 			},
 			{
-				name: "Barquete de salmó fumat amb formatge crema i tomàquet cherri",
-				price: "€2,90",
+				name: "Montadito de formatge brie, mermelada de tomàquet i ametlles llaminades",
+				price: "€2,80",
+			},
+			{
+				name: "Montadito de salmó fumat amb formatge crema i tomàquet cherri",
+				price: "€2,80",
 			},
 			{ name: "Hummus amb torradetes i fines herbes", price: "€5,90" },
 		],
@@ -210,28 +218,28 @@ export const cartaCaSections: MenuSection[] = [
 	{
 		title: "Vegetals",
 		items: [
-			{ name: "Olives", price: "€3,30" },
+			{ name: "Olives", price: "€3,50" },
 			{
 				name: "Empanada de ceba caramel·litzada, nous, formatge de cabra i mozzarella",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{
 				name: "Empanada de espinacs, formatge crema, mozzarella i pinyons",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{ name: "Pebrots de padró", price: "€5,90" },
 			{
 				name: "Amanida de formatge de cabra (mesclum, tomàquet cherri, ametlles, mel i vinagreta de llima)",
-				price: "€7,70",
+				price: "€7,90",
 			},
 			{
 				name: "Amanida del xef (mesclum, alvocat, tomàquet sec, nous)",
-				price: "€7,70",
+				price: "€7,90",
 			},
-			{ name: "Wok de verdures", price: "€7,70" },
+			{ name: "Wok de verdures", price: "€7,90" },
 			{
 				name: "Carxofa confitada amb salsa gremolata i pure de moniatos",
-				price: "€8,50",
+				price: "€8,90",
 			},
 			{
 				name: "Mini hamburgueses veganes amb maionesa de jalapeny i mermelada de tomàquet x2u",
@@ -245,11 +253,11 @@ export const cartaCaSections: MenuSection[] = [
 			{ name: "Mandonguilles daneses amb salsa d'ametlles", price: "€7,90" },
 			{
 				name: "Broqueta de pollastre amb salsa de mel i curry",
-				price: "€10,50",
+				price: "€10,90",
 			},
 			{
 				name: "Pollastre marinat estil asiàtic amb salsa tzatziki, menta, ametlles i coriandre",
-				price: "€10,50",
+				price: "€10,90",
 			},
 			{ name: "Cassola de vedella amb all", price: "€11,90" },
 			{
@@ -298,14 +306,18 @@ export const cartaFrSections: MenuSection[] = [
 	{
 		title: "Pain",
 		items: [
-			{ name: "Pain a la tomate", price: "€2,20" },
+			{ name: "Pain a la tomate", price: "€2,50" },
+			{
+				name: "Montadito de jambon de pays, roquette, parmesan et sirop balsamique",
+				price: "€2,80",
+			},
 			{
 				name: "Montadito de fromage brie, confiture de tomate et amandes",
-				price: "€2,50",
+				price: "€2,80",
 			},
 			{
 				name: "Montadito de saumon fumé, fromage Filadelfia et tomate cerise",
-				price: "€2,90",
+				price: "€2,80",
 			},
 			{ name: "Houmous avec toasts et herbes", price: "€5,90" },
 		],
@@ -325,28 +337,28 @@ export const cartaFrSections: MenuSection[] = [
 	{
 		title: "Végétal",
 		items: [
-			{ name: "Olives", price: "€3,30" },
+			{ name: "Olives", price: "€3,50" },
 			{
 				name: "Chausson fourré au fromage de chèvre, noix, mozzarella et oignon caramelisé",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{
 				name: "Chausson aux epinards, fromage frais, mozzarella et pignons",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{ name: "Poivrons de Padrón", price: "€5,90" },
 			{
 				name: "Salade de chèvre (mezclum, tomate cerise, chèvre, amandes, miel et vinaigrette au citron vert)",
-				price: "€7,70",
+				price: "€7,90",
 			},
 			{
 				name: "Salade du chef (mezclum, avocat, tomates séchées et noix)",
-				price: "€7,70",
+				price: "€7,90",
 			},
-			{ name: "Wok de légumes", price: "€7,70" },
+			{ name: "Wok de légumes", price: "€7,90" },
 			{
 				name: "Artichaut à la sauce gremolata sur purée de patate douce",
-				price: "€8,50",
+				price: "€8,90",
 			},
 			{
 				name: "Mini burgers végétaliens avec une mayonnaise au jalapeño et confiture de tomate x2u",
@@ -358,10 +370,10 @@ export const cartaFrSections: MenuSection[] = [
 		title: "Viande",
 		items: [
 			{ name: "Boulettes Danoises et sa sauce d'amandes", price: "€7,90" },
-			{ name: "Brochette de poulet, sauce curry et miel", price: "€10,50" },
+			{ name: "Brochette de poulet, sauce curry et miel", price: "€10,90" },
 			{
 				name: "Poulet mariné à la morocaine avec une sauce tzatziki, menthe, amandes et coriandre",
-				price: "€10,50",
+				price: "€10,90",
 			},
 			{ name: "Cassolette de veau à l'ail", price: "€11,90" },
 			{
@@ -410,14 +422,18 @@ export const cartaEnSections: MenuSection[] = [
 	{
 		title: "Bread",
 		items: [
-			{ name: "Catalan style bread with tomato", price: "€2,20" },
+			{ name: "Catalan style bread with tomato", price: "€2,50" },
+			{
+				name: "Montaditos with cured ham, rocket salad, parmesan and caramelized balsamic oil",
+				price: "€2,80",
+			},
 			{
 				name: "Montaditos with brie cheese, tomato marmalade and roasted almonds",
-				price: "€2,50",
+				price: "€2,80",
 			},
 			{
 				name: "Montaditos with smoked salmon, cream cheese and cherry tomatoes",
-				price: "€2,90",
+				price: "€2,80",
 			},
 			{ name: "Hummus with herb encrusted toasted bread", price: "€5,90" },
 		],
@@ -437,28 +453,28 @@ export const cartaEnSections: MenuSection[] = [
 	{
 		title: "Vegetable",
 		items: [
-			{ name: "Olives", price: "€3,30" },
+			{ name: "Olives", price: "€3,50" },
 			{
 				name: "Empanada filled with caramelized onion, walnuts, goat cheese and mozzarella",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{
 				name: "Empanada filled with spinach, cream cheese, mozzarella and pine nuts",
-				price: "€3,50",
+				price: "€3,80",
 			},
 			{ name: "Padrón peppers", price: "€5,90" },
 			{
 				name: "Goat cheese salad (mezclum, cherry tomatoes, goat cheese, almonds, honey and lime vinaigrette)",
-				price: "€7,70",
+				price: "€7,90",
 			},
 			{
 				name: "Chef's salad (mezclum, avocado, sun dried tomatoes and nuts)",
-				price: "€7,70",
+				price: "€7,90",
 			},
-			{ name: "Asian stir-fried vegetables", price: "€7,70" },
+			{ name: "Asian stir-fried vegetables", price: "€7,90" },
 			{
 				name: "Slow cooked artichokes on a sweet potato purée and gremolata dressing",
-				price: "€8,50",
+				price: "€8,90",
 			},
 			{
 				name: "Mini vegan hamburgers filled with jalapeño mayonnaise and tomato marmalade x2u",
@@ -470,10 +486,10 @@ export const cartaEnSections: MenuSection[] = [
 		title: "Meat",
 		items: [
 			{ name: "Danish style meatballs with almond sauce", price: "€7,90" },
-			{ name: "Honey and curry chicken skewers", price: "€10,50" },
+			{ name: "Honey and curry chicken skewers", price: "€10,90" },
 			{
 				name: "Moroccan style marinated chicken with tzatziki, mint, coriander and almonds",
-				price: "€10,50",
+				price: "€10,90",
 			},
 			{ name: "Beef casserole with garlic butter", price: "€11,90" },
 			{
