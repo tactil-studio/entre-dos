@@ -1406,11 +1406,6 @@ export const bebidasEsSections: MenuSection[] = [
 		title: "Bebidas",
 		items: [
 			{
-				name: "Reparador",
-				desc: "Zumo natural de zanahoria, remolacha, manzana y naranja",
-				price: "6,00€",
-			},
-			{
 				name: "Antioxidante",
 				desc: "Zumo natural de zanahoria, naranja y manzana roja",
 				price: "6,00€",
@@ -1450,11 +1445,6 @@ export const bebidasEnSections: MenuSection[] = [
 		title: "Drinks",
 		items: [
 			{
-				name: "Repairer",
-				desc: "Natural carrot, beetroot, apple and orange juice",
-				price: "6,00€",
-			},
-			{
 				name: "Antioxidant",
 				desc: "Natural carrot, orange and red apple juice",
 				price: "6,00€",
@@ -1489,11 +1479,6 @@ export const bebidasCaSections: MenuSection[] = [
 	{
 		title: "Begudes",
 		items: [
-			{
-				name: "Reparador",
-				desc: "Suc natural de pastanaga, remolatxa, poma i taronja",
-				price: "6,00€",
-			},
 			{
 				name: "Antioxidant",
 				desc: "Suc natural de pastanaga, taronja i poma vermella",
@@ -1533,11 +1518,6 @@ export const bebidasFrSections: MenuSection[] = [
 	{
 		title: "Boissons",
 		items: [
-			{
-				name: "Réparateur",
-				desc: "Jus naturel de carotte, betterave, pomme et orange",
-				price: "6,00€",
-			},
 			{
 				name: "Antioxydant",
 				desc: "Jus naturel de carotte, orange et pomme rouge",
