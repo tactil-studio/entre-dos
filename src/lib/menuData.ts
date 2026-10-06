@@ -829,7 +829,7 @@ export const menuDiaFr: MenuDiaData = {
 
 // ── VINOS ─────────────────────────────────────────────────────────────────────
 
-export const vinosEsSections: MenuSection[] = [
+const legacyVinosEsSections: MenuSection[] = [
 	{
 		title: "Vino blanco",
 		items: [
@@ -906,7 +906,7 @@ export const vinosEsSections: MenuSection[] = [
 	},
 ];
 
-export const vinosEnSections: MenuSection[] = [
+const legacyVinosEnSections: MenuSection[] = [
 	{
 		title: "White wine",
 		items: [
@@ -983,7 +983,7 @@ export const vinosEnSections: MenuSection[] = [
 	},
 ];
 
-export const vinosCaSections: MenuSection[] = [
+const legacyVinosCaSections: MenuSection[] = [
 	{
 		title: "Vi blanc",
 		items: [
@@ -1060,7 +1060,7 @@ export const vinosCaSections: MenuSection[] = [
 	},
 ];
 
-export const vinosFrSections: MenuSection[] = [
+const legacyVinosFrSections: MenuSection[] = [
 	{
 		title: "Vin blanc",
 		items: [
@@ -1137,21 +1137,329 @@ export const vinosFrSections: MenuSection[] = [
 	},
 ];
 
+type WineSectionKey = "white" | "red" | "rose" | "cava" | "natural";
+type LocalizedWineItem = Omit<MenuItem, "desc"> & {
+	descriptions: Record<LangCode, string>;
+};
+
+const wineCatalog: Array<{
+	key: WineSectionKey;
+	items: LocalizedWineItem[];
+}> = [
+	{
+		key: "white",
+		items: [
+			{
+				name: "CASTELL DE FADES ORGÁNIC",
+				subtitle: "Conca de Barberà · Viognier",
+				descriptions: {
+					es: "Un blanco cítrico y cremoso, con un carácter fresco y una elaboración ecológica.",
+					en: "A citrusy, creamy white with a fresh character and organic production.",
+					ca: "Un blanc cítric i cremós, amb un caràcter fresc i una elaboració ecològica.",
+					fr: "Un blanc citronné et crémeux, au caractère frais et issu d'une élaboration biologique.",
+				},
+				price: "3,50€ / 19,00€",
+			},
+			{
+				name: "A VEIRA DO MAR",
+				subtitle: "Rías Baixas · Albariño",
+				descriptions: {
+					es: "Aromas de fruta y melocotón, con una textura sedosa y un final fresco.",
+					en: "Fruit and peach aromas, with a silky texture and a fresh finish.",
+					ca: "Aromes de fruita i préssec, amb una textura sedosa i un final fresc.",
+					fr: "Arômes de fruits et de pêche, avec une texture soyeuse et une finale fraîche.",
+				},
+				price: "3,90€ / 23,00€",
+			},
+			{
+				name: "FINCA FEROES",
+				subtitle: "Verdejo",
+				descriptions: {
+					es: "Notas tropicales y una frescura marcada, con un final largo y agradable.",
+					en: "Tropical notes and pronounced freshness, with a long, pleasant finish.",
+					ca: "Notes tropicals i una frescor marcada, amb un final llarg i agradable.",
+					fr: "Notes tropicales et fraîcheur marquée, avec une finale longue et agréable.",
+				},
+				price: "3,90€ / 23,00€",
+			},
+			{
+				name: "SEÑORÍO DE RUBIOS",
+				subtitle: "Godello",
+				descriptions: {
+					es: "Aromas de fruta blanca y flores, acompañados de un toque cítrico y refrescante.",
+					en: "White fruit and floral aromas, with a refreshing citrus touch.",
+					ca: "Aromes de fruita blanca i flors, acompanyats d'un toc cítric i refrescant.",
+					fr: "Arômes de fruits blancs et de fleurs, accompagnés d'une touche d'agrumes rafraîchissante.",
+				},
+				price: "26,00€",
+			},
+			{
+				name: "TUETS TOT BLANC (NATURAL)",
+				subtitle: "Chenin · Garnatxa blanca",
+				descriptions: {
+					es: "Un vino seco y aromático, fresco en boca y con un carácter natural muy marcado.",
+					en: "A dry, aromatic wine that is fresh on the palate, with a distinctive natural character.",
+					ca: "Un vi sec i aromàtic, fresc en boca i amb un caràcter natural molt marcat.",
+					fr: "Un vin sec et aromatique, frais en bouche et au caractère naturel très affirmé.",
+				},
+				price: "26,00€",
+			},
+		],
+	},
+	{
+		key: "red",
+		items: [
+			{
+				name: "CASTELL DE FADES ORGÁNIC",
+				subtitle: "Conca de Barberà · Cabernet · Syrah",
+				descriptions: {
+					es: "Afrutado y fresco, con un buen equilibrio entre fruta y estructura.",
+					en: "Fruity and fresh, with a good balance between fruit and structure.",
+					ca: "Afruitat i fresc, amb un bon equilibri entre fruita i estructura.",
+					fr: "Fruité et frais, avec un bon équilibre entre le fruit et la structure.",
+				},
+				price: "3,50€ / 19,00€",
+			},
+			{
+				name: "FINCA FEROES CRIANZA",
+				subtitle: "Rioja · Tempranillo · Garnatxa",
+				descriptions: {
+					es: "Fruta roja madura y un paso por boca redondo y persistente.",
+					en: "Ripe red fruit and a rounded, lingering palate.",
+					ca: "Fruita vermella madura i un pas per boca rodó i persistent.",
+					fr: "Fruits rouges mûrs et une bouche ronde et persistante.",
+				},
+				price: "3,90€ / 23,00€",
+			},
+			{
+				name: "CLOS DE NIT JOVE",
+				subtitle: "Montsants · Garnatxa · Carinyena",
+				descriptions: {
+					es: "Fruta roja fresca, con un carácter elegante y una textura sedosa.",
+					en: "Fresh red fruit, with an elegant character and a silky texture.",
+					ca: "Fruita vermella fresca, amb un caràcter elegant i una textura sedosa.",
+					fr: "Fruits rouges frais, avec un caractère élégant et une texture soyeuse.",
+				},
+				price: "3,90€ / 23,00€",
+			},
+			{
+				name: "OTERO CRIANZA SELECCIÓN",
+				subtitle: "Valles de Benavente · Mencía",
+				descriptions: {
+					es: "Frutos rojos y notas especiadas, con un carácter intenso y equilibrado.",
+					en: "Red berries and spicy notes, with an intense, balanced character.",
+					ca: "Fruits vermells i notes especiades, amb un caràcter intens i equilibrat.",
+					fr: "Fruits rouges et notes épicées, au caractère intense et équilibré.",
+				},
+				price: "26,00€",
+			},
+			{
+				name: "RUMORE (NATURAL)",
+				subtitle: "Garnatxa negra · Sumoll",
+				descriptions: {
+					es: "Vibrante y fresco, con notas de fruta roja y un final ligeramente meloso.",
+					en: "Vibrant and fresh, with red-fruit notes and a gently honeyed finish.",
+					ca: "Vibrant i fresc, amb notes de fruita vermella i un final lleugerament melós.",
+					fr: "Vibrant et frais, avec des notes de fruits rouges et une finale légèrement miellée.",
+				},
+				price: "26,00€",
+			},
+		],
+	},
+	{
+		key: "rose",
+		items: [
+			{
+				name: "CASTELL DE FADES ORGÁNIC",
+				subtitle: "Rías Baixas · Albariño",
+				descriptions: {
+					es: "Afrutado y elegante, con una expresión fresca y equilibrada.",
+					en: "Fruity and elegant, with a fresh, balanced expression.",
+					ca: "Afruitat i elegant, amb una expressió fresca i equilibrada.",
+					fr: "Fruité et élégant, avec une expression fraîche et équilibrée.",
+				},
+				price: "3,50€ / 19,00€",
+			},
+			{
+				name: "CUCCURUCUCU (NATURAL)",
+				subtitle: "Cabernet Sauvignon · Syrah · Macabeu",
+				descriptions: {
+					es: "Fruta roja madura, notas de barrica y un toque dulce.",
+					en: "Ripe red fruit, barrel notes, and a touch of sweetness.",
+					ca: "Fruita vermella madura, notes de bóta i un toc dolç.",
+					fr: "Fruits rouges mûrs, notes de fût et une touche de douceur.",
+				},
+				price: "26,00€",
+			},
+		],
+	},
+	{
+		key: "cava",
+		items: [
+			{
+				name: "DIGNITAT BRUT",
+				subtitle: "Xarel·lo · Macabeo · Parellada",
+				descriptions: {
+					es: "Ligero y fresco, con un carácter sutil y delicado.",
+					en: "Light and fresh, with a subtle, delicate character.",
+					ca: "Lleuger i fresc, amb un caràcter subtil i delicat.",
+					fr: "Léger et frais, au caractère subtil et délicat.",
+				},
+				price: "3,90€ / 23,00€",
+			},
+			{
+				name: "DIGNITAT ROSÉ",
+				subtitle: "Trepat · Garnatxa · Monastrell",
+				descriptions: {
+					es: "Fruta roja fresca y delicada, con un carácter elegante.",
+					en: "Fresh, delicate red fruit with an elegant character.",
+					ca: "Fruita vermella fresca i delicada, amb un caràcter elegant.",
+					fr: "Fruits rouges frais et délicats, avec un caractère élégant.",
+				},
+				price: "26,00€",
+			},
+			{
+				name: "FANATIC BRUT IMPERIAL RESERVA ORGÁNIC",
+				subtitle: "Chardonnay · Parellada",
+				descriptions: {
+					es: "Maduro y elegante, con burbuja fina y una textura delicada.",
+					en: "Mature and elegant, with fine bubbles and a delicate texture.",
+					ca: "Madur i elegant, amb bombolla fina i una textura delicada.",
+					fr: "Mûr et élégant, avec une bulle fine et une texture délicate.",
+				},
+				price: "3,90€ / 23,00€",
+			},
+		],
+	},
+	{
+		key: "natural",
+		items: [
+			{
+				name: "FLOR DE CORALÍ 2024",
+				subtitle: "Pansa blanca 75% · Merlot 25%",
+				descriptions: {
+					es: "Fresco y frutal, con una expresión vibrante y ligera.",
+					en: "Fresh and fruity, with a vibrant, light expression.",
+					ca: "Fresc i afruitat, amb una expressió vibrant i lleugera.",
+					fr: "Frais et fruité, avec une expression vibrante et légère.",
+				},
+				price: "26,00€",
+			},
+			{
+				name: "FLOR DE SANT JOAN 2024",
+				subtitle: "Pansa blanca 100%",
+				descriptions: {
+					es: "Cítrico y floral, con una textura cremosa y fresca.",
+					en: "Citrusy and floral, with a creamy, fresh texture.",
+					ca: "Cítric i floral, amb una textura cremosa i fresca.",
+					fr: "Citronné et floral, avec une texture crémeuse et fraîche.",
+				},
+				price: "26,00€",
+			},
+			{
+				name: "ORANGE FINCA PARERA (NATURAL)",
+				subtitle: "Xarel·lo · Malvasía de Sitges",
+				descriptions: {
+					es: "Brisado y jugoso, con notas de fruta exótica y un carácter fresco.",
+					en: "Skin-contact and juicy, with exotic fruit notes and a fresh character.",
+					ca: "Brisat i sucós, amb notes de fruita exòtica i un caràcter fresc.",
+					fr: "Macéré et juteux, avec des notes de fruits exotiques et un caractère frais.",
+				},
+				price: "26,00€",
+			},
+			{
+				name: "ORBIS ORANGE (NATURAL)",
+				subtitle: "Xarel·lo vermell · Xarel·lo · Macabeu",
+				descriptions: {
+					es: "Elaborado en ánfora, con notas de piel de naranja y frutos secos.",
+					en: "Made in amphora, with notes of orange peel and dried fruit.",
+					ca: "Elaborat en àmfora, amb notes de pell de taronja i fruits secs.",
+					fr: "Élevé en amphore, avec des notes de peau d'orange et de fruits secs.",
+				},
+				price: "26,00€",
+			},
+		],
+	},
+];
+
+const createWineSections = (
+	titles: Record<WineSectionKey, string>,
+	glassLabel: string,
+	lang: LangCode,
+): MenuSection[] =>
+	wineCatalog.map(({ key, items }) => ({
+		title: titles[key],
+		items: items.map((item) => ({
+			...item,
+			desc: item.descriptions[lang],
+			price: item.price.includes("/")
+				? `${glassLabel} ${item.price}`
+				: item.price,
+		})),
+	}));
+
+export const vinosEsSections = createWineSections(
+	{
+		white: "Vinos blancos",
+		red: "Vinos tintos",
+		rose: "Vinos rosados",
+		cava: "Cavas",
+		natural: "Vinos ancestrales / Vinos naturales",
+	},
+	"copa",
+	"es",
+);
+
+export const vinosEnSections = createWineSections(
+	{
+		white: "White wines",
+		red: "Red wines",
+		rose: "Rosé wines",
+		cava: "Cava",
+		natural: "Ancestral wines / Natural wines",
+	},
+	"glass",
+	"en",
+);
+
+export const vinosCaSections = createWineSections(
+	{
+		white: "Vins blancs",
+		red: "Vins negres",
+		rose: "Vins rosats",
+		cava: "Caves",
+		natural: "Vins ancestrals / Vins naturals",
+	},
+	"copa",
+	"ca",
+);
+
+export const vinosFrSections = createWineSections(
+	{
+		white: "Vins blancs",
+		red: "Vins rouges",
+		rose: "Vins rosés",
+		cava: "Cavas",
+		natural: "Vins ancestraux / Vins naturels",
+	},
+	"verre",
+	"fr",
+);
+
 // ── COCKTAILS ─────────────────────────────────────────────────────────────────
 
 export const cocktailsEsSections: MenuSection[] = [
 	{
 		title: "Cocktails",
-		note: "*opciones sin alcohol",
 		items: [
-			{
-				name: "Margarita",
-				desc: "Tequila, triple sec, lima, limón",
-				price: "6,00€",
-			},
 			{
 				name: "Margarita maracuyá",
 				desc: "Tequila, triple sec, lima, leche de coco, maracuyá",
+				price: "6,00€",
+			},
+			{
+				name: "Blood Margarita",
+				desc: "Tequila, naranja sanguina, lima",
 				price: "6,00€",
 			},
 			{
@@ -1159,37 +1467,46 @@ export const cocktailsEsSections: MenuSection[] = [
 				desc: "Vodka, azúcar, licor de café, café",
 				price: "6,00€",
 			},
-			{ name: "Gin Basil Smash", desc: "Gin, lima, albahaca", price: "6,00€" },
 			{
-				name: "Mojito*",
-				desc: "Ron, lima, menta, azúcar moreno, agua con gas",
+				name: "Paloma",
+				desc: "Tequila, pomelo, lima, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Mojito de fresa*",
-				desc: "Ron, lima, fresa, azúcar moreno, refresco de limón",
+				name: "Mojito",
+				desc: "Ron, lima, menta, azúcar moreno, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Piña Colada*",
+				name: "Mojito con fresa",
+				desc: "Ron, lima, fresa, azúcar moreno, soda",
+				price: "6,00€",
+			},
+			{
+				name: "Piña Colada",
 				desc: "Ron blanco, zumo de piña, sirope de coco, nata",
 				price: "6,00€",
 			},
 			{
-				name: "Blackberry Moscow Mule*",
+				name: "Blackberry Moscow Mule",
 				desc: "Vodka, lima, arándanos, azúcar moreno, Ginger Ale",
 				price: "6,00€",
 			},
 			{ name: "Caipirinha", desc: "Cachaça, azúcar, lima", price: "6,00€" },
 			{
 				name: "Aperol Spritz",
-				desc: "Aperol, Cava Brut, agua con gas, naranja",
+				desc: "Aperol, cava, soda, naranja",
+				price: "6,00€",
+			},
+			{
+				name: "Michelada",
+				desc: "Cerveza, lima, tomate, especias, salsa picante",
 				price: "6,00€",
 			},
 			{
 				name: "Sangría casera",
 				desc: "De vino tinto, blanco o cava",
-				price: "4,50€ | 17,00€",
+				price: "4,50€ / 17,00€",
 			},
 		],
 	},
@@ -1198,16 +1515,15 @@ export const cocktailsEsSections: MenuSection[] = [
 export const cocktailsEnSections: MenuSection[] = [
 	{
 		title: "Cocktails",
-		note: "*alcohol-free options available",
 		items: [
-			{
-				name: "Margarita",
-				desc: "Tequila, triple sec, lime, lemon",
-				price: "6,00€",
-			},
 			{
 				name: "Passion fruit Margarita",
 				desc: "Tequila, triple sec, lime, coconut milk, passion fruit",
+				price: "6,00€",
+			},
+			{
+				name: "Blood Margarita",
+				desc: "Tequila, blood orange, lime",
 				price: "6,00€",
 			},
 			{
@@ -1215,37 +1531,46 @@ export const cocktailsEnSections: MenuSection[] = [
 				desc: "Vodka, sugar, coffee liqueur, coffee",
 				price: "6,00€",
 			},
-			{ name: "Gin Basil Smash", desc: "Gin, lime, basil", price: "6,00€" },
 			{
-				name: "Mojito*",
-				desc: "Rum, lime, mint, brown sugar, sparkling water",
+				name: "Paloma",
+				desc: "Tequila, grapefruit, lime, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Strawberry Mojito*",
-				desc: "Rum, lime, strawberry, brown sugar, lemon soda",
+				name: "Mojito",
+				desc: "Rum, lime, mint, brown sugar, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Piña Colada*",
+				name: "Strawberry Mojito",
+				desc: "Rum, lime, strawberry, brown sugar, soda",
+				price: "6,00€",
+			},
+			{
+				name: "Piña Colada",
 				desc: "White rum, pineapple juice, coconut syrup, cream",
 				price: "6,00€",
 			},
 			{
-				name: "Blackberry Moscow Mule*",
+				name: "Blackberry Moscow Mule",
 				desc: "Vodka, lime, blackberries, brown sugar, Ginger Ale",
 				price: "6,00€",
 			},
 			{ name: "Caipirinha", desc: "Cachaça, sugar, lime", price: "6,00€" },
 			{
 				name: "Aperol Spritz",
-				desc: "Aperol, Brut Cava, sparkling water, orange",
+				desc: "Aperol, cava, soda, orange",
+				price: "6,00€",
+			},
+			{
+				name: "Michelada",
+				desc: "Beer, lime, tomato, spices, hot sauce",
 				price: "6,00€",
 			},
 			{
 				name: "Homemade Sangría",
 				desc: "Red, white or cava",
-				price: "4,50€ | 17,00€",
+				price: "4,50€ / 17,00€",
 			},
 		],
 	},
@@ -1254,16 +1579,15 @@ export const cocktailsEnSections: MenuSection[] = [
 export const cocktailsCaSections: MenuSection[] = [
 	{
 		title: "Còctels",
-		note: "*opcions sense alcohol",
 		items: [
-			{
-				name: "Margarita",
-				desc: "Tequila, triple sec, llima, llimona",
-				price: "6,00€",
-			},
 			{
 				name: "Margarita maracuyà",
 				desc: "Tequila, triple sec, llima, llet de coco, maracuyà",
+				price: "6,00€",
+			},
+			{
+				name: "Blood Margarita",
+				desc: "Tequila, taronja sanguina, llima",
 				price: "6,00€",
 			},
 			{
@@ -1272,40 +1596,45 @@ export const cocktailsCaSections: MenuSection[] = [
 				price: "6,00€",
 			},
 			{
-				name: "Gin Basil Smash",
-				desc: "Gin, llima, alfàbrega",
+				name: "Paloma",
+				desc: "Tequila, aranja, llima, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Mojito*",
-				desc: "Ron, llima, menta, sucre morè, aigua amb gas",
+				name: "Mojito",
+				desc: "Ron, llima, menta, sucre morè, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Mojito de maduixa*",
-				desc: "Ron, llima, maduixa, sucre morè, refresc de llimona",
+				name: "Mojito amb maduixa",
+				desc: "Ron, llima, maduixa, sucre morè, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Piña Colada*",
+				name: "Piña Colada",
 				desc: "Ron blanc, suc de pinya, xarop de coco, nata",
 				price: "6,00€",
 			},
 			{
-				name: "Blackberry Moscow Mule*",
+				name: "Blackberry Moscow Mule",
 				desc: "Vodka, llima, nabius, sucre morè, Ginger Ale",
 				price: "6,00€",
 			},
 			{ name: "Caipirinha", desc: "Cachaça, sucre, llima", price: "6,00€" },
 			{
 				name: "Aperol Spritz",
-				desc: "Aperol, Cava Brut, aigua amb gas, taronja",
+				desc: "Aperol, cava, soda, taronja",
+				price: "6,00€",
+			},
+			{
+				name: "Michelada",
+				desc: "Cervesa, llima, tomàquet, espècies, salsa picant",
 				price: "6,00€",
 			},
 			{
 				name: "Sangria casolana",
 				desc: "De vi negre, blanc o cava",
-				price: "4,50€ | 17,00€",
+				price: "4,50€ / 17,00€",
 			},
 		],
 	},
@@ -1314,16 +1643,15 @@ export const cocktailsCaSections: MenuSection[] = [
 export const cocktailsFrSections: MenuSection[] = [
 	{
 		title: "Cocktails",
-		note: "*options sans alcool disponibles",
 		items: [
-			{
-				name: "Margarita",
-				desc: "Tequila, triple sec, citron vert, citron",
-				price: "6,00€",
-			},
 			{
 				name: "Margarita fruit de la passion",
 				desc: "Tequila, triple sec, citron vert, lait de coco, fruit de la passion",
+				price: "6,00€",
+			},
+			{
+				name: "Blood Margarita",
+				desc: "Tequila, orange sanguine, citron vert",
 				price: "6,00€",
 			},
 			{
@@ -1332,27 +1660,27 @@ export const cocktailsFrSections: MenuSection[] = [
 				price: "6,00€",
 			},
 			{
-				name: "Gin Basil Smash",
-				desc: "Gin, citron vert, basilic",
+				name: "Paloma",
+				desc: "Tequila, pamplemousse, citron vert, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Mojito*",
-				desc: "Rhum, citron vert, menthe, sucre roux, eau gazeuse",
+				name: "Mojito",
+				desc: "Rhum, citron vert, menthe, sucre roux, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Mojito à la fraise*",
-				desc: "Rhum, citron vert, fraise, sucre roux, limonade",
+				name: "Mojito à la fraise",
+				desc: "Rhum, citron vert, fraise, sucre roux, soda",
 				price: "6,00€",
 			},
 			{
-				name: "Piña Colada*",
+				name: "Piña Colada",
 				desc: "Rhum blanc, jus d'ananas, sirop de coco, crème",
 				price: "6,00€",
 			},
 			{
-				name: "Blackberry Moscow Mule*",
+				name: "Blackberry Moscow Mule",
 				desc: "Vodka, citron vert, mûres, sucre roux, Ginger Ale",
 				price: "6,00€",
 			},
@@ -1363,167 +1691,272 @@ export const cocktailsFrSections: MenuSection[] = [
 			},
 			{
 				name: "Aperol Spritz",
-				desc: "Aperol, Cava Brut, eau gazeuse, orange",
+				desc: "Aperol, cava, soda, orange",
+				price: "6,00€",
+			},
+			{
+				name: "Michelada",
+				desc: "Bière, citron vert, tomate, épices, sauce piquante",
 				price: "6,00€",
 			},
 			{
 				name: "Sangría maison",
 				desc: "Vin rouge, blanc ou cava",
-				price: "4,50€ | 17,00€",
+				price: "4,50€ / 17,00€",
 			},
 		],
 	},
 ];
 
-// ── BEBIDAS ───────────────────────────────────────────────────────────────────
+// ── SIN ALCOHOL ──────────────────────────────────────────────────────────────
 
-export const bebidasEsSections: MenuSection[] = [
+type AlcoholFreeSectionKey = "mocktails" | "bottles" | "beers" | "juices";
+type LocalizedText = Record<LangCode, string>;
+type LocalizedAlcoholFreeItem = {
+	name: LocalizedText;
+	desc?: LocalizedText;
+	price: string;
+};
+
+const alcoholFreeCatalog: Array<{
+	key: AlcoholFreeSectionKey;
+	items: LocalizedAlcoholFreeItem[];
+}> = [
 	{
-		title: "Bebidas",
+		key: "mocktails",
 		items: [
 			{
-				name: "Antioxidante",
-				desc: "Zumo natural de zanahoria, naranja y manzana roja",
+				name: {
+					es: "Michelada",
+					en: "Michelada",
+					ca: "Michelada",
+					fr: "Michelada",
+				},
+				desc: {
+					es: "Cerveza sin alcohol, lima, tomate, especias, salsa picante",
+					en: "Alcohol-free beer, lime, tomato, spices, hot sauce",
+					ca: "Cervesa sense alcohol, llima, tomàquet, espècies, salsa picant",
+					fr: "Bière sans alcool, citron vert, tomate, épices, sauce piquante",
+				},
 				price: "6,00€",
 			},
 			{
-				name: "Detox",
-				desc: "Zumo de manzana verde, pepino, jengibre y miel",
+				name: { es: "Mojito", en: "Mojito", ca: "Mojito", fr: "Mojito" },
+				desc: {
+					es: "Lima, menta, azúcar moreno, Ginger Ale",
+					en: "Lime, mint, brown sugar, Ginger Ale",
+					ca: "Llima, menta, sucre morè, Ginger Ale",
+					fr: "Citron vert, menthe, sucre roux, Ginger Ale",
+				},
 				price: "6,00€",
 			},
-			{ name: "Zumo de naranja natural", price: "5,00€" },
 			{
-				name: "Mimosa",
-				desc: "Cava con zumo de naranja natural",
-				price: "4,80€",
+				name: {
+					es: "Mojito con fresa",
+					en: "Strawberry Mojito",
+					ca: "Mojito amb maduixa",
+					fr: "Mojito à la fraise",
+				},
+				desc: {
+					es: "Lima, fresa, azúcar moreno, Fanta limón",
+					en: "Lime, strawberry, brown sugar, lemon soda",
+					ca: "Llima, maduixa, sucre morè, Fanta llimona",
+					fr: "Citron vert, fraise, sucre roux, soda au citron",
+				},
+				price: "6,00€",
 			},
 			{
-				name: "Bloody Mary",
-				desc: "Vodka, zumo de tomate, limón, Tabasco y salsa Worcestershire",
-				price: "8,00€",
+				name: {
+					es: "Piña Colada",
+					en: "Piña Colada",
+					ca: "Piña Colada",
+					fr: "Piña Colada",
+				},
+				desc: {
+					es: "Zumo de piña, sirope de coco, nata",
+					en: "Pineapple juice, coconut syrup, cream",
+					ca: "Suc de pinya, xarop de coco, nata",
+					fr: "Jus d'ananas, sirop de coco, crème",
+				},
+				price: "6,00€",
 			},
 			{
-				name: "Mojito sin alcohol",
-				desc: "Lima, menta fresca, azúcar moreno, ginger ale",
-				price: "7,00€",
+				name: {
+					es: "Blackberry Moscow Mule",
+					en: "Blackberry Moscow Mule",
+					ca: "Blackberry Moscow Mule",
+					fr: "Blackberry Moscow Mule",
+				},
+				desc: {
+					es: "Lima, arándanos, azúcar moreno, Ginger Ale",
+					en: "Lime, blackberries, brown sugar, Ginger Ale",
+					ca: "Llima, nabius, sucre morè, Ginger Ale",
+					fr: "Citron vert, mûres, sucre roux, Ginger Ale",
+				},
+				price: "6,00€",
 			},
 			{
-				name: "Mojito de fresa sin alcohol",
-				desc: "Lima, fresas, azúcar moreno, refresco de limón",
-				price: "7,00€",
+				name: {
+					es: "Martini Tonic",
+					en: "Martini Tonic",
+					ca: "Martini Tonic",
+					fr: "Martini Tonic",
+				},
+				desc: {
+					es: "Martini blanco 0,0, agua tónica",
+					en: "Martini Bianco 0.0, tonic water",
+					ca: "Martini blanc 0,0, aigua tònica",
+					fr: "Martini blanc 0,0, eau tonique",
+				},
+				price: "6,00€",
+			},
+		],
+	},
+	{
+		key: "bottles",
+		items: [
+			{
+				name: {
+					es: "La Mundial Rosalita",
+					en: "La Mundial Rosalita",
+					ca: "La Mundial Rosalita",
+					fr: "La Mundial Rosalita",
+				},
+				price: "19,00€",
+			},
+			{
+				name: {
+					es: "La Mundial Clarita",
+					en: "La Mundial Clarita",
+					ca: "La Mundial Clarita",
+					fr: "La Mundial Clarita",
+				},
+				price: "19,00€",
+			},
+			{
+				name: {
+					es: "Botella de vino tinto/blanco sin alcohol",
+					en: "Alcohol-free red/white wine bottle",
+					ca: "Ampolla de vi negre/blanc sense alcohol",
+					fr: "Bouteille de vin rouge/blanc sans alcool",
+				},
+				price: "19,00€",
+			},
+		],
+	},
+	{
+		key: "beers",
+		items: [
+			{
+				name: {
+					es: "Cerveza tostada 0,0 / Clara 0,0",
+					en: "Dark beer 0.0 / Shandy 0.0",
+					ca: "Cervesa torrada 0,0 / Clara 0,0",
+					fr: "Bière ambrée 0,0 / Panaché 0,0",
+				},
+				price: "3,00€",
+			},
+			{
+				name: {
+					es: "Erdinger Alkoholfrei",
+					en: "Erdinger Alkoholfrei",
+					ca: "Erdinger Alkoholfrei",
+					fr: "Erdinger Alkoholfrei",
+				},
+				price: "4,00€",
+			},
+		],
+	},
+	{
+		key: "juices",
+		items: [
+			{
+				name: {
+					es: "Zumo de naranja",
+					en: "Orange juice",
+					ca: "Suc de taronja",
+					fr: "Jus d'orange",
+				},
+				price: "4,00€",
+			},
+			{
+				name: { es: "Detox", en: "Detox", ca: "Detox", fr: "Détox" },
+				desc: {
+					es: "Zumo de manzana verde, pepino, jengibre y miel",
+					en: "Green apple, cucumber, ginger and honey juice",
+					ca: "Suc de poma verda, cogombre, gingebre i mel",
+					fr: "Jus de pomme verte, concombre, gingembre et miel",
+				},
+				price: "6,00€",
+			},
+			{
+				name: {
+					es: "Antioxidante",
+					en: "Antioxidant",
+					ca: "Antioxidant",
+					fr: "Antioxydant",
+				},
+				desc: {
+					es: "Zumo natural de zanahoria, naranja y manzana roja",
+					en: "Natural carrot, orange and red apple juice",
+					ca: "Suc natural de pastanaga, taronja i poma vermella",
+					fr: "Jus naturel de carotte, orange et pomme rouge",
+				},
+				price: "6,00€",
 			},
 		],
 	},
 ];
 
-export const bebidasEnSections: MenuSection[] = [
-	{
-		title: "Drinks",
-		items: [
-			{
-				name: "Antioxidant",
-				desc: "Natural carrot, orange and red apple juice",
-				price: "6,00€",
-			},
-			{
-				name: "Detox",
-				desc: "Green apple, cucumber, ginger and honey juice",
-				price: "6,00€",
-			},
-			{ name: "Fresh orange juice", price: "5,00€" },
-			{ name: "Mimosa", desc: "Cava with fresh orange juice", price: "4,80€" },
-			{
-				name: "Bloody Mary",
-				desc: "Vodka, tomato juice, lemon, Tabasco and Worcestershire sauce",
-				price: "8,00€",
-			},
-			{
-				name: "Alcohol-free Mojito",
-				desc: "Lime, fresh mint, brown sugar, ginger ale",
-				price: "7,00€",
-			},
-			{
-				name: "Strawberry alcohol-free Mojito",
-				desc: "Lime, strawberries, brown sugar, lemon soda",
-				price: "7,00€",
-			},
-		],
-	},
-];
+const createAlcoholFreeSections = (
+	titles: Record<AlcoholFreeSectionKey, string>,
+	lang: LangCode,
+): MenuSection[] =>
+	alcoholFreeCatalog.map(({ key, items }) => ({
+		title: titles[key],
+		items: items.map((item) => ({
+			name: item.name[lang],
+			desc: item.desc?.[lang],
+			price: item.price,
+		})),
+	}));
 
-export const bebidasCaSections: MenuSection[] = [
+export const bebidasEsSections = createAlcoholFreeSections(
 	{
-		title: "Begudes",
-		items: [
-			{
-				name: "Antioxidant",
-				desc: "Suc natural de pastanaga, taronja i poma vermella",
-				price: "6,00€",
-			},
-			{
-				name: "Detox",
-				desc: "Suc de poma verda, cogombre, gingebre i mel",
-				price: "6,00€",
-			},
-			{ name: "Suc de taronja natural", price: "5,00€" },
-			{
-				name: "Mimosa",
-				desc: "Cava amb suc de taronja natural",
-				price: "4,80€",
-			},
-			{
-				name: "Bloody Mary",
-				desc: "Vodka, suc de tomàquet, llimona, Tabasco i salsa Worcestershire",
-				price: "8,00€",
-			},
-			{
-				name: "Mojito sense alcohol",
-				desc: "Llima, menta fresca, sucre morè, ginger ale",
-				price: "7,00€",
-			},
-			{
-				name: "Mojito de maduixa sense alcohol",
-				desc: "Llima, maduixes, sucre morè, refresc de llimona",
-				price: "7,00€",
-			},
-		],
+		mocktails: "Mocktails",
+		bottles: "Botellas espumante/vino sin alcohol",
+		beers: "Cervezas",
+		juices: "Zumos",
 	},
-];
-
-export const bebidasFrSections: MenuSection[] = [
+	"es",
+);
+export const bebidasEnSections = createAlcoholFreeSections(
 	{
-		title: "Boissons",
-		items: [
-			{
-				name: "Antioxydant",
-				desc: "Jus naturel de carotte, orange et pomme rouge",
-				price: "6,00€",
-			},
-			{
-				name: "Détox",
-				desc: "Jus de pomme verte, concombre, gingembre et miel",
-				price: "6,00€",
-			},
-			{ name: "Jus d'orange frais", price: "5,00€" },
-			{ name: "Mimosa", desc: "Cava avec jus d'orange frais", price: "4,80€" },
-			{
-				name: "Bloody Mary",
-				desc: "Vodka, jus de tomate, citron, Tabasco et sauce Worcestershire",
-				price: "8,00€",
-			},
-			{
-				name: "Mojito sans alcool",
-				desc: "Citron vert, menthe fraîche, sucre roux, ginger ale",
-				price: "7,00€",
-			},
-			{
-				name: "Mojito à la fraise sans alcool",
-				desc: "Citron vert, fraises, sucre roux, limonade",
-				price: "7,00€",
-			},
-		],
+		mocktails: "Mocktails",
+		bottles: "Alcohol-free sparkling wine/wine bottles",
+		beers: "Beers",
+		juices: "Juices",
 	},
-];
+	"en",
+);
+export const bebidasCaSections = createAlcoholFreeSections(
+	{
+		mocktails: "Mocktails",
+		bottles: "Ampolles d'escumós/vi sense alcohol",
+		beers: "Cerveses",
+		juices: "Sucs",
+	},
+	"ca",
+);
+export const bebidasFrSections = createAlcoholFreeSections(
+	{
+		mocktails: "Mocktails",
+		bottles: "Bouteilles de mousseux/vin sans alcool",
+		beers: "Bières",
+		juices: "Jus",
+	},
+	"fr",
+);
 
 export const languages: Record<LangCode, LangConfig> = {
 	es: {
@@ -1541,7 +1974,7 @@ export const languages: Record<LangCode, LangConfig> = {
 			{ id: "menu-dia", label: "Menú del día", menuDia: menuDiaEs },
 			{ id: "vinos", label: "Vinos", sections: vinosEsSections },
 			{ id: "cocktails", label: "Cocktails", sections: cocktailsEsSections },
-			{ id: "bebidas", label: "Bebidas", sections: bebidasEsSections },
+			{ id: "bebidas", label: "Sin alcohol", sections: bebidasEsSections },
 		],
 	},
 	en: {
@@ -1559,7 +1992,7 @@ export const languages: Record<LangCode, LangConfig> = {
 			{ id: "menu-dia", label: "Menu of the day", menuDia: menuDiaEn },
 			{ id: "vinos", label: "Wine", sections: vinosEnSections },
 			{ id: "cocktails", label: "Cocktails", sections: cocktailsEnSections },
-			{ id: "bebidas", label: "Drinks", sections: bebidasEnSections },
+			{ id: "bebidas", label: "Alcohol-free", sections: bebidasEnSections },
 		],
 	},
 	ca: {
@@ -1577,7 +2010,7 @@ export const languages: Record<LangCode, LangConfig> = {
 			{ id: "menu-dia", label: "Menú del dia", menuDia: menuDiaCa },
 			{ id: "vinos", label: "Vins", sections: vinosCaSections },
 			{ id: "cocktails", label: "Còctels", sections: cocktailsCaSections },
-			{ id: "bebidas", label: "Begudes", sections: bebidasCaSections },
+			{ id: "bebidas", label: "Sense alcohol", sections: bebidasCaSections },
 		],
 	},
 	fr: {
@@ -1595,7 +2028,7 @@ export const languages: Record<LangCode, LangConfig> = {
 			{ id: "menu-dia", label: "Menu du jour", menuDia: menuDiaFr },
 			{ id: "vinos", label: "Vins", sections: vinosFrSections },
 			{ id: "cocktails", label: "Cocktails", sections: cocktailsFrSections },
-			{ id: "bebidas", label: "Boissons", sections: bebidasFrSections },
+			{ id: "bebidas", label: "Sans alcool", sections: bebidasFrSections },
 		],
 	},
 };

@@ -22,7 +22,10 @@ const SectionBlock = ({ section }: { section: MenuSection }) => {
 				>
 					{section.title}
 				</h2>
-				<div className="grid grid-cols-2 gap-x-6" style={{ borderTop: `1px solid ${DIVIDER}` }}>
+				<div
+					className="grid grid-cols-2 gap-x-6"
+					style={{ borderTop: `1px solid ${DIVIDER}` }}
+				>
 					{section.items.map((item, i) => (
 						<div
 							key={i}
@@ -30,7 +33,10 @@ const SectionBlock = ({ section }: { section: MenuSection }) => {
 							style={{ borderBottom: `1px solid ${DIVIDER}` }}
 						>
 							<span style={{ color: GREEN_DIM }}>{item.name}</span>
-							<span className="shrink-0 tabular-nums" style={{ color: GREEN, fontWeight: 600 }}>
+							<span
+								className="shrink-0 tabular-nums"
+								style={{ color: GREEN, fontWeight: 600 }}
+							>
 								{item.price}
 							</span>
 						</div>
@@ -45,36 +51,59 @@ const SectionBlock = ({ section }: { section: MenuSection }) => {
 		<div className="flex flex-col min-w-0">
 			<div className="flex items-center gap-3 mb-1">
 				<h2
-					className="font-heading italic shrink-0"
-					style={{ color: GREEN, fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1 }}
+					className="font-heading italic min-w-0"
+					style={{
+						color: GREEN,
+						fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+						lineHeight: 1,
+					}}
 				>
 					{section.title}
 				</h2>
 				<div className="flex-1 h-px" style={{ backgroundColor: DIVIDER }} />
 			</div>
 			{section.subtitle && (
-				<p className="font-body font-bold text-sm mb-4" style={{ color: GREEN }}>
+				<p
+					className="font-body font-bold text-sm mb-4"
+					style={{ color: GREEN }}
+				>
 					{section.subtitle}
 				</p>
 			)}
 			<div>
 				{section.items.map((item, i) => (
-					<div key={i} className="py-2" style={{ borderBottom: `1px solid ${DIVIDER}` }}>
+					<div
+						key={i}
+						className="py-2"
+						style={{ borderBottom: `1px solid ${DIVIDER}` }}
+					>
 						<div className="flex items-baseline justify-between gap-2">
-							<span className="font-body font-semibold text-base leading-snug" style={{ color: GREEN }}>
+							<span
+								className="font-body font-semibold text-base leading-snug"
+								style={{ color: GREEN }}
+							>
 								{item.name}
 							</span>
-							<span className="font-body text-sm shrink-0 tabular-nums ml-4" style={{ color: GREEN, fontWeight: 600 }}>
+							<span
+								className="font-body text-sm shrink-0 tabular-nums ml-4"
+								style={{ color: GREEN, fontWeight: 600 }}
+							>
 								{item.price}
 							</span>
 						</div>
 						{item.subtitle && (
-							<p className="font-body text-xs mt-0.5 leading-snug" style={{ color: GREEN }}>
+							<p
+								className="font-body text-xs mt-0.5 leading-snug"
+								style={{ color: GREEN }}
+							>
 								{item.subtitle}
 							</p>
 						)}
 						{item.desc && (
-							<p className="font-body text-xs mt-0.5 leading-snug italic" style={{ color: GREEN_DIM }}>
+							<p
+								className="font-body text-xs mt-0.5 leading-snug italic"
+								style={{ color: GREEN_DIM }}
+							>
 								{item.desc}
 							</p>
 						)}
@@ -82,7 +111,10 @@ const SectionBlock = ({ section }: { section: MenuSection }) => {
 				))}
 			</div>
 			{section.note && (
-				<p className="font-body text-xs mt-4 italic" style={{ color: GREEN_DIM }}>
+				<p
+					className="font-body text-xs mt-4 italic"
+					style={{ color: GREEN_DIM }}
+				>
 					{section.note}
 				</p>
 			)}
