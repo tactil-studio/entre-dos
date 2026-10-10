@@ -141,6 +141,15 @@
 }
 
 @layer utilities {
+  .discovery-page { --background: 68 11% 83%; }
+  .discovery-stop { scroll-margin-top: 10rem; }
+  .discovery-photo { border-radius: 4rem 0.5rem 4rem 0.5rem; }
+  .discovery-stop:nth-child(even) .discovery-photo { border-radius: 0.5rem 4rem 0.5rem 4rem; }
+  .discovery-stop:last-child { padding-bottom: 3rem; }
+  .discovery-invitation:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 6px; }
+  @media (prefers-reduced-motion: reduce) {
+    .discovery-page *, .discovery-invitation * { transition: none !important; }
+  }
   .font-heading {
     font-family: var(--font-heading);
     letter-spacing: -0.02em;
