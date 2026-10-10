@@ -141,6 +141,7 @@
 }
 
 @layer utilities {
+  body:has(.discovery-page) { overflow-x: clip; }
   .discovery-page { --background: 68 11% 83%; }
   .discovery-stop { scroll-margin-top: 10rem; }
   .discovery-photo { border-radius: 4rem 0.5rem 4rem 0.5rem; }
