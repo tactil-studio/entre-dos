@@ -7,6 +7,7 @@ import DiscoveryInvitation from "@/components/DiscoveryInvitation";
 import MenuRenderer from "@/components/MenuRenderer";
 import Navbar from "@/components/Navbar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { useLang } from "@/contexts/LangContext";
 import { useMode } from "@/contexts/ModeContext";
 import {
 	langOrder,
@@ -102,6 +103,8 @@ const Carta = () => {
 	const [searchParams] = useSearchParams();
 	const lang = resolveLang(langParam);
 	const config = languages[lang];
+	const { setLang } = useLang();
+	useEffect(() => { if (lang === "es" || lang === "en") setLang(lang); }, [lang]);
 	const { mode } = useMode();
 
 	const [active, setActive] = useState<string>(() =>

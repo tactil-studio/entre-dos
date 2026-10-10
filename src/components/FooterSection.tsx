@@ -5,7 +5,7 @@ import TikTokIcon from "@/components/icons/TikTokIcon";
 import { useLang } from "@/contexts/LangContext";
 
 const FooterSection = () => {
-	const { t } = useLang();
+	const { t, lang } = useLang();
 	const tf = t.footer;
 	const bgColor = "hsl(0 0% 6%)";
 
@@ -52,7 +52,7 @@ const FooterSection = () => {
 							</li>
 							<li>
 								<Link
-									to="/carta"
+									to={lang === "en" ? "/carta/en" : "/carta"}
 									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>
 									{tf.navMenu}

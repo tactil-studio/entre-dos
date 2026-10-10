@@ -6,6 +6,7 @@ import FooterSection from "@/components/FooterSection";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { discoveryCopy, getDiscoveryStops } from "@/lib/dishDiscovery";
+import { useLang } from "@/contexts/LangContext";
 import { resolveLang } from "@/lib/menuData";
 
 const number = (value: number) => String(value).padStart(2, "0");
@@ -14,6 +15,8 @@ export default function Sugerencias() {
   const { lang: langParam } = useParams();
   const lang = resolveLang(langParam);
   const text = discoveryCopy[lang];
+  const { setLang } = useLang();
+  useEffect(() => { if (lang === "es" || lang === "en") setLang(lang); }, [lang]);
   const stops = useMemo(() => getDiscoveryStops(lang), [lang]);
   const [current, setCurrent] = useState(0);
   const cartaPath = lang === "es" ? "/carta" : `/carta/${lang}`;
@@ -71,7 +74,7 @@ export default function Sugerencias() {
               <p className="font-mono-label text-[11px]">{text.stop} {number(current + 1)} <span className="text-muted-foreground">/ {number(stops.length)}</span></p>
             </div>
             <div className="hidden items-center gap-1 lg:flex">
-              {stops.map((stop, index) => <Button key={stop.id} size="icon" variant={current === index ? "default" : "ghost"} onClick={() => goTo(index)} aria-label={`${text.stop} ${index + 1}: ${stop.grouped ? text.montaditos : stop.items[0].name}`} aria-current={current === index ? "step" : undefined} className="size-8 rounded-full font-mono-label text-[10px]">{number(index + 1)}</Button>)}
+              {stops.map((stop, index) => <Button key={stop.id} size="icon" variant={current === index ? "default" : "ghost"} onClick={() => goTo(index)} aria-label={`${text.stop} ${index + 1}: ${stop.grouped ? text[stop.grouped] : stop.items[0].name}`} aria-current={current === index ? "step" : undefined} className="size-8 rounded-full font-mono-label text-[10px]">{number(index + 1)}</Button>)}
             </div>
             <div className="flex gap-2">
               <Button size="icon" variant="outline" onClick={() => goTo(current - 1)} disabled={current === 0} className="size-9 rounded-full border-foreground/30" aria-label={text.previous} title={text.previous}><ArrowLeft /></Button>
@@ -85,16 +88,16 @@ export default function Sugerencias() {
             <div aria-hidden="true" className="absolute bottom-24 left-1/2 top-8 hidden border-l border-dashed border-foreground/25 md:block" />
             {stops.map((stop, index) => {
               const item = stop.items[0];
-              const title = stop.grouped ? text.montaditos : item.name;
+              const title = stop.grouped ? text[stop.grouped] : item.name;
               const reverse = index % 2 !== 0;
               return (
-                <article id={stop.id} key={stop.id} data-discovery-stop={stop.grouped ? "montaditos" : stop.id} className="discovery-stop relative grid items-center gap-6 pb-14 md:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)] md:gap-6 md:pb-24">
+                <article id={stop.id} key={stop.id} data-discovery-stop={stop.grouped || stop.id} className="discovery-stop relative grid items-center gap-6 pb-14 md:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)] md:gap-6 md:pb-24">
                   <div className={`min-w-0 ${reverse ? "md:col-start-3" : "md:col-start-1"} md:row-start-1`}>
                     <p className="mb-3 flex items-center gap-3 font-mono-label text-[10px] text-muted-foreground"><span className="text-foreground md:hidden">{number(index + 1)} —</span>{stop.category}</p>
                     <h2 className={`font-heading leading-tight ${stop.grouped || title.length < 45 ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"}`}>{title}</h2>
                     {stop.grouped ? (
                       <>
-                        <p className="mt-3 font-serif-italic text-2xl text-night-blue">{text.grouped}</p>
+                        <p className="mt-3 font-serif-italic text-2xl text-night-blue">{stop.grouped === "empanadas" ? text.empanadasIntro : text.grouped}</p>
                         <ul className="mt-5 divide-y divide-foreground/15">
                           {stop.items.map(variant => <li key={variant.name} className="flex items-start justify-between gap-4 py-3"><span className="text-sm leading-relaxed text-muted-foreground">{variant.name}</span><span className="shrink-0 font-mono-label text-xs">{variant.price}</span></li>)}
                         </ul>
