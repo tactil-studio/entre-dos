@@ -5,6 +5,7 @@ export interface MenuItem {
 	subtitle?: string; // e.g. grape variety line on wine items
 	desc?: string;
 	price: string;
+	image?: string;
 }
 
 export interface MenuSection {
@@ -521,6 +522,73 @@ export const cartaEnSections: MenuSection[] = [
 		],
 	},
 ];
+
+const cartaDishImages = [
+	[
+		"/menus/dishes/pan-tomate.JPG",
+		"/menus/dishes/montaditos.JPG",
+		"/menus/dishes/montaditos.JPG",
+		"/menus/dishes/montaditos-2.JPG",
+		"/menus/dishes/hummus.JPG",
+	],
+	[
+		"/menus/dishes/bravas.JPG",
+		undefined,
+		"/menus/dishes/boniato-frito.JPG",
+	],
+	[
+		undefined,
+		"/menus/dishes/empanadas.JPG",
+		"/menus/dishes/empanadas.JPG",
+		"/menus/dishes/pimientos-padron.JPG",
+		"/menus/dishes/ensalada-cabra.JPG",
+		"/menus/dishes/ensalada-chef.JPG",
+		"/menus/dishes/wok-verduras.JPG",
+		"/menus/dishes/alcachofa.JPG",
+		undefined,
+	],
+	[
+		"/menus/dishes/albondigas.JPG",
+		"/menus/dishes/brochetas.JPG",
+		"/menus/dishes/pollo-marinado.JPG",
+		undefined,
+		"/menus/dishes/bikini.JPG",
+	],
+	[
+		"/menus/dishes/chipirones.JPG",
+		"/menus/dishes/salmon-plancha.JPG",
+		"/menus/dishes/gambas.JPG",
+		undefined,
+		undefined,
+	],
+];
+
+const cartaPairDishImages = [
+	undefined,
+	[
+		"/menus/dishes/tabla-jamon-2.JPG",
+		undefined,
+		undefined,
+		"/menus/dishes/tabla-mezze.JPG",
+		"/menus/dishes/tabla-mixta.JPG",
+	],
+];
+
+const withCartaDishImages = (sections: MenuSection[]): MenuSection[] =>
+	sections.map((section, sectionIndex) => ({
+		...section,
+		items: section.items.map((item, itemIndex) => ({
+			...item,
+			image: cartaDishImages[sectionIndex]?.[itemIndex],
+		})),
+		pairWith: section.pairWith && {
+			...section.pairWith,
+			items: section.pairWith.items.map((item, itemIndex) => ({
+				...item,
+				image: cartaPairDishImages[sectionIndex]?.[itemIndex],
+			})),
+		},
+	}));
 
 // ── BRUNCH ────────────────────────────────────────────────────────────────────
 
@@ -1969,7 +2037,7 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Toca para ampliar",
 		terraceNote: "*suplemento 10% en terraza",
 		tabs: [
-			{ id: "carta", label: "Carta", sections: cartaEsSections },
+			{ id: "carta", label: "Carta", sections: withCartaDishImages(cartaEsSections) },
 			{ id: "brunch", label: "Brunch", sections: brunchEsSections },
 			{ id: "menu-dia", label: "Menú del día", menuDia: menuDiaEs },
 			{ id: "vinos", label: "Vinos", sections: vinosEsSections },
@@ -1987,7 +2055,7 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Tap to enlarge",
 		terraceNote: "*allergy chart available · *extra charge 10% on terrace",
 		tabs: [
-			{ id: "carta", label: "Menu", sections: cartaEnSections },
+			{ id: "carta", label: "Menu", sections: withCartaDishImages(cartaEnSections) },
 			{ id: "brunch", label: "Brunch", sections: brunchEnSections },
 			{ id: "menu-dia", label: "Menu of the day", menuDia: menuDiaEn },
 			{ id: "vinos", label: "Wine", sections: vinosEnSections },
@@ -2005,7 +2073,7 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Toca per ampliar",
 		terraceNote: "*suplement 10% a la terrassa",
 		tabs: [
-			{ id: "carta", label: "Carta", sections: cartaCaSections },
+			{ id: "carta", label: "Carta", sections: withCartaDishImages(cartaCaSections) },
 			{ id: "brunch", label: "Brunch", sections: brunchCaSections },
 			{ id: "menu-dia", label: "Menú del dia", menuDia: menuDiaCa },
 			{ id: "vinos", label: "Vins", sections: vinosCaSections },
@@ -2023,7 +2091,7 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Touchez pour agrandir",
 		terraceNote: "*supplément 10% en terrasse",
 		tabs: [
-			{ id: "carta", label: "Carte", sections: cartaFrSections },
+			{ id: "carta", label: "Carte", sections: withCartaDishImages(cartaFrSections) },
 			{ id: "brunch", label: "Brunch", sections: brunchFrSections },
 			{ id: "menu-dia", label: "Menu du jour", menuDia: menuDiaFr },
 			{ id: "vinos", label: "Vins", sections: vinosFrSections },

@@ -11,6 +11,7 @@ import Contacto from "./pages/Contacto.tsx";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import QRLanguage from "./pages/QRLanguage.tsx";
+import Sugerencias from "./pages/Sugerencias.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,8 @@ const App = () => (
 							<Route path="/qr" element={<QRLanguage />} />
 							<Route path="/carta" element={<Carta />} />
 							<Route path="/carta/:lang" element={<Carta />} />
+							<Route path="/sugerencias" element={<Sugerencias />} />
+							<Route path="/sugerencias/:lang" element={<Sugerencias />} />
 							<Route path="/contacto" element={<Contacto />} />
 							{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 							<Route path="*" element={<NotFound />} />

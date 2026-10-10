@@ -1,4 +1,7 @@
-import type { MenuSection } from "@/lib/menuData";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { useState } from "react";
+import type { MenuItem, MenuSection } from "@/lib/menuData";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 interface MenuRendererProps {
 	sections: MenuSection[];
@@ -11,7 +14,13 @@ const GREEN_DIM = "#5A7A3A"; // lighter green for item text
 const DIVIDER = "rgba(45,80,22,0.2)";
 
 // Renders a single section column
-const SectionBlock = ({ section }: { section: MenuSection }) => {
+const SectionBlock = ({
+	section,
+	onSelectPhoto,
+}: {
+	section: MenuSection;
+	onSelectPhoto: (item: MenuItem) => void;
+}) => {
 	// Extras: compact two-column grid
 	if (section.layout === "extras-grid") {
 		return (
@@ -78,18 +87,32 @@ const SectionBlock = ({ section }: { section: MenuSection }) => {
 						style={{ borderBottom: `1px solid ${DIVIDER}` }}
 					>
 						<div className="flex items-baseline justify-between gap-2">
-							<span
-								className="font-body font-semibold text-base leading-snug"
-								style={{ color: GREEN }}
-							>
-								{item.name}
-							</span>
-							<span
-								className="font-body text-sm shrink-0 tabular-nums ml-4"
-								style={{ color: GREEN, fontWeight: 600 }}
-							>
-								{item.price}
-							</span>
+							{item.image ? (
+								<button
+									type="button"
+									onClick={() => onSelectPhoto(item)}
+									className="min-w-0 text-left font-body font-semibold text-base leading-snug decoration-dotted underline-offset-4 transition-colors hover:text-[#5A7A3A] focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#2D5016] focus-visible:ring-offset-2"
+									style={{ color: GREEN, textDecorationLine: "underline" }}
+									aria-label={`View photo of ${item.name}`}
+								>
+									{item.name}
+								</button>
+							) : (
+								<span
+									className="min-w-0 font-body font-semibold text-base leading-snug"
+									style={{ color: GREEN }}
+								>
+									{item.name}
+								</span>
+							)}
+							<div className="shrink-0 ml-4">
+								<span
+									className="font-body text-sm tabular-nums"
+									style={{ color: GREEN, fontWeight: 600 }}
+								>
+									{item.price}
+								</span>
+							</div>
 						</div>
 						{item.subtitle && (
 							<p
@@ -125,6 +148,7 @@ const SectionBlock = ({ section }: { section: MenuSection }) => {
 const MenuRenderer = ({ sections, terraceNote }: MenuRendererProps) => {
 	// Track which section titles have already been rendered as pairWith
 	const rendered = new Set<string>();
+	const [selectedPhoto, setSelectedPhoto] = useState<MenuItem | null>(null);
 
 	return (
 		<div
@@ -141,15 +165,15 @@ const MenuRenderer = ({ sections, terraceNote }: MenuRendererProps) => {
 							key={section.title}
 							className="mt-10 first:mt-0 grid grid-cols-1 md:grid-cols-2 gap-6"
 						>
-							<SectionBlock section={section} />
-							<SectionBlock section={section.pairWith} />
+							<SectionBlock section={section} onSelectPhoto={setSelectedPhoto} />
+							<SectionBlock section={section.pairWith} onSelectPhoto={setSelectedPhoto} />
 						</div>
 					);
 				}
 
 				return (
 					<div key={section.title} className="mt-10 first:mt-0">
-						<SectionBlock section={section} />
+						<SectionBlock section={section} onSelectPhoto={setSelectedPhoto} />
 					</div>
 				);
 			})}
@@ -157,6 +181,24 @@ const MenuRenderer = ({ sections, terraceNote }: MenuRendererProps) => {
 			<p className="mt-12 text-xs font-body" style={{ color: GREEN_DIM }}>
 				{terraceNote}
 			</p>
+
+			<Dialog
+				open={selectedPhoto !== null}
+				onOpenChange={(open) => !open && setSelectedPhoto(null)}
+			>
+				<DialogContent className="w-[calc(100%-2rem)] max-w-4xl border border-[#2D5016]/20 bg-[#F5EDE0] p-3 shadow-2xl sm:rounded-none [&>button]:text-[#2D5016] [&>button]:hover:text-[#5A7A3A]">
+					<VisuallyHidden>
+						<DialogTitle>{selectedPhoto?.name}</DialogTitle>
+					</VisuallyHidden>
+					{selectedPhoto?.image && (
+						<img
+							src={selectedPhoto.image}
+							alt={selectedPhoto.name}
+							className="max-h-[78vh] w-full object-contain"
+						/>
+					)}
+				</DialogContent>
+			</Dialog>
 		</div>
 	);
 };
