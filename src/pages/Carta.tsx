@@ -1,9 +1,9 @@
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { Sparkles } from "lucide-react";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import floral from "@/assets/floral-day.webp";
 import FooterSection from "@/components/FooterSection";
+import DiscoveryInvitation from "@/components/DiscoveryInvitation";
 import MenuRenderer from "@/components/MenuRenderer";
 import Navbar from "@/components/Navbar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -233,21 +233,7 @@ const Carta = () => {
 						))}
 					</div>
 
-					{active === "carta" && (
-						<Link
-							to={lang === "es" ? "/sugerencias" : `/sugerencias/${lang}`}
-							className="mx-auto mb-10 flex w-fit items-center gap-2 border border-[#2D5016]/30 px-5 py-3 font-mono-label text-[0.65rem] text-[#2D5016] transition-colors hover:bg-[#2D5016] hover:text-[#F5EDE0]"
-						>
-							<Sparkles className="size-3.5" strokeWidth={1.5} aria-hidden="true" />
-							{lang === "es"
-								? "Platos populares"
-								: lang === "en"
-									? "Popular dishes"
-									: lang === "ca"
-										? "Plats populars"
-										: "Plats populaires"}
-						</Link>
-					)}
+					{active === "carta" && <DiscoveryInvitation lang={lang} />}
 
 					{activeTab.sections ? (
 						<MenuRenderer

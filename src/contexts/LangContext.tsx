@@ -1,10 +1,10 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import { translations, Lang, Translations } from "@/lib/translations";
+import { translations, Lang } from "@/lib/translations";
 
 interface LangContextValue {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: Translations;
+  t: (typeof translations)[Lang];
 }
 
 const LangContext = createContext<LangContextValue | null>(null);
