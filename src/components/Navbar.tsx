@@ -14,6 +14,13 @@ const Navbar = () => {
 	const navigate = useNavigate();
 	const isHome = location.pathname === "/";
 	const showToggle = location.pathname === "/";
+	const menuPage = location.pathname.match(/^\/(carta|sugerencias)(?:\/(es|en|ca|fr))?\/?$/);
+	const menuPath = lang === "en" ? "/carta/en" : "/carta";
+	const switchLanguage = () => {
+		const next = lang === "es" ? "en" : "es";
+		setLang(next);
+		if (menuPage) navigate(`/${menuPage[1]}${next === "en" ? "/en" : ""}${location.search}`);
+	};
 
 	useEffect(() => {
 		if (!isHome) {
@@ -87,7 +94,7 @@ const Navbar = () => {
 						</button>
 					</li>
 					<li>
-						<Link to="/carta" className={navLinkClass}>
+						<Link to={menuPath} className={navLinkClass}>
 							{t.nav.menu}
 						</Link>
 					</li>
@@ -101,9 +108,9 @@ const Navbar = () => {
 				<div className="hidden md:flex items-center justify-end gap-6">
 					{showToggle && <DayNightToggle size="compact" />}
 					<button
-						onClick={() => setLang(lang === "es" ? "en" : "es")}
+						onClick={switchLanguage}
 						className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[0.6rem] font-mono-label tracking-widest uppercase transition-all duration-300 ${transparentNav ? "border-white/30 text-white/80 hover:border-white hover:text-white" : "border-foreground/20 text-foreground/60 hover:border-foreground/60 hover:text-foreground"}`}
-						aria-label="Switch language"
+						aria-label={lang === "es" ? "Cambiar a inglés" : "Switch to Spanish"}
 						title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
 					>
 						<Globe size={12} strokeWidth={1.75} />
@@ -160,7 +167,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<Link
-								to="/carta"
+								to={menuPath}
 								onClick={() => setOpen(false)}
 								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
 							>
@@ -198,9 +205,9 @@ const Navbar = () => {
 						</li>
 						<li>
 							<button
-								onClick={() => setLang(lang === "es" ? "en" : "es")}
+								onClick={switchLanguage}
 								className="inline-flex items-center gap-1.5 rounded-full border border-foreground/20 text-foreground/60 hover:border-foreground/60 hover:text-foreground px-2.5 py-1 text-[0.6rem] font-mono-label tracking-widest uppercase transition-all duration-300"
-								aria-label="Switch language"
+								aria-label={lang === "es" ? "Cambiar a inglés" : "Switch to Spanish"}
 								title={
 									lang === "es" ? "Switch to English" : "Cambiar a Español"
 								}
