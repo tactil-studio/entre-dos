@@ -341,3 +341,11 @@ body {
   transform: scale(1);
   box-shadow: 0 0 40px rgba(128, 120, 44, 0.1);
 }
+
+@keyframes stair-step { from { top: 100%; } to { top: -20%; } }
+@keyframes stairs-out { 0%,75% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes room-zoom { from { scale: 1.25; filter: brightness(0.4); } to { scale: 1; filter: brightness(1); } }
+.animate-stair-step { animation: stair-step 0.9s cubic-bezier(0.6,0,0.4,1) infinite; }
+.animate-stairs-out { animation: stairs-out 1.5s ease forwards; }
+.animate-room-zoom { animation: room-zoom 1.8s cubic-bezier(0.2,0.7,0.2,1) both; }
+@media (prefers-reduced-motion: reduce) { .animate-room-zoom { animation: none; } }

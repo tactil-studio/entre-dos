@@ -76,6 +76,14 @@ const FooterSection = () => {
 							</li>
 							<li>
 								<Link
+									to="/sala-privada"
+									className="text-background/80 hover:text-background transition-colors text-sm font-body"
+								>
+									{lang === "es" ? "Sala privada" : "Private room"}
+								</Link>
+							</li>
+							<li>
+								<Link
 									to="/contacto"
 									className="text-background/80 hover:text-background transition-colors text-sm font-body"
 								>

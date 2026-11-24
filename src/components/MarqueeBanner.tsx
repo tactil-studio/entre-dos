@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const MESSAGES = [
 	"Sala privada disponible en el piso inferior",
 	"Private room available downstairs",
@@ -13,7 +14,7 @@ const MarqueeBanner = () => {
 	);
 
 	return (
-		<div className="relative z-30 bg-foreground text-background border-b border-foreground/10 overflow-hidden">
+		<Link to="/sala-privada" aria-label="Sala privada" className="block relative z-30 bg-foreground text-background border-b border-foreground/10 overflow-hidden">
 			<div className="flex whitespace-nowrap animate-marquee py-4">
 				{items.map(({ text, key }) => (
 					<span
@@ -25,7 +26,7 @@ const MarqueeBanner = () => {
 					</span>
 				))}
 			</div>
-		</div>
+		</Link>
 	);
 };
 

@@ -99,6 +99,11 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
+						<Link to="/sala-privada" className={navLinkClass}>
+							{lang === "es" ? "Sala privada" : "Private room"}
+						</Link>
+					</li>
+					<li>
 						<Link to="/contacto" className={navLinkClass}>
 							{t.nav.contact}
 						</Link>
@@ -172,6 +177,15 @@ const Navbar = () => {
 								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
 							>
 								{t.nav.menu}
+							</Link>
+						</li>
+						<li>
+							<Link
+								to="/sala-privada"
+								onClick={() => setOpen(false)}
+								className="text-foreground/60 hover:text-foreground text-xs font-body tracking-[0.2em] uppercase"
+							>
+								{lang === "es" ? "Sala privada" : "Private room"}
 							</Link>
 						</li>
 						<li>
