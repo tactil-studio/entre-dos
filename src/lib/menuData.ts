@@ -51,12 +51,12 @@ export interface LangConfig {
 const esTablas: MenuSection = {
 	title: "Tablas",
 	items: [
-		{ name: "Jamón ibérico", price: "€13,50" },
-		{ name: "Tabla de quesos", price: "€13,50" },
-		{ name: "Tabla de embutidos", price: "€13,50" },
+		{ name: "Jamón ibérico", price: "€14,00" },
+		{ name: "Tabla de quesos", price: "€14,00" },
+		{ name: "Tabla de embutidos", price: "€14,00" },
 		{
 			name: "Tabla mezze con baba ganoush, hummus, tzatziki, pepino fresco, apio, zanahorias y pan de pita",
-			price: "€14,50",
+			price: "€15,00",
 		},
 		{ name: "Tabla mixta", price: "€17,50" },
 	],
@@ -66,7 +66,7 @@ export const cartaEsSections: MenuSection[] = [
 	{
 		title: "Pan",
 		items: [
-			{ name: "Pan con tomate", price: "€2,50" },
+			{ name: "Pan con tomate", price: "€2,75" },
 			{
 				name: "Montadito de jamón del país, rúcula, parmesano y aceite balsámico caramelizado",
 				price: "€2,80",
@@ -79,14 +79,14 @@ export const cartaEsSections: MenuSection[] = [
 				name: "Montadito de salmón ahumado con queso crema y tomate cherry",
 				price: "€2,80",
 			},
-			{ name: "Hummus con tostaditas y finas hierbas", price: "€5,90" },
+			{ name: "Hummus con tostaditas y finas hierbas", price: "€6,20" },
 		],
 	},
 	{
 		title: "Patatas",
 		pairWith: esTablas,
 		items: [
-			{ name: "Patatas bravas de la casa", price: "€5,90" },
+			{ name: "Patatas bravas de la casa", price: "€6,20" },
 			{
 				name: "Patatas wedges con mayonesa de curry y cebolla",
 				price: "€6,50",
@@ -100,16 +100,16 @@ export const cartaEsSections: MenuSection[] = [
 	{
 		title: "Vegetales",
 		items: [
-			{ name: "Olivas", price: "€3,50" },
+			{ name: "Olivas", price: "€3,75" },
 			{
 				name: "Empanada de cebolla caramelizada, nueces, queso de cabra y mozzarella",
-				price: "€3,80",
+				price: "€3,90",
 			},
 			{
 				name: "Empanada de espinacas, queso crema, mozzarella y piñones",
-				price: "€3,80",
+				price: "€3,90",
 			},
-			{ name: "Pimientos de Padrón", price: "€5,90" },
+			{ name: "Pimientos de Padrón", price: "€6,20" },
 			{
 				name: "Ensalada de queso de cabra (mezclum, tomate cherry, almendras, vinagreta de miel y lima)",
 				price: "€7,90",
@@ -121,22 +121,22 @@ export const cartaEsSections: MenuSection[] = [
 			{ name: "Wok de verduras", price: "€7,90" },
 			{
 				name: "Alcachofa confitada con salsa gremolata sobre puré de boniato",
-				price: "€8,90",
+				price: "€9,20",
 			},
 			{
 				name: "Mini hamburguesas veganas con mayonesa de jalapeño y mermelada de tomate x2",
-				price: "€10,90",
+				price: "€11,50",
 			},
 		],
 	},
 	{
 		title: "Carne",
 		items: [
-			{ name: "Albóndigas danesas con salsa de almendras", price: "€7,90" },
-			{ name: "Brocheta de pollo con salsa de miel y curry", price: "€10,90" },
+			{ name: "Albóndigas danesas con salsa de almendras", price: "€8,25" },
+			{ name: "Brocheta de pollo con salsa de miel y curry", price: "€11,20" },
 			{
 				name: "Pollo marinado estilo marroquí con salsa tzatziki, menta, almendras tostadas y cilantro",
-				price: "€10,90",
+				price: "€11,20",
 			},
 			{ name: "Cazuela de ternera al ajillo", price: "€11,90" },
 			{
@@ -148,11 +148,11 @@ export const cartaEsSections: MenuSection[] = [
 	{
 		title: "Mar",
 		items: [
-			{ name: "Chipirones", price: "€9,90" },
-			{ name: "Salmón a la plancha con Bok Choi", price: "€10,90" },
+			{ name: "Chipirones", price: "€10,25" },
+			{ name: "Salmón a la plancha con Bok Choi", price: "€11,25" },
 			{
 				name: "Gambas salteadas con ajo, perejil y vino blanco",
-				price: "€10,90",
+				price: "€11,25",
 			},
 			{ name: "Tataki de atún", price: "€11,90" },
 			{ name: "Tartar de salmón con aguacate", price: "€11,90" },
@@ -173,12 +173,12 @@ export const cartaEsSections: MenuSection[] = [
 const caTaules: MenuSection = {
 	title: "Taules",
 	items: [
-		{ name: "Pernil ibèric", price: "€13,50" },
-		{ name: "Taula de formatges", price: "€13,50" },
-		{ name: "Taula d'embotits", price: "€13,50" },
+		{ name: "Pernil ibèric", price: "€14,00" },
+		{ name: "Taula de formatges", price: "€14,00" },
+		{ name: "Taula d'embotits", price: "€14,00" },
 		{
 			name: "Taula mezze amb baba ganoush, tzatziki, hummus, comcombre, api, pastanagues i pa de pita",
-			price: "€14,50",
+			price: "€15,00",
 		},
 		{ name: "Taula mixta", price: "€17,50" },
 	],
@@ -188,7 +188,7 @@ export const cartaCaSections: MenuSection[] = [
 	{
 		title: "Pà",
 		items: [
-			{ name: "Pà amb tomàquet", price: "€2,50" },
+			{ name: "Pà amb tomàquet", price: "€2,75" },
 			{
 				name: "Montadito de pernil del país, rúcula, parmesà i oli balsàmic caramel·litzat",
 				price: "€2,80",
@@ -201,14 +201,14 @@ export const cartaCaSections: MenuSection[] = [
 				name: "Montadito de salmó fumat amb formatge crema i tomàquet cherri",
 				price: "€2,80",
 			},
-			{ name: "Hummus amb torradetes i fines herbes", price: "€5,90" },
+			{ name: "Hummus amb torradetes i fines herbes", price: "€6,20" },
 		],
 	},
 	{
 		title: "Patates",
 		pairWith: caTaules,
 		items: [
-			{ name: "Patates braves de la casa", price: "€5,90" },
+			{ name: "Patates braves de la casa", price: "€6,20" },
 			{ name: "Patates wedges amb maionesa de curry i ceba", price: "€6,50" },
 			{
 				name: "Moniatos fregits amb maionesa de pebre chipotle picant",
@@ -219,16 +219,16 @@ export const cartaCaSections: MenuSection[] = [
 	{
 		title: "Vegetals",
 		items: [
-			{ name: "Olives", price: "€3,50" },
+			{ name: "Olives", price: "€3,75" },
 			{
 				name: "Empanada de ceba caramel·litzada, nous, formatge de cabra i mozzarella",
-				price: "€3,80",
+				price: "€3,90",
 			},
 			{
 				name: "Empanada de espinacs, formatge crema, mozzarella i pinyons",
-				price: "€3,80",
+				price: "€3,90",
 			},
-			{ name: "Pebrots de padró", price: "€5,90" },
+			{ name: "Pebrots de padró", price: "€6,20" },
 			{
 				name: "Amanida de formatge de cabra (mesclum, tomàquet cherri, ametlles, mel i vinagreta de llima)",
 				price: "€7,90",
@@ -240,25 +240,25 @@ export const cartaCaSections: MenuSection[] = [
 			{ name: "Wok de verdures", price: "€7,90" },
 			{
 				name: "Carxofa confitada amb salsa gremolata i pure de moniatos",
-				price: "€8,90",
+				price: "€9,20",
 			},
 			{
 				name: "Mini hamburgueses veganes amb maionesa de jalapeny i mermelada de tomàquet x2u",
-				price: "€10,90",
+				price: "€11,50",
 			},
 		],
 	},
 	{
 		title: "Carn",
 		items: [
-			{ name: "Mandonguilles daneses amb salsa d'ametlles", price: "€7,90" },
+			{ name: "Mandonguilles daneses amb salsa d'ametlles", price: "€8,25" },
 			{
 				name: "Broqueta de pollastre amb salsa de mel i curry",
-				price: "€10,90",
+				price: "€11,20",
 			},
 			{
 				name: "Pollastre marinat estil asiàtic amb salsa tzatziki, menta, ametlles i coriandre",
-				price: "€10,90",
+				price: "€11,20",
 			},
 			{ name: "Cassola de vedella amb all", price: "€11,90" },
 			{
@@ -270,9 +270,9 @@ export const cartaCaSections: MenuSection[] = [
 	{
 		title: "Mar",
 		items: [
-			{ name: "Xipirons", price: "€9,90" },
-			{ name: "Salmó a la planxa amb Bok Choi", price: "€10,90" },
-			{ name: "Gambes saltejades, all, julivert i vi blanc", price: "€10,90" },
+			{ name: "Xipirons", price: "€10,25" },
+			{ name: "Salmó a la planxa amb Bok Choi", price: "€11,25" },
+			{ name: "Gambes saltejades, all, julivert i vi blanc", price: "€11,25" },
 			{ name: "Tataki de tonyina", price: "€11,90" },
 			{ name: "Tartar de salmó i alvocat", price: "€11,90" },
 		],
@@ -292,12 +292,12 @@ export const cartaCaSections: MenuSection[] = [
 const frPlanches: MenuSection = {
 	title: "Planches",
 	items: [
-		{ name: "Jambon Ibérique", price: "€13,50" },
-		{ name: "Planche de fromages", price: "€13,50" },
-		{ name: "Planche de charcuterie", price: "€13,50" },
+		{ name: "Jambon Ibérique", price: "€14,00" },
+		{ name: "Planche de fromages", price: "€14,00" },
+		{ name: "Planche de charcuterie", price: "€14,00" },
 		{
 			name: "Mezze board avec baba ganoush, tzatziki, concombre cru, céleri, carottes et pain pita",
-			price: "€14,50",
+			price: "€15,00",
 		},
 		{ name: "Planche Mixte", price: "€17,50" },
 	],
@@ -307,7 +307,7 @@ export const cartaFrSections: MenuSection[] = [
 	{
 		title: "Pain",
 		items: [
-			{ name: "Pain a la tomate", price: "€2,50" },
+			{ name: "Pain a la tomate", price: "€2,75" },
 			{
 				name: "Montadito de jambon de pays, roquette, parmesan et sirop balsamique",
 				price: "€2,80",
@@ -320,14 +320,14 @@ export const cartaFrSections: MenuSection[] = [
 				name: "Montadito de saumon fumé, fromage Filadelfia et tomate cerise",
 				price: "€2,80",
 			},
-			{ name: "Houmous avec toasts et herbes", price: "€5,90" },
+			{ name: "Houmous avec toasts et herbes", price: "€6,20" },
 		],
 	},
 	{
 		title: "Patates",
 		pairWith: frPlanches,
 		items: [
-			{ name: "Patate bravas de la maison", price: "€5,90" },
+			{ name: "Patate bravas de la maison", price: "€6,20" },
 			{ name: "Patate wedges et mayonnaise de curry", price: "€6,50" },
 			{
 				name: "Frites de patates douces avec une mayonnaisse épicé au piment chipotle",
@@ -338,16 +338,16 @@ export const cartaFrSections: MenuSection[] = [
 	{
 		title: "Végétal",
 		items: [
-			{ name: "Olives", price: "€3,50" },
+			{ name: "Olives", price: "€3,75" },
 			{
 				name: "Chausson fourré au fromage de chèvre, noix, mozzarella et oignon caramelisé",
-				price: "€3,80",
+				price: "€3,90",
 			},
 			{
 				name: "Chausson aux epinards, fromage frais, mozzarella et pignons",
-				price: "€3,80",
+				price: "€3,90",
 			},
-			{ name: "Poivrons de Padrón", price: "€5,90" },
+			{ name: "Poivrons de Padrón", price: "€6,20" },
 			{
 				name: "Salade de chèvre (mezclum, tomate cerise, chèvre, amandes, miel et vinaigrette au citron vert)",
 				price: "€7,90",
@@ -359,22 +359,22 @@ export const cartaFrSections: MenuSection[] = [
 			{ name: "Wok de légumes", price: "€7,90" },
 			{
 				name: "Artichaut à la sauce gremolata sur purée de patate douce",
-				price: "€8,90",
+				price: "€9,20",
 			},
 			{
 				name: "Mini burgers végétaliens avec une mayonnaise au jalapeño et confiture de tomate x2u",
-				price: "€10,90",
+				price: "€11,50",
 			},
 		],
 	},
 	{
 		title: "Viande",
 		items: [
-			{ name: "Boulettes Danoises et sa sauce d'amandes", price: "€7,90" },
-			{ name: "Brochette de poulet, sauce curry et miel", price: "€10,90" },
+			{ name: "Boulettes Danoises et sa sauce d'amandes", price: "€8,25" },
+			{ name: "Brochette de poulet, sauce curry et miel", price: "€11,20" },
 			{
 				name: "Poulet mariné à la morocaine avec une sauce tzatziki, menthe, amandes et coriandre",
-				price: "€10,90",
+				price: "€11,20",
 			},
 			{ name: "Cassolette de veau à l'ail", price: "€11,90" },
 			{
@@ -386,9 +386,9 @@ export const cartaFrSections: MenuSection[] = [
 	{
 		title: "Mer",
 		items: [
-			{ name: "Chipirons grillés", price: "€9,90" },
-			{ name: "Saumon grillé à la plancha et chou chinois", price: "€10,90" },
-			{ name: "Gambas à la persillade", price: "€10,90" },
+			{ name: "Chipirons grillés", price: "€10,25" },
+			{ name: "Saumon grillé à la plancha et chou chinois", price: "€11,25" },
+			{ name: "Gambas à la persillade", price: "€11,25" },
 			{ name: "Tataki de thon", price: "€11,90" },
 			{ name: "Tartare de saumon et avocat", price: "€11,90" },
 		],
@@ -408,12 +408,12 @@ export const cartaFrSections: MenuSection[] = [
 const enPlatters: MenuSection = {
 	title: "Platters",
 	items: [
-		{ name: "Jamón ibérico", price: "€13,50" },
-		{ name: "Cheese platter", price: "€13,50" },
-		{ name: "Charcuterie platter", price: "€13,50" },
+		{ name: "Jamón ibérico", price: "€14,00" },
+		{ name: "Cheese platter", price: "€14,00" },
+		{ name: "Charcuterie platter", price: "€14,00" },
 		{
 			name: "Mezze board with baba ganoush, tzatziki, hummus, celery, carrots and pita bread",
-			price: "€14,50",
+			price: "€15,00",
 		},
 		{ name: "Mixed platter", price: "€17,50" },
 	],
@@ -423,7 +423,7 @@ export const cartaEnSections: MenuSection[] = [
 	{
 		title: "Bread",
 		items: [
-			{ name: "Catalan style bread with tomato", price: "€2,50" },
+			{ name: "Catalan style bread with tomato", price: "€2,75" },
 			{
 				name: "Montaditos with cured ham, rocket salad, parmesan and caramelized balsamic oil",
 				price: "€2,80",
@@ -436,14 +436,14 @@ export const cartaEnSections: MenuSection[] = [
 				name: "Montaditos with smoked salmon, cream cheese and cherry tomatoes",
 				price: "€2,80",
 			},
-			{ name: "Hummus with herb encrusted toasted bread", price: "€5,90" },
+			{ name: "Hummus with herb encrusted toasted bread", price: "€6,20" },
 		],
 	},
 	{
 		title: "Potato",
 		pairWith: enPlatters,
 		items: [
-			{ name: "Homemade patatas bravas", price: "€5,90" },
+			{ name: "Homemade patatas bravas", price: "€6,20" },
 			{ name: "Potato wedges with curry and onion mayonnaise", price: "€6,50" },
 			{
 				name: "Sweet potato fries with a spicy, smoky chipotle mayonnaise",
@@ -454,16 +454,16 @@ export const cartaEnSections: MenuSection[] = [
 	{
 		title: "Vegetable",
 		items: [
-			{ name: "Olives", price: "€3,50" },
+			{ name: "Olives", price: "€3,75" },
 			{
 				name: "Empanada filled with caramelized onion, walnuts, goat cheese and mozzarella",
-				price: "€3,80",
+				price: "€3,90",
 			},
 			{
 				name: "Empanada filled with spinach, cream cheese, mozzarella and pine nuts",
-				price: "€3,80",
+				price: "€3,90",
 			},
-			{ name: "Padrón peppers", price: "€5,90" },
+			{ name: "Padrón peppers", price: "€6,20" },
 			{
 				name: "Goat cheese salad (mezclum, cherry tomatoes, goat cheese, almonds, honey and lime vinaigrette)",
 				price: "€7,90",
@@ -475,22 +475,22 @@ export const cartaEnSections: MenuSection[] = [
 			{ name: "Asian stir-fried vegetables", price: "€7,90" },
 			{
 				name: "Slow cooked artichokes on a sweet potato purée and gremolata dressing",
-				price: "€8,90",
+				price: "€9,20",
 			},
 			{
 				name: "Mini vegan hamburgers filled with jalapeño mayonnaise and tomato marmalade x2u",
-				price: "€10,90",
+				price: "€11,50",
 			},
 		],
 	},
 	{
 		title: "Meat",
 		items: [
-			{ name: "Danish style meatballs with almond sauce", price: "€7,90" },
-			{ name: "Honey and curry chicken skewers", price: "€10,90" },
+			{ name: "Danish style meatballs with almond sauce", price: "€8,25" },
+			{ name: "Honey and curry chicken skewers", price: "€11,20" },
 			{
 				name: "Moroccan style marinated chicken with tzatziki, mint, coriander and almonds",
-				price: "€10,90",
+				price: "€11,20",
 			},
 			{ name: "Beef casserole with garlic butter", price: "€11,90" },
 			{
@@ -502,11 +502,11 @@ export const cartaEnSections: MenuSection[] = [
 	{
 		title: "From the sea",
 		items: [
-			{ name: "Fried baby squid", price: "€9,90" },
-			{ name: "Grilled salmon with Bok Choi", price: "€10,90" },
+			{ name: "Fried baby squid", price: "€10,25" },
+			{ name: "Grilled salmon with Bok Choi", price: "€11,25" },
 			{
 				name: "Garlic prawns with parsley and white wine sauce",
-				price: "€10,90",
+				price: "€11,25",
 			},
 			{ name: "Tuna tataki", price: "€11,90" },
 			{ name: "Salmon tartar with avocado", price: "€11,90" },
@@ -531,11 +531,7 @@ const cartaDishImages = [
 		"/menus/dishes/montaditos-2.JPG",
 		"/menus/dishes/hummus.JPG",
 	],
-	[
-		"/menus/dishes/bravas.JPG",
-		undefined,
-		"/menus/dishes/boniato-frito.JPG",
-	],
+	["/menus/dishes/bravas.JPG", undefined, "/menus/dishes/boniato-frito.JPG"],
 	[
 		undefined,
 		"/menus/dishes/empanadas.JPG",
@@ -905,19 +901,19 @@ const legacyVinosEsSections: MenuSection[] = [
 				name: "CASTELL DE FADES D.O. Conca de Barberà",
 				subtitle: "Viognier · Ecológico",
 				desc: "Fruta blanca y sutiles notas de fruta tropical (piña fresca)",
-				price: "copa 3,50€ / 19,00€",
+				price: "copa 3,80€ / 21,00€",
 			},
 			{
 				name: "VIÑA SANZO D.O. Rueda",
 				subtitle: "Verdejo · Ecológico",
 				desc: "Seco, aromático, persistente",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 			{
 				name: "CLOS DE COSTA D.O. Catalunya",
 				subtitle: "Chardonnay",
 				desc: "Afrutado con notas de pera, piña y cítricos",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -928,19 +924,19 @@ const legacyVinosEsSections: MenuSection[] = [
 				name: "CLOS DE DÍA D.O. Terra Alta",
 				subtitle: "Garnacha roja",
 				desc: "Fácil de beber, afrutado, tanino sutil",
-				price: "copa 3,50€ / 19,00€",
+				price: "copa 3,80€ / 21,00€",
 			},
 			{
 				name: "VEGA CASCAJO Crianza D.O. Rioja",
 				subtitle: "Tempranillo",
 				desc: "Agradable Rioja con notas de fruta roja madura y regaliz",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 			{
 				name: "SANZO T-3 D.O. Terra Alta",
 				subtitle: "Tempranillo",
 				desc: "Color rojo intenso. Fruta madura con toques de vainilla",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -951,7 +947,7 @@ const legacyVinosEsSections: MenuSection[] = [
 				name: "DOMINIO DEL DUEÑO V. Benavente",
 				subtitle: "Tempranillo",
 				desc: "Alegres notas de fruta roja",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -962,13 +958,13 @@ const legacyVinosEsSections: MenuSection[] = [
 				name: "CAVA MO Brut Nature",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Burbuja equilibrada, aromas afrutados",
-				price: "copa 3,50€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 			{
 				name: "CAVA Dignitat Brut Rosé",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Cava muy agradable con notas finas y sedosas de fruta roja fresca",
-				price: "copa 3,90€ / 25,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -982,19 +978,19 @@ const legacyVinosEnSections: MenuSection[] = [
 				name: "CASTELL DE FADES D.O. Conca de Barberà",
 				subtitle: "Viognier · Ecologic",
 				desc: "White fruit and subtle notes of tropical fruit (fresh pineapple)",
-				price: "glass 3,50€ / 19,00€",
+				price: "glass 3,80€ / 21,00€",
 			},
 			{
 				name: "VIÑA SANZO D.O. Rueda",
 				subtitle: "Verdejo · Ecologic",
 				desc: "Dry, aromatic, persistent",
-				price: "glass 3,90€ / 23,00€",
+				price: "glass 4,10€ / 25,00€",
 			},
 			{
 				name: "CLOS DE COSTA D.O. Catalunya",
 				subtitle: "Chardonnay",
 				desc: "Fruity with notes of pear, pineapple, and citrus",
-				price: "glass 3,90€ / 23,00€",
+				price: "glass 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1005,19 +1001,19 @@ const legacyVinosEnSections: MenuSection[] = [
 				name: "CLOS DE DÍA D.O. Terra Alta",
 				subtitle: "Garnacha roja",
 				desc: "Easy to drink, fruity, subtle tannin",
-				price: "glass 3,50€ / 19,00€",
+				price: "glass 3,80€ / 21,00€",
 			},
 			{
 				name: "VEGA CASCAJO Crianza D.O. Rioja",
 				subtitle: "Tempranillo",
 				desc: "Pleasant Rioja with notes of ripe red fruit and licorice",
-				price: "glass 3,90€ / 23,00€",
+				price: "glass 4,10€ / 25,00€",
 			},
 			{
 				name: "SANZO T-3 D.O. Terra Alta",
 				subtitle: "Tempranillo",
 				desc: "Intense red color. Ripe fruit with hints of vanilla",
-				price: "glass 3,90€ / 23,00€",
+				price: "glass 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1028,7 +1024,7 @@ const legacyVinosEnSections: MenuSection[] = [
 				name: "DOMINIO DEL DUEÑO V. Benavente",
 				subtitle: "Tempranillo",
 				desc: "Cheerful notes of red fruit",
-				price: "glass 3,90€ / 23,00€",
+				price: "glass 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1039,13 +1035,13 @@ const legacyVinosEnSections: MenuSection[] = [
 				name: "CAVA MO Brut Nature",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Balanced bubble, fruity aromas",
-				price: "glass 3,50€ / 23,00€",
+				price: "glass 4,10€ / 25,00€",
 			},
 			{
 				name: "CAVA Dignitat Brut Rosé",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Very pleasant cava with fine and silky notes of fresh red fruit",
-				price: "glass 3,90€ / 25,00€",
+				price: "glass 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1059,19 +1055,19 @@ const legacyVinosCaSections: MenuSection[] = [
 				name: "CASTELL DE FADES D.O. Conca de Barberà",
 				subtitle: "Viognier · Ecològic",
 				desc: "Fruita blanca i subtils notes de fruita tropical (pinya fresca)",
-				price: "copa 3,50€ / 19,00€",
+				price: "copa 3,80€ / 21,00€",
 			},
 			{
 				name: "VIÑA SANZO D.O. Rueda",
 				subtitle: "Verdejo · Ecològic",
 				desc: "Sec, aromàtic, persistent",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 			{
 				name: "CLOS DE COSTA D.O. Catalunya",
 				subtitle: "Chardonnay",
 				desc: "Afruitat amb notes de pera, pinya i cítrics",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1082,19 +1078,19 @@ const legacyVinosCaSections: MenuSection[] = [
 				name: "CLOS DE DÍA D.O. Terra Alta",
 				subtitle: "Garnatxa roja",
 				desc: "Fàcil de beure, afruitat, taní subtil",
-				price: "copa 3,50€ / 19,00€",
+				price: "copa 3,80€ / 21,00€",
 			},
 			{
 				name: "VEGA CASCAJO Crianza D.O. Rioja",
 				subtitle: "Tempranillo",
 				desc: "Agradable Rioja amb notes de fruita vermella madura i regalèssia",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 			{
 				name: "SANZO T-3 D.O. Terra Alta",
 				subtitle: "Tempranillo",
 				desc: "Color vermell intens. Fruita madura amb tocs de vainilla",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1105,7 +1101,7 @@ const legacyVinosCaSections: MenuSection[] = [
 				name: "DOMINIO DEL DUEÑO V. Benavente",
 				subtitle: "Tempranillo",
 				desc: "Alegres notes de fruita vermella",
-				price: "copa 3,90€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1116,13 +1112,13 @@ const legacyVinosCaSections: MenuSection[] = [
 				name: "CAVA MO Brut Nature",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Bombolla equilibrada, aromes afruitats",
-				price: "copa 3,50€ / 23,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 			{
 				name: "CAVA Dignitat Brut Rosé",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Cava molt agradable amb notes fines i sedoses de fruita vermella fresca",
-				price: "copa 3,90€ / 25,00€",
+				price: "copa 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1136,19 +1132,19 @@ const legacyVinosFrSections: MenuSection[] = [
 				name: "CASTELL DE FADES D.O. Conca de Barberà",
 				subtitle: "Viognier · Biologique",
 				desc: "Fruits blancs et subtiles notes de fruits tropicaux (ananas frais)",
-				price: "verre 3,50€ / 19,00€",
+				price: "verre 3,80€ / 21,00€",
 			},
 			{
 				name: "VIÑA SANZO D.O. Rueda",
 				subtitle: "Verdejo · Biologique",
 				desc: "Sec, aromatique, persistant",
-				price: "verre 3,90€ / 23,00€",
+				price: "verre 4,10€ / 25,00€",
 			},
 			{
 				name: "CLOS DE COSTA D.O. Catalunya",
 				subtitle: "Chardonnay",
 				desc: "Fruité avec des notes de poire, d'ananas et d'agrumes",
-				price: "verre 3,90€ / 23,00€",
+				price: "verre 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1159,19 +1155,19 @@ const legacyVinosFrSections: MenuSection[] = [
 				name: "CLOS DE DÍA D.O. Terra Alta",
 				subtitle: "Garnacha roja",
 				desc: "Facile à boire, fruité, tanin subtil",
-				price: "verre 3,50€ / 19,00€",
+				price: "verre 3,80€ / 21,00€",
 			},
 			{
 				name: "VEGA CASCAJO Crianza D.O. Rioja",
 				subtitle: "Tempranillo",
 				desc: "Agréable Rioja avec des notes de fruits rouges mûrs et de réglisse",
-				price: "verre 3,90€ / 23,00€",
+				price: "verre 4,10€ / 25,00€",
 			},
 			{
 				name: "SANZO T-3 D.O. Terra Alta",
 				subtitle: "Tempranillo",
 				desc: "Couleur rouge intense. Fruits mûrs avec des touches de vanille",
-				price: "verre 3,90€ / 23,00€",
+				price: "verre 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1182,7 +1178,7 @@ const legacyVinosFrSections: MenuSection[] = [
 				name: "DOMINIO DEL DUEÑO V. Benavente",
 				subtitle: "Tempranillo",
 				desc: "Joyeuses notes de fruits rouges",
-				price: "verre 3,90€ / 23,00€",
+				price: "verre 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1193,13 +1189,13 @@ const legacyVinosFrSections: MenuSection[] = [
 				name: "CAVA MO Brut Nature",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Bulle équilibrée, arômes fruités",
-				price: "verre 3,50€ / 23,00€",
+				price: "verre 4,10€ / 25,00€",
 			},
 			{
 				name: "CAVA Dignitat Brut Rosé",
 				subtitle: "Xarel·lo, Macabeo, Parellada",
 				desc: "Cava très agréable avec des notes fines et soyeuses de fruits rouges frais",
-				price: "verre 3,90€ / 25,00€",
+				price: "verre 4,10€ / 25,00€",
 			},
 		],
 	},
@@ -1226,7 +1222,7 @@ const wineCatalog: Array<{
 					ca: "Un blanc cítric i cremós, amb un caràcter fresc i una elaboració ecològica.",
 					fr: "Un blanc citronné et crémeux, au caractère frais et issu d'une élaboration biologique.",
 				},
-				price: "3,50€ / 19,00€",
+				price: "3,80€ / 21,00€",
 			},
 			{
 				name: "A VEIRA DO MAR",
@@ -1237,7 +1233,7 @@ const wineCatalog: Array<{
 					ca: "Aromes de fruita i préssec, amb una textura sedosa i un final fresc.",
 					fr: "Arômes de fruits et de pêche, avec une texture soyeuse et une finale fraîche.",
 				},
-				price: "3,90€ / 23,00€",
+				price: "4,10€ / 25,00€",
 			},
 			{
 				name: "FINCA FEROES",
@@ -1248,7 +1244,7 @@ const wineCatalog: Array<{
 					ca: "Notes tropicals i una frescor marcada, amb un final llarg i agradable.",
 					fr: "Notes tropicales et fraîcheur marquée, avec une finale longue et agréable.",
 				},
-				price: "3,90€ / 23,00€",
+				price: "4,10€ / 25,00€",
 			},
 			{
 				name: "SEÑORÍO DE RUBIOS",
@@ -1259,7 +1255,7 @@ const wineCatalog: Array<{
 					ca: "Aromes de fruita blanca i flors, acompanyats d'un toc cítric i refrescant.",
 					fr: "Arômes de fruits blancs et de fleurs, accompagnés d'une touche d'agrumes rafraîchissante.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 			{
 				name: "TUETS TOT BLANC (NATURAL)",
@@ -1270,7 +1266,7 @@ const wineCatalog: Array<{
 					ca: "Un vi sec i aromàtic, fresc en boca i amb un caràcter natural molt marcat.",
 					fr: "Un vin sec et aromatique, frais en bouche et au caractère naturel très affirmé.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 		],
 	},
@@ -1286,7 +1282,7 @@ const wineCatalog: Array<{
 					ca: "Afruitat i fresc, amb un bon equilibri entre fruita i estructura.",
 					fr: "Fruité et frais, avec un bon équilibre entre le fruit et la structure.",
 				},
-				price: "3,50€ / 19,00€",
+				price: "3,80€ / 21,00€",
 			},
 			{
 				name: "FINCA FEROES CRIANZA",
@@ -1297,7 +1293,7 @@ const wineCatalog: Array<{
 					ca: "Fruita vermella madura i un pas per boca rodó i persistent.",
 					fr: "Fruits rouges mûrs et une bouche ronde et persistante.",
 				},
-				price: "3,90€ / 23,00€",
+				price: "4,10€ / 25,00€",
 			},
 			{
 				name: "CLOS DE NIT JOVE",
@@ -1308,7 +1304,7 @@ const wineCatalog: Array<{
 					ca: "Fruita vermella fresca, amb un caràcter elegant i una textura sedosa.",
 					fr: "Fruits rouges frais, avec un caractère élégant et une texture soyeuse.",
 				},
-				price: "3,90€ / 23,00€",
+				price: "4,10€ / 25,00€",
 			},
 			{
 				name: "OTERO CRIANZA SELECCIÓN",
@@ -1319,7 +1315,7 @@ const wineCatalog: Array<{
 					ca: "Fruits vermells i notes especiades, amb un caràcter intens i equilibrat.",
 					fr: "Fruits rouges et notes épicées, au caractère intense et équilibré.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 			{
 				name: "RUMORE (NATURAL)",
@@ -1330,7 +1326,7 @@ const wineCatalog: Array<{
 					ca: "Vibrant i fresc, amb notes de fruita vermella i un final lleugerament melós.",
 					fr: "Vibrant et frais, avec des notes de fruits rouges et une finale légèrement miellée.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 		],
 	},
@@ -1346,7 +1342,7 @@ const wineCatalog: Array<{
 					ca: "Afruitat i elegant, amb una expressió fresca i equilibrada.",
 					fr: "Fruité et élégant, avec une expression fraîche et équilibrée.",
 				},
-				price: "3,50€ / 19,00€",
+				price: "3,80€ / 21,00€",
 			},
 			{
 				name: "CUCCURUCUCU (NATURAL)",
@@ -1357,7 +1353,7 @@ const wineCatalog: Array<{
 					ca: "Fruita vermella madura, notes de bóta i un toc dolç.",
 					fr: "Fruits rouges mûrs, notes de fût et une touche de douceur.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 		],
 	},
@@ -1373,7 +1369,7 @@ const wineCatalog: Array<{
 					ca: "Lleuger i fresc, amb un caràcter subtil i delicat.",
 					fr: "Léger et frais, au caractère subtil et délicat.",
 				},
-				price: "3,90€ / 23,00€",
+				price: "4,10€ / 25,00€",
 			},
 			{
 				name: "DIGNITAT ROSÉ",
@@ -1384,7 +1380,7 @@ const wineCatalog: Array<{
 					ca: "Fruita vermella fresca i delicada, amb un caràcter elegant.",
 					fr: "Fruits rouges frais et délicats, avec un caractère élégant.",
 				},
-				price: "26,00€",
+				price: "4,10€ / 25,00€",
 			},
 			{
 				name: "FANATIC BRUT IMPERIAL RESERVA ORGÁNIC",
@@ -1395,7 +1391,7 @@ const wineCatalog: Array<{
 					ca: "Madur i elegant, amb bombolla fina i una textura delicada.",
 					fr: "Mûr et élégant, avec une bulle fine et une texture délicate.",
 				},
-				price: "3,90€ / 23,00€",
+				price: "27,00€",
 			},
 		],
 	},
@@ -1411,7 +1407,7 @@ const wineCatalog: Array<{
 					ca: "Fresc i afruitat, amb una expressió vibrant i lleugera.",
 					fr: "Frais et fruité, avec une expression vibrante et légère.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 			{
 				name: "FLOR DE SANT JOAN 2024",
@@ -1422,7 +1418,7 @@ const wineCatalog: Array<{
 					ca: "Cítric i floral, amb una textura cremosa i fresca.",
 					fr: "Citronné et floral, avec une texture crémeuse et fraîche.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 			{
 				name: "ORANGE FINCA PARERA (NATURAL)",
@@ -1433,7 +1429,7 @@ const wineCatalog: Array<{
 					ca: "Brisat i sucós, amb notes de fruita exòtica i un caràcter fresc.",
 					fr: "Macéré et juteux, avec des notes de fruits exotiques et un caractère frais.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 			{
 				name: "ORBIS ORANGE (NATURAL)",
@@ -1444,7 +1440,7 @@ const wineCatalog: Array<{
 					ca: "Elaborat en àmfora, amb notes de pell de taronja i fruits secs.",
 					fr: "Élevé en amphore, avec des notes de peau d'orange et de fruits secs.",
 				},
-				price: "26,00€",
+				price: "27,00€",
 			},
 		],
 	},
@@ -1523,58 +1519,58 @@ export const cocktailsEsSections: MenuSection[] = [
 			{
 				name: "Margarita maracuyá",
 				desc: "Tequila, triple sec, lima, leche de coco, maracuyá",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blood Margarita",
 				desc: "Tequila, naranja sanguina, lima",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Café Martini",
 				desc: "Vodka, azúcar, licor de café, café",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Paloma",
 				desc: "Tequila, pomelo, lima, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Mojito",
 				desc: "Ron, lima, menta, azúcar moreno, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Mojito con fresa",
 				desc: "Ron, lima, fresa, azúcar moreno, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Piña Colada",
 				desc: "Ron blanco, zumo de piña, sirope de coco, nata",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blackberry Moscow Mule",
 				desc: "Vodka, lima, arándanos, azúcar moreno, Ginger Ale",
-				price: "6,00€",
+				price: "6,80€",
 			},
-			{ name: "Caipirinha", desc: "Cachaça, azúcar, lima", price: "6,00€" },
+			{ name: "Caipirinha", desc: "Cachaça, azúcar, lima", price: "6,80€" },
 			{
 				name: "Aperol Spritz",
 				desc: "Aperol, cava, soda, naranja",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Michelada",
 				desc: "Cerveza, lima, tomate, especias, salsa picante",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Sangría casera",
 				desc: "De vino tinto, blanco o cava",
-				price: "4,50€ / 17,00€",
+				price: "4,80€ / 19,00€",
 			},
 		],
 	},
@@ -1587,58 +1583,58 @@ export const cocktailsEnSections: MenuSection[] = [
 			{
 				name: "Passion fruit Margarita",
 				desc: "Tequila, triple sec, lime, coconut milk, passion fruit",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blood Margarita",
 				desc: "Tequila, blood orange, lime",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Café Martini",
 				desc: "Vodka, sugar, coffee liqueur, coffee",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Paloma",
 				desc: "Tequila, grapefruit, lime, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Mojito",
 				desc: "Rum, lime, mint, brown sugar, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Strawberry Mojito",
 				desc: "Rum, lime, strawberry, brown sugar, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Piña Colada",
 				desc: "White rum, pineapple juice, coconut syrup, cream",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blackberry Moscow Mule",
 				desc: "Vodka, lime, blackberries, brown sugar, Ginger Ale",
-				price: "6,00€",
+				price: "6,80€",
 			},
-			{ name: "Caipirinha", desc: "Cachaça, sugar, lime", price: "6,00€" },
+			{ name: "Caipirinha", desc: "Cachaça, sugar, lime", price: "6,80€" },
 			{
 				name: "Aperol Spritz",
 				desc: "Aperol, cava, soda, orange",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Michelada",
 				desc: "Beer, lime, tomato, spices, hot sauce",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Homemade Sangría",
 				desc: "Red, white or cava",
-				price: "4,50€ / 17,00€",
+				price: "4,80€ / 19,00€",
 			},
 		],
 	},
@@ -1651,58 +1647,58 @@ export const cocktailsCaSections: MenuSection[] = [
 			{
 				name: "Margarita maracuyà",
 				desc: "Tequila, triple sec, llima, llet de coco, maracuyà",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blood Margarita",
 				desc: "Tequila, taronja sanguina, llima",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Café Martini",
 				desc: "Vodka, sucre, licor de cafè, cafè",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Paloma",
 				desc: "Tequila, aranja, llima, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Mojito",
 				desc: "Ron, llima, menta, sucre morè, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Mojito amb maduixa",
 				desc: "Ron, llima, maduixa, sucre morè, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Piña Colada",
 				desc: "Ron blanc, suc de pinya, xarop de coco, nata",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blackberry Moscow Mule",
 				desc: "Vodka, llima, nabius, sucre morè, Ginger Ale",
-				price: "6,00€",
+				price: "6,80€",
 			},
-			{ name: "Caipirinha", desc: "Cachaça, sucre, llima", price: "6,00€" },
+			{ name: "Caipirinha", desc: "Cachaça, sucre, llima", price: "6,80€" },
 			{
 				name: "Aperol Spritz",
 				desc: "Aperol, cava, soda, taronja",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Michelada",
 				desc: "Cervesa, llima, tomàquet, espècies, salsa picant",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Sangria casolana",
 				desc: "De vi negre, blanc o cava",
-				price: "4,50€ / 17,00€",
+				price: "4,80€ / 19,00€",
 			},
 		],
 	},
@@ -1715,62 +1711,62 @@ export const cocktailsFrSections: MenuSection[] = [
 			{
 				name: "Margarita fruit de la passion",
 				desc: "Tequila, triple sec, citron vert, lait de coco, fruit de la passion",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blood Margarita",
 				desc: "Tequila, orange sanguine, citron vert",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Café Martini",
 				desc: "Vodka, sucre, liqueur de café, café",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Paloma",
 				desc: "Tequila, pamplemousse, citron vert, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Mojito",
 				desc: "Rhum, citron vert, menthe, sucre roux, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Mojito à la fraise",
 				desc: "Rhum, citron vert, fraise, sucre roux, soda",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Piña Colada",
 				desc: "Rhum blanc, jus d'ananas, sirop de coco, crème",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Blackberry Moscow Mule",
 				desc: "Vodka, citron vert, mûres, sucre roux, Ginger Ale",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Caipirinha",
 				desc: "Cachaça, sucre, citron vert",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Aperol Spritz",
 				desc: "Aperol, cava, soda, orange",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Michelada",
 				desc: "Bière, citron vert, tomate, épices, sauce piquante",
-				price: "6,00€",
+				price: "6,80€",
 			},
 			{
 				name: "Sangría maison",
 				desc: "Vin rouge, blanc ou cava",
-				price: "4,50€ / 17,00€",
+				price: "4,80€ / 19,00€",
 			},
 		],
 	},
@@ -2037,7 +2033,11 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Toca para ampliar",
 		terraceNote: "*suplemento 10% en terraza",
 		tabs: [
-			{ id: "carta", label: "Carta", sections: withCartaDishImages(cartaEsSections) },
+			{
+				id: "carta",
+				label: "Carta",
+				sections: withCartaDishImages(cartaEsSections),
+			},
 			{ id: "brunch", label: "Brunch", sections: brunchEsSections },
 			{ id: "menu-dia", label: "Menú del día", menuDia: menuDiaEs },
 			{ id: "vinos", label: "Vinos", sections: vinosEsSections },
@@ -2055,7 +2055,11 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Tap to enlarge",
 		terraceNote: "*allergy chart available · *extra charge 10% on terrace",
 		tabs: [
-			{ id: "carta", label: "Menu", sections: withCartaDishImages(cartaEnSections) },
+			{
+				id: "carta",
+				label: "Menu",
+				sections: withCartaDishImages(cartaEnSections),
+			},
 			{ id: "brunch", label: "Brunch", sections: brunchEnSections },
 			{ id: "menu-dia", label: "Menu of the day", menuDia: menuDiaEn },
 			{ id: "vinos", label: "Wine", sections: vinosEnSections },
@@ -2073,7 +2077,11 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Toca per ampliar",
 		terraceNote: "*suplement 10% a la terrassa",
 		tabs: [
-			{ id: "carta", label: "Carta", sections: withCartaDishImages(cartaCaSections) },
+			{
+				id: "carta",
+				label: "Carta",
+				sections: withCartaDishImages(cartaCaSections),
+			},
 			{ id: "brunch", label: "Brunch", sections: brunchCaSections },
 			{ id: "menu-dia", label: "Menú del dia", menuDia: menuDiaCa },
 			{ id: "vinos", label: "Vins", sections: vinosCaSections },
@@ -2091,7 +2099,11 @@ export const languages: Record<LangCode, LangConfig> = {
 		tapHint: "Touchez pour agrandir",
 		terraceNote: "*supplément 10% en terrasse",
 		tabs: [
-			{ id: "carta", label: "Carte", sections: withCartaDishImages(cartaFrSections) },
+			{
+				id: "carta",
+				label: "Carte",
+				sections: withCartaDishImages(cartaFrSections),
+			},
 			{ id: "brunch", label: "Brunch", sections: brunchFrSections },
 			{ id: "menu-dia", label: "Menu du jour", menuDia: menuDiaFr },
 			{ id: "vinos", label: "Vins", sections: vinosFrSections },
